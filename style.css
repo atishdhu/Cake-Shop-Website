@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: Nunito;
+    color: #777;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul{
+    margin: 0;
+}
+
+.nav li{
+    display: inline;
+}
+
+.nav a{
+    
+    display: inline-block; /*makes space on top of inline elements - the nav*/
+    padding: .7em;/*only makes space to left and right but not top since elements are inline*/
+    color: white;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    /*font-size: larger; */
+    color: pink;
+    background-color: rgba(0,0,0,.3);
+}
+
+.active{
+    text-decoration: blink;
+   -webkit-text-decoration-color: pink;
+    color: pink;
+
+    
+}
+.main-nav{
+    text-align: center;
+    font-size: 1.1em;
+}
+.main-nav li{
+    padding: 0 2%;
+}
+
+.main-header{
+    background-color: rgba(0,0,0,0);
+    background-image: url("donut.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding-bottom: 30px;
+}
+
+.business-name{ /*The baker title*/
+    text-align: center;
+    margin: 0;
+    font-size: 5em;
+    color: white;
+    font-family: Playfair Display;
+}
+
+
+.active{
+   border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
+}
