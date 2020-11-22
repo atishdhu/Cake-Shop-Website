@@ -38,9 +38,8 @@ html, body{
     text-decoration: blink;
    -webkit-text-decoration-color: pink;
     color: pink;
-
-    
 }
+
 .main-nav{
     text-align: center;
     font-size: 1.1em;
@@ -51,7 +50,7 @@ html, body{
 
 .main-header{
     background-color: rgba(0,0,0,0);
-    background-image: url("donut.jpg");
+    background-image: url("Assets/images/1.index/donut.jpg");
     background-size: cover;
     background-blend-mode: multiply;
     padding-bottom: 30px;
@@ -69,3 +68,8 @@ html, body{
 .active{
    border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
 }
+
+
+/* Start Slideshow */
+
+/* End Slideshow */
