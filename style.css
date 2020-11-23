@@ -34,20 +34,8 @@ html, body{
     background-color: rgba(0,0,0,.3);
 }
 
-.active{
-    text-decoration: blink;
-   -webkit-text-decoration-color: pink;
-    color: pink;
-
     
-}
-.main-nav{
-    text-align: center;
-    font-size: 1.1em;
-}
-.main-nav li{
-    padding: 0 2%;
-}
+
 
 .main-header{
     background-color: rgba(0,0,0,0);
@@ -60,12 +48,26 @@ html, body{
 .business-name{ /*The baker title*/
     text-align: center;
     margin: 0;
-    font-size: 5em;
+    font-size: 3em;
     color: white;
     font-family: Playfair Display;
+    font-weight: 100;
 }
 
+.larger-name{ /*business name - landing page in header*/
+    font-size: 5em;
+}
 
 .active{
    border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
 }
+
+.main-nav{
+    text-align: center;
+    font-size: 1.1em;
+}
+.main-nav li{
+    padding: 0 2%;
+}
+
+
