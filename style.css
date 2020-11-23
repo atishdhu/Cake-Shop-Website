@@ -34,12 +34,28 @@ html, body{
     background-color: rgba(0,0,0,.3);
 }
 
+<<<<<<< HEAD
     
 
+=======
+.active{
+    text-decoration: blink;
+   -webkit-text-decoration-color: pink;
+    color: pink;
+}
+
+.main-nav{
+    text-align: center;
+    font-size: 1.1em;
+}
+.main-nav li{
+    padding: 0 2%;
+}
+>>>>>>> 3aa765a62f7dd4cdef0df4932ffcc2d9edb25978
 
 .main-header{
     background-color: rgba(0,0,0,0);
-    background-image: url("donut.jpg");
+    background-image: url("Assets/images/1.index/donut.jpg");
     background-size: cover;
     background-blend-mode: multiply;
     padding-bottom: 30px;
@@ -62,6 +78,7 @@ html, body{
    border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
 }
 
+<<<<<<< HEAD
 .main-nav{
     text-align: center;
     font-size: 1.1em;
@@ -71,3 +88,9 @@ html, body{
 }
 
 
+=======
+
+/* Start Slideshow */
+
+/* End Slideshow */
+>>>>>>> 3aa765a62f7dd4cdef0df4932ffcc2d9edb25978
