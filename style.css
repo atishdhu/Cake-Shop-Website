@@ -34,7 +34,6 @@ html, body{
     display: none;
 }
 
-/*The baker title*/
 .business-name a{ 
     float: right;
     margin-right: 40px;
@@ -63,6 +62,7 @@ html, body{
     left: -100%;
     text-align: center;
     transition: all .5s;
+    z-index: 5;
 }
 
 .nav a{
@@ -81,7 +81,7 @@ html, body{
 
 
 #check:checked ~ ul{
-    left:0;
+    left:0%;
 }
 
 /*End Navigation Bar*/
@@ -95,3 +95,78 @@ html, body{
 
 /* End Slideshow */
 
+/* Start Our Baker*/
+
+.our-baker{
+    position:relative;
+    
+}
+
+.baker-info{
+    position:relative;
+    padding: 28px 28px 40px 28px;
+    color: white;
+    z-index:2;
+}
+
+.our-baker h1{
+    text-align: center;
+    position:relative;
+    padding: 20px;
+    padding-top: 40px;
+    color: white;
+    font-size: 35px;
+    z-index:2;
+}
+
+.baker-info p{
+    font-size: 20px;
+}
+
+.baker-bg img {
+    width: 100%;
+    opacity: 70%;
+    object-fit: cover;
+    height:65em;
+    filter: brightness(20%);
+}
+
+.baker-bg{
+    position: absolute;
+    top:0px;
+    z-index:1;
+}
+
+.baker-profile{
+    position: relative;
+    width:100%;
+    height:45vh;
+    object-position: 100% 0%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.baker-profile-group{
+    position: relative;
+    background-color: white;
+    padding: 0px 0px 10px 0px;
+    background-size: contain;
+    z-index: 2;
+}
+
+.baker-profile-group p{
+    text-align: center;
+}
+
+.baker-profile-group .name{
+    font-size: 20px;
+}
+
+.baker-profile-group .description{
+    font-size: 20px;
+}
+
+.baker-profile-group .hierarchy{
+    color: #FFA5A5FF;
+}
+/* End Our Baker*/
