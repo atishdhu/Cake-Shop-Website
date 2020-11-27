@@ -16,8 +16,8 @@ html, body{
 /*Start Navigation Bar*/
 .nav ul{
     margin: 0;
-    padding-bottom: .2em;/*only makes space to left and right but not top since elements are inline*/
-    padding-top: 1em;/*only makes space to left and right but not top since elements are inline*/
+    padding-bottom: .2em;
+    padding-top: 1em;
 }
 
 .nav li{
@@ -73,23 +73,21 @@ html, body{
 .business-name a{ /*The baker title*/
     text-align: center;
     margin: 0;
-    font-size: 3em;
-<<<<<<< HEAD
-    color: white;
-=======
+    font-size: 1em;
     color: black;
->>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
+
     font-family: Playfair Display;
-    font-weight: 100;
+    font-weight: 100; 
 }
 
-<<<<<<< HEAD
+
 .larger-name{ /*business name - landing page in header*/
     font-size: 5em;
+    margin-bottom: 3px;
+    margin-top: 3px
 }
 
-=======
->>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
+
 .active{
    border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
 }
@@ -121,7 +119,7 @@ html, body{
 }
 
 .slideshow img{
-    width: 100%;
+    width: 70%;
 }
 /* End Slideshow */
 
@@ -129,33 +127,32 @@ html, body{
 .Order{
     text-align: center;
     position: relative;
-    padding-top: 53%;
+    padding-top: 30%;
 }
 
-.Order img{
+
+.orderBg{ /*class for only the 'how to order' bg*/
     position: absolute;
-    top:80%;
+    top:70%;
     left:0px;
     right: 0px;
     width: 100%;
     z-index: 2;
+    transform: rotate(180deg); /*rotates image 180 degrees*/
 }
 
 .Order h1{
     position: relative;
-    color:black;
+    color:#777;
     z-index: 3;
 }
 
-<<<<<<< HEAD
-/* End Slideshow */
-
-=======
+/*
 .Order ul{
     position:relative;
     z-index: 3;
 }
-
+*/
 .Order li{
     display: inline-block; /*makes space on top of inline elements - the nav*/
     padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
@@ -163,5 +160,33 @@ html, body{
     color: black;
     text-decoration: none;
 }
+
+/*START How to order gallery*/
+.htoGallery {
+  
+  position:relative;
+  z-index: 3;
+  margin: 0 auto;
+  
+}
+
+.row {
+  display: flex;
+  
+}
+
+.column {
+  flex: 0%;
+  padding: 50px;
+  
+}
+
+@media screen and (max-width: 500px) { /*responsiveness attempt*/
+  .column {
+    width: 100%;
+  }
+  
+}
+/*END How to order gallery*/
 /*End How to Order*/
->>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
+
