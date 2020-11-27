@@ -15,31 +15,19 @@ html, body{
 /*Start Navigation Bar*/
 
 .main-header{
-    position:relative;
-    z-index: 2;
-}
-
-.main-header img{
-    position: absolute;
-    background-position: bottom;
-    background-size: cover;
-    top:-20px;
-    left:0px;
-    right:0px;
-    width: 100%;
-    z-index: 1;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 80px;
 }
 
 .checkbtn{
     font-size: 30px;
     color: black;
     float: left;
-    line-height: 80px;
+    line-height: 60px;
     margin-left: 40px;
     cursor: pointer;
     display: block;
-    position: relative;
-    z-index: 2;
 }
 
 #check{
@@ -49,12 +37,10 @@ html, body{
 /*The baker title*/
 .business-name a{ 
     float: right;
-    padding-right: 92px;
-    font-size: 2em;
+    margin-right: 40px;
+    font-size: 40px;
     color: black;
     font-family: Playfair Display;
-    position: relative;
-    z-index: 2;
 }
 
 .nav ul li a{
@@ -103,33 +89,9 @@ html, body{
 
 /* Start Slideshow */
 
-.slideshow{
-    position: absolute;
-    top:17%;
-    right:0px;
-    left: 0px;
-    z-index: 1;
-}
-
 .slideshow img{
     width: 100%;
 }
 
 /* End Slideshow */
-
-
-/*Start How to Order*/
-
-.Order img{
-    position: absolute;
-    background-position: bottom;
-    background-size: cover;
-    top:325px;
-    left:0px;
-    right:0px;
-    width: 100%;
-    z-index: 1;
-}
-
-/*End How to Order*/
 
