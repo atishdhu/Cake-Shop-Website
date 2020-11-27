@@ -12,7 +12,7 @@ html, body{
     background-color: white;
 }
 
-/*Start Navigation Bar*/
+/* Start Navigation Bar */
 
 .main-header{
     background-color: white;
@@ -84,7 +84,7 @@ html, body{
     left:0%;
 }
 
-/*End Navigation Bar*/
+/* End Navigation Bar */
 
 
 /* Start Slideshow */
@@ -95,11 +95,10 @@ html, body{
 
 /* End Slideshow */
 
-/* Start Our Baker*/
 
+/* Start Our Baker */
 .our-baker{
-    position:relative;
-    
+    position:relative; 
 }
 
 .baker-info{
@@ -109,7 +108,7 @@ html, body{
     z-index:2;
 }
 
-.our-baker h1{
+.our-baker h2{
     text-align: center;
     position:relative;
     padding: 20px;
@@ -137,10 +136,10 @@ html, body{
     z-index:1;
 }
 
-.baker-profile{
+.baker-pic img{
     position: relative;
     width:100%;
-    height:45vh;
+    overflow: hidden;
     object-position: 100% 0%;
     object-fit: cover;
     z-index: 2;
@@ -169,4 +168,13 @@ html, body{
 .baker-profile-group .hierarchy{
     color: #FFA5A5FF;
 }
-/* End Our Baker*/
+/* End Our Baker */
+
+
+/* Start Locate Us */
+.location h2{
+    text-align: center;
+    color: #FFA5A5FF;
+    font-size: 35px;
+}
+/* End Locate Us */
