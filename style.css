@@ -13,6 +13,12 @@ html, body{
 }
 
 /*Start Navigation Bar*/
+
+.main-header{
+    position:relative;
+    z-index: 2;
+}
+
 .main-header img{
     position: absolute;
     background-position: bottom;
@@ -27,9 +33,9 @@ html, body{
 .checkbtn{
     font-size: 30px;
     color: black;
-    float: right;
+    float: left;
     line-height: 80px;
-    margin-right: 40px;
+    margin-left: 40px;
     cursor: pointer;
     display: block;
     position: relative;
@@ -42,8 +48,8 @@ html, body{
 
 /*The baker title*/
 .business-name a{ 
-    float: left;
-    padding-left: 40px;
+    float: right;
+    padding-right: 92px;
     font-size: 2em;
     color: black;
     font-family: Playfair Display;
@@ -58,7 +64,7 @@ html, body{
 .nav ul li{
     display: block;
     padding-top: 50px;
-    padding-right: 20px;
+    padding-right: 32px;
     line-height: 12px;
 }
 
@@ -91,13 +97,15 @@ html, body{
 #check:checked ~ ul{
     left:0;
 }
+
 /*End Navigation Bar*/
 
 
 /* Start Slideshow */
+
 .slideshow{
     position: absolute;
-    top:5%;
+    top:17%;
     right:0px;
     left: 0px;
     z-index: 1;
@@ -106,46 +114,22 @@ html, body{
 .slideshow img{
     width: 100%;
 }
+
 /* End Slideshow */
 
+
 /*Start How to Order*/
-.Order{
-    text-align: center;
-    position: relative;
-    padding-top: 53%;
-}
 
 .Order img{
     position: absolute;
-    top:80%;
-    left:0%;
-    right: 0%;
+    background-position: bottom;
+    background-size: cover;
+    top:325px;
+    left:0px;
+    right:0px;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
 }
 
-.Order h1{
-    position: relative;
-    color:black;
-    z-index: 3;
-}
-
-.Order ul{
-    position:relative;
-    z-index: 3;
-}
-
-.Order li{
-    display: inline-block; /*makes space on top of inline elements - the nav*/
-    padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
-    padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
-    color: black;
-    text-decoration: none;
-}
 /*End How to Order*/
 
-@media only screen and (min-width:1000px){
-    .business-name a{
-        color: red;
-    }
-}
