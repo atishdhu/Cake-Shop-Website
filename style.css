@@ -10,28 +10,33 @@
 html, body{
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
+/*Start Navigation Bar*/
 .nav ul{
     margin: 0;
+    padding-bottom: .2em;/*only makes space to left and right but not top since elements are inline*/
+    padding-top: 1em;/*only makes space to left and right but not top since elements are inline*/
 }
 
 .nav li{
     display: inline;
+    
 }
 
 .nav a{
-    
     display: inline-block; /*makes space on top of inline elements - the nav*/
-    padding: .7em;/*only makes space to left and right but not top since elements are inline*/
-    color: white;
+    padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
+    padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+    color: black;
     text-decoration: none;
 }
 
 .nav a:hover{
     /*font-size: larger; */
-    color: pink;
-    background-color: rgba(0,0,0,.3);
+    color: #FFA5A5FF;
+    /* background-color: rgba(0,0,0,.3); */
 }
 
 
@@ -40,8 +45,8 @@ html, body{
 
 .active{
     text-decoration: blink;
-   -webkit-text-decoration-color: pink;
-    color: pink;
+    color: #FFA5A5FF;
+   /* -webkit-text-decoration-color: pink; */
 }
 
 .main-nav{
@@ -55,28 +60,44 @@ html, body{
 
 .main-header{
     background-color: rgba(0,0,0,0);
-    background-image: url("Assets/images/1.index/donut.jpg");
+    background-image: url("Assets/images/1.index/NavBg.png");
+    background-position: bottom;
     background-size: cover;
     background-blend-mode: multiply;
-    padding-bottom: 30px;
+    padding-top: 0px;
+    padding-bottom:30px;
+    position: relative;
+    z-index: 2; /*Put navigation bar infront of slideshow*/
 }
 
-.business-name{ /*The baker title*/
+.business-name a{ /*The baker title*/
     text-align: center;
     margin: 0;
     font-size: 3em;
+<<<<<<< HEAD
     color: white;
+=======
+    color: black;
+>>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
     font-family: Playfair Display;
     font-weight: 100;
 }
 
+<<<<<<< HEAD
 .larger-name{ /*business name - landing page in header*/
     font-size: 5em;
 }
 
+=======
+>>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
 .active{
    border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
 }
+
+.business-name a:hover{
+  color:#9DDFD3FF;
+}
+/*End Navigation Bar*/
 
 
 .main-nav{
@@ -91,6 +112,56 @@ html, body{
 
 
 /* Start Slideshow */
+.slideshow{
+    position: absolute;
+    top:5%;
+    right:0px;
+    left: 0px;
+    z-index: 1;
+}
 
+.slideshow img{
+    width: 100%;
+}
 /* End Slideshow */
 
+/*Start How to Order*/
+.Order{
+    text-align: center;
+    position: relative;
+    padding-top: 53%;
+}
+
+.Order img{
+    position: absolute;
+    top:80%;
+    left:0px;
+    right: 0px;
+    width: 100%;
+    z-index: 2;
+}
+
+.Order h1{
+    position: relative;
+    color:black;
+    z-index: 3;
+}
+
+<<<<<<< HEAD
+/* End Slideshow */
+
+=======
+.Order ul{
+    position:relative;
+    z-index: 3;
+}
+
+.Order li{
+    display: inline-block; /*makes space on top of inline elements - the nav*/
+    padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
+    padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+    color: black;
+    text-decoration: none;
+}
+/*End How to Order*/
+>>>>>>> a1d804638f2446dbb2c858df219eaff1b5cd71e2
