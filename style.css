@@ -14,7 +14,7 @@ html, body{
 
 .subtitle h2{
     text-align: center;
-    color: #FBA1A1FF;
+    color: #FF7380FF;
     font-size: 35px;
 }
 
@@ -76,12 +76,12 @@ html, body{
 }
 
 .main-nav ul a.active{
-    color: #FBA1A1FF;
+    color: #FF7380FF;
     border-bottom: 2px solid currentColor;
 }
 
 .main-nav ul a:hover{
-    color: #FBA1A1FF;
+    color: #FF7380FF;
 }
 
 
@@ -99,10 +99,19 @@ html, body{
 
 
 /* Start How to Order*/
+.how-to-order h2{
+    padding-top: 40px;
+    color:white;
+}
+
+.how-to-order{
+    background-color: #23CFA7FF;
+}
+
 .row{
     text-align: center;
     font-size:80px;
-    color: #0099BBFF;
+    color:white;
     padding-bottom: 20px;
 }
 
@@ -115,7 +124,6 @@ html, body{
     font-size: 25px;
     color:black;
 }
-
 /* End How to Order*/
 
 
@@ -170,13 +178,94 @@ html, body{
 }
 
 .baker-profile-group .hierarchy{
-    color: #FBA1A1FF;
+    color: #FF7380FF;
 }
 /* End Our Baker */
 
 
 /* Start Locate Us */
 .location h2{
-    color: #FBA1A1FF;
+    color: #FF7380FF;
 }
 /* End Locate Us */
+
+
+/* Start Contact Us Form */
+.contact-section h2{
+    color: white;
+}
+
+.contact-us{
+    background: #59D4F0FF;
+    padding: 0px 40px;
+    padding-bottom: 40px;
+    border-top: 10px solid #23CFA7FF;
+}
+
+.contact-section label, input, textarea {
+    display: block;
+    width: 100%;
+    font-size: 12pt;
+    line-height: 24pt;
+}
+ 
+.contact-section input {
+    margin-bottom: 24pt;
+}
+  
+.contact-section h3 {
+    font-weight: normal;
+    font-size: 10pt;
+    line-height: 24pt;
+    font-style: italic;
+    margin: 0 0 0.5em 0;
+}
+  
+.contact-section span {
+    font-size: 8pt;
+}
+  
+.contact-section em {
+    color: #FF7380FF;
+    font-weight: bold;
+}
+  
+.contact-section input, textarea {
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    background: white;
+    padding-left: 5px;
+    outline: none;
+}
+  
+.contact-section input:focus, textarea:focus {
+    border: 1px solid #6bd4b1;
+}
+  
+.contact-section textarea {
+    resize: none;
+}
+
+.submit-button{
+    padding-top: 20px;
+}
+
+.contact-section button {
+    display: block;
+    line-height: 24pt;
+    padding: 0 20px;
+    border: none;
+    background: #23CFA7FF;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
+}
+
+.contact-section button:hover {
+    color: #FF7380FF;
+    border-bottom: 2px solid #FF7380FF;
+}
+/* End Contact Us Form */

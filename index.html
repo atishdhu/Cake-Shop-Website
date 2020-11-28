@@ -51,23 +51,23 @@
             <div class="row">
                 <div class="column">
                   <i class="fas fa-birthday-cake"></i>
-                  <p>Choose your cake</p>
+                  <p><b>Choose your cake</b></p>
                 </div>
                 <div class="column">
                   <i class="fas fa-cart-plus"></i>
-                  <p>Add to cart</p>
+                  <p><b>Add to cart</b></p>
                 </div>
                 <div class="column">
                   <i class="fas fa-money-check-alt"></i>
-                  <p>Checkout</p>
+                  <p><b>Checkout</b></p>
                 </div>
                  <div class="column">
                  <i class="fas fa-box-open"></i>
-                 <p>We pack it up</p>
+                 <p><b>We pack it up</b></p>
                 </div>
                   <div class="column">
                   <i class="fas fa-shipping-fast"></i>
-                  <p>Deliver it at your doorstep</p>
+                  <p><b>Deliver it at your doorstep</b></p>
                 </div>
             </div>
          </div>
@@ -100,14 +100,42 @@
         <!-- End Our Baker-->
 
         <!-- Start Google Map-->
-        <div class="subtitle">
-            <h2>LOCATE US</h2>
+        <div class="map">
+            <div class="subtitle">
+                <h2>LOCATE US</h2>
+            </div>
+    
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7483.163979214587!2d57.5197261228079!3d-20.31756231290802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c4272c436d1%3A0x14c5afb30243ca4a!2sPatisserie%20Swiss%20At%20Jerningham%20and%20Royal%20Street!5e0!3m2!1sen!2smu!4v1606498197938!5m2!1sen!2smu" width="100%"" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
         </div>
-
-        <div class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7483.163979214587!2d57.5197261228079!3d-20.31756231290802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c4272c436d1%3A0x14c5afb30243ca4a!2sPatisserie%20Swiss%20At%20Jerningham%20and%20Royal%20Street!5e0!3m2!1sen!2smu!4v1606498197938!5m2!1sen!2smu" width="100%"" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-        
         <!-- End Google Map-->
+
+
+        <!-- Start Contact Us -->
+        <div class="contact-section">
+            <div class="contact-us">
+                <div class="subtitle">
+                    <h2>CONTACT US</h2>
+                    <p>Our Company is the best, meet the creative team that never sleeps. Say something to us we will answer to you.</p>
+                </div>
+                <form action="#">
+                    <label for="customerName">NAME <em>&#x2a;</em></label>
+                    <input id="customerName" name="customerName" required="" type="text" />
+                    <label for="customerEmail">EMAIL <em>&#x2a;</em></label>
+                    <input id="customerEmail" name="customerEmail" required="" type="email" />
+                    <label for="customerPhone">PHONE</label>
+                    <input id="customerPhone" name="customerPhone" pattern="[/0-9]{8}|[/0-9]{7}" type="tel" />
+                    <label for="orderNumber">ORDER NUMBER</label>
+                    <input id="orderNumber" name="orderNumber" type="text" />
+                    <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
+                    <textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
+                    <div class="submit-button">
+                        <button id="customerOrder">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact Us-->
     </body>
 </html>
