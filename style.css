@@ -188,16 +188,26 @@ html, body{
 /* End Slideshow */
 
 /* Start Wave Image */
-.wave-image img{
+.wave-image-group img{
     position:relative;
     max-width:100%;
     margin:0;
+    z-index:3;
+}
+
+.wave-image-group .wave-image{
     margin-bottom: -10px;
     margin-top: -40px;
     vertical-align: bottom;
-    z-index:3;
+}
+
+.wave-image-group .wave-image-flip{
+    margin-bottom: -40px;
+    margin-top: -10px;
+    vertical-align: top;
 }
 /* End Wave Image */
+
 
 /* Start How to Order*/
 .how-to-order h2{
@@ -216,7 +226,7 @@ html, body{
     text-align: center;
     font-size:80px;
     color:white;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .row .column{
@@ -232,13 +242,14 @@ html, body{
 }
 /* End How to Order*/
 
+
 /* Start Product List*/
 .all-cakes .subtitle h2{
-    padding-top: 28px;
+    padding-top: 80px;
     color:#FFBB63FF;
 }
 .all-cakes{
-    margin-top: -30px;
+    margin-top: -90px;
     margin-bottom: -30px;
     padding-bottom:40px;
     background-color: #F4F3EFFF;
@@ -271,7 +282,6 @@ html, body{
 }
 
 .hot-cake-description{
-    background-color: #23CFA7FF;
     border-radius: 0 0 30px 30px;
     text-align: center;
     width: 80%;
@@ -284,7 +294,28 @@ html, body{
 .hot-cake-description span{
     margin: 0;
 }
+
+.cake1 .hot-cake-description{
+    background-color: #23CFA7FF;
+}
+
+.cake2 .hot-cake-description{
+    background-color: #FFBB63FF;
+}
+
+.cake2 .hot-cake-description{
+    background-color: #FF7380FF;
+}
+
+.cake3 .hot-cake-description{
+    background-color: #59D4F0FF;
+}
+
+.cake4 .hot-cake-description{
+    background-color: #9A70BFFF;
+}
 /* End Product List*/
+
 
 /* Start Our Baker */
 .baker-info{
@@ -345,11 +376,11 @@ html, body{
 /* Start Locate Us */
 .google-map{
     vertical-align: bottom;
-    margin: -7px;
+    margin-bottom: -7px;
 }
 
 .map .subtitle h2{
-    color: #9A70BFFF;
+    color: #23CFA7FF;
 }
 /* End Locate Us */
 
@@ -420,9 +451,10 @@ html, body{
 .contact-section button {
     display: block;
     line-height: 24pt;
+    width:100%;
     padding: 0 20px;
     border: none;
-    background: #23CFA7FF;
+    background: #FF7380FF;
     color: white;
     letter-spacing: 2px;
     transition: 0.2s all ease-in-out;
@@ -431,8 +463,8 @@ html, body{
 }
 
 .contact-section button:hover {
-    color: #FF7380FF;
-    border-bottom: 2px solid #FF7380FF;
+    color: white;
+    border-bottom: 2px solid white;
 }
 /* End Contact Us Form */
 
