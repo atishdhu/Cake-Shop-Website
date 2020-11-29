@@ -17,6 +17,29 @@ html, body{
     text-align: center;
     color: #FF7380FF;
     font-size: 35px;
+    letter-spacing: 2.2pt;
+}
+
+.push-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.push-button button{
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 24pt;
+    padding: 10px 0;
+    width: 80%;
+    margin-top: 40px;
+    border: none;
+    background: #FF7380FF;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
 }
 
 /* Start Navigation Bar */
@@ -112,34 +135,18 @@ html, body{
     margin:0;
 }
   
-/* Next & previous buttons */
-/* .slideshow-container .prev, .next{
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-} */
-  
-  /* Position the "next button" to the right */
+/* Position the "next button" to the right */
 .slideshow-container .next{
     right: 0;
     border-radius: 3px 0 0 3px;
 }
   
-  /* On hover, add a black background color with a little bit see-through */
+/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover{
     background-color: rgba(0,0,0,0.8);
 }
   
-  /* Caption text */
+/* Caption text */
 .slideshow-container .text{
     color: #f2f2f2;
     font-family: "Courgette";
@@ -152,7 +159,7 @@ html, body{
     z-index:3;
 }
   
-  /* The dots/bullets/indicators */
+/* The dots/bullets/indicators */
 .slideshow-container .dot{
     cursor: pointer;
     height: 15px;
@@ -168,7 +175,7 @@ html, body{
     background-color: #717171;
 }
   
-  /* Fading animation */
+/* Fading animation */
 .slideshow-container .fade{
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -265,6 +272,7 @@ html, body{
     margin: 10% 10% 0 10%;
     margin-bottom: 0;
     padding: 20px;
+    box-shadow: 5px 10px 30px grey;
 }
 
 .hot-cake-baseInfo span{
@@ -288,6 +296,7 @@ html, body{
     margin: 0% 10% 10% 10%;
     margin-bottom: 0;
     padding: 20px;
+    box-shadow: 5px 10px 30px grey;
 }
 
 .hot-cake-description span{
@@ -312,6 +321,10 @@ html, body{
 
 .cake4 .hot-cake-description{
     background-color: #9A70BFFF;
+}
+
+.push-button .view-all-cakes{
+    background-color: #FFBB63FF;
 }
 /* End Product List*/
 
@@ -391,6 +404,15 @@ html, body{
     color: white;
 }
 
+.contact-section .subtitle{
+    text-align: center;
+    justify-content: center;
+}
+
+.contact-section .subtitle p{
+    font-size: 14pt;
+}
+
 .contact-us{
     background: #59D4F0FF;
     padding: 0px 40px;
@@ -445,20 +467,6 @@ html, body{
 
 .submit-button{
     padding-top: 20px;
-}
-
-.contact-section button {
-    display: block;
-    line-height: 24pt;
-    width:100%;
-    padding: 0 20px;
-    border: none;
-    background: #FF7380FF;
-    color: white;
-    letter-spacing: 2px;
-    transition: 0.2s all ease-in-out;
-    border-bottom: 2px solid transparent;
-    outline: none;
 }
 
 .contact-section button:hover {
@@ -571,7 +579,7 @@ html, body{
     overflow:hidden;
     white-space: nowrap;
     font-size: 18px;
-    color: grey;
+    color: black;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.1s ease-in-out;
