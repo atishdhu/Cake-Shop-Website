@@ -197,7 +197,7 @@ html, body{
 
 .wave-image-group .wave-image{
     margin-bottom: -10px;
-    margin-top: -40px;
+    margin-top: -30px;
     vertical-align: bottom;
 }
 
@@ -218,7 +218,6 @@ html, body{
 
 .how-to-order{
     position:relative;
-    overflow-y: hidden;
     background-color: #23CFA7FF;
 }
 
@@ -469,6 +468,87 @@ html, body{
 /* End Contact Us Form */
 
 
+/* Start Footer */
+.wave-image-group .footer-wave{
+    margin-bottom: -10px;
+    margin-top: -50px;
+}
+
+.footer{
+    background-color: #FF7380FF;
+    background-size: 100%;
+    width: 100%;
+    height: 580px;
+    margin: 0;
+    margin-top: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo-name{
+    font-size: 70px;
+    font-family: Playfair Display;
+}
+
+.social-media{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.social-media a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-media span{
+    display: inline;
+    letter-spacing: 8px;
+    font-size: 40px;
+}
+
+.contact-links{
+    font-size: 22px;
+}
+
+.contact-links span{
+    display: block;
+}
+
+.contact-links .phone{
+    padding: 25px 0;
+}
+
+.contact-links .address{
+    padding-bottom: 25px;
+}
+
+.legal-links{
+    font-size:20px;
+    line-height: 35px;
+}
+
+.legal-links span{
+    display: block;
+    letter-spacing: 3px;
+}
+
+.legal-links a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.copyright{
+    padding-top: 25px;
+}
+
+.copyright span{
+    font-size: 15px;
+}
+
+/* End Footer */
+
+
 /* Start Bottom Navbar */
 .bottom-nav{
     position: fixed;
@@ -505,5 +585,4 @@ html, body{
 .bottom-nav-icon{
     font-size: 18px;
 }
-
 /* End Bottom Navbar */
