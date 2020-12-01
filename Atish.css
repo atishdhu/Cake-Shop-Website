@@ -209,10 +209,34 @@ html, body{
     margin: 0px;
 }
 
+.what-you-can-do .fa-cookie{
+    color: #FFBB63FF;
+}
+
+.what-you-can-do .fa-mitten{
+    color: #23CFA7FF;
+}
+
+.what-you-can-do .fa-boxes{
+    color: #59D4F0FF;
+}
+
+.what-you-can-do .column .buy-our-cake{
+    color: #FFBB63FF;
+}
+
+.what-you-can-do .column .customize-cake{
+    color: #23CFA7FF;
+}
+
+.what-you-can-do .create-box{
+    color: #59D4F0FF;
+}
+
 .what-you-can-do .column .what-you-can-do-subtitle{
     font-size: 30px;
     font-weight: bold;
-    color: #FFBB63FF;
+    color: black;
 }
 
 .what-you-can-do .column .what-you-can-do-text{
@@ -222,7 +246,7 @@ html, body{
 
 .what-you-can-do .row{
     text-align: center;
-    font-size:80px;
+    font-size: 80px;
     color:white;
     padding-bottom: 40px;
 }
@@ -230,13 +254,13 @@ html, body{
 .what-you-can-do .row .column{
     display: block;
     padding-top: 30px;
-    margin:0;
+    margin: 0;
 }
 
 .what-you-can-do .row .column span{
     display: block;
     padding: 0 30px;
-    margin:0;
+    margin: 0;
 }
 /* End What You Can Do */
 
@@ -249,7 +273,7 @@ html, body{
 .all-cakes{
     margin-top: -90px;
     margin-bottom: -40px;
-    padding-bottom:80px;
+    padding-bottom: 80px;
     background-color: #F4F3EFFF;
 }
 
