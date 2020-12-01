@@ -132,13 +132,7 @@ html, body{
 /* Hide the images by default */
 .slideshow-container .mySlides{
     display: none;
-    margin:0;
-}
-  
-/* Position the "next button" to the right */
-.slideshow-container .next{
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    margin: 0px;
 }
   
 /* On hover, add a black background color with a little bit see-through */
@@ -149,7 +143,7 @@ html, body{
 /* Caption text */
 .slideshow-container .text{
     color: #f2f2f2;
-    font-family: "Courgette";
+    line-height: 50px;
     font-size: 2em;
     padding: 8px 12px;
     position: absolute;
@@ -157,22 +151,6 @@ html, body{
     width: 100%;
     text-align: center;
     z-index:3;
-}
-  
-/* The dots/bullets/indicators */
-.slideshow-container .dot{
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-  
-.slideshow-container .active, .dot:hover{
-    background-color: #717171;
 }
   
 /* Fading animation */
@@ -193,6 +171,7 @@ html, body{
     to {opacity: 1}
 }
 /* End Slideshow */
+
 
 /* Start Wave Image */
 .wave-image-group img{
@@ -216,37 +195,50 @@ html, body{
 /* End Wave Image */
 
 
-/* Start How to Order*/
-.how-to-order h2{
-    padding-top: 40px;
+/* Start What You Can Do */
+.what-you-can-do{
+    position:relative;
+    background-color: #FF7380FF;
+    margin:0;
+    z-index: 3;
+}
+
+.what-you-can-do h2{
+    padding-top: 28px;
     color:white;
     margin: 0px;
 }
 
-.how-to-order{
-    position:relative;
-    background-color: #23CFA7FF;
+.what-you-can-do .column .what-you-can-do-subtitle{
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFBB63FF;
 }
 
-.row{
+.what-you-can-do .column .what-you-can-do-text{
+    font-size: 25px;
+    color: white;
+}
+
+.what-you-can-do .row{
     text-align: center;
     font-size:80px;
     color:white;
     padding-bottom: 40px;
 }
 
-.row .column{
+.what-you-can-do .row .column{
     display: block;
     padding-top: 30px;
     margin:0;
 }
 
-.row .column p{
-    font-size: 25px;
-    color:black;
+.what-you-can-do .row .column span{
+    display: block;
+    padding: 0 30px;
     margin:0;
 }
-/* End How to Order*/
+/* End What You Can Do */
 
 
 /* Start Product List*/
@@ -256,8 +248,8 @@ html, body{
 }
 .all-cakes{
     margin-top: -90px;
-    margin-bottom: -30px;
-    padding-bottom:40px;
+    margin-bottom: -40px;
+    padding-bottom:80px;
     background-color: #F4F3EFFF;
 }
 
@@ -329,15 +321,58 @@ html, body{
 /* End Product List*/
 
 
+/* Start How to Order*/
+.how-to-order h2{
+    padding-top: 40px;
+    color:white;
+    margin: 0px;
+}
+
+.how-to-order{
+    position:relative;
+    background-color: #23CFA7FF;
+}
+
+.how-to-order .row{
+    text-align: center;
+    font-size:80px;
+    color:white;
+    padding-bottom: 40px;
+}
+
+.how-to-order .row .column{
+    display: block;
+    padding-top: 30px;
+    margin:0;
+}
+
+.how-to-order .row .column p{
+    font-size: 25px;
+    color:black;
+    margin:0;
+}
+
+.wave-image-group .how-to-order-wave{
+    margin-bottom: -70px;
+}
+/* End How to Order*/
+
+
 /* Start Our Baker */
+.our-baker{
+    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./Assets/images/1.index/CupcakePattern_Darken.jpg");
+    margin: 0;
+}
+
 .baker-info{
-    padding: 28px 28px 40px 28px;
+    padding: 40px 28px 40px 28px;
     color: white;
 }
 
 .our-baker h2{
     padding: 20px;
-    padding-top: 40px;
+    padding-top: 90px;
+    margin: 0;
     color: white;
 }
 
@@ -345,9 +380,6 @@ html, body{
     font-size: 20px;
 }
 
-.our-baker{
-    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./Assets/images/1.index/CupcakePattern_Darken.jpg");
-}
 .baker-pic{
     background-image: url("./Assets/images/1.index/Baker.png");
     padding-bottom: 100%;
