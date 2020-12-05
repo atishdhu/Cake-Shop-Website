@@ -43,6 +43,10 @@ html, body{
 }
 
 /* Start Navigation Bar */
+.main-header-media1200{
+    display:none;
+}
+
 .main-header{
     background-color: white;
     padding-top: 5px;
@@ -117,7 +121,7 @@ html, body{
 
 /* Start Slideshow */
 .slideshow-container{
-    max-width: 1000px;
+    max-width: 100%;
     position: relative;
     margin: 0;
     z-index: 2;
@@ -174,6 +178,10 @@ html, body{
 
 
 /* Start Wave Image */
+.wave-image-group-media1200{
+    display: none;
+}
+
 .wave-image-group img{
     position:relative;
     max-width:100%;
@@ -209,7 +217,7 @@ html, body{
     margin: 0px;
 }
 
-.what-you-can-do .fa-cookie{
+/* .what-you-can-do .fa-cookie{
     color: #FFBB63FF;
 }
 
@@ -231,7 +239,7 @@ html, body{
 
 .what-you-can-do .create-box{
     color: #59D4F0FF;
-}
+} */
 
 .what-you-can-do .column .what-you-can-do-subtitle{
     font-size: 30px;
@@ -650,68 +658,71 @@ html, body{
 }
 /* End Bottom Navbar */
 
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 1200px){
 
-    /* Start Navigation Bar */
     .main-header{
-        background-color: white;
-        padding-top: 5px;
-        padding-bottom: 80px;
-    }
-
-    .checkbtn{
         display:none;
     }
 
-    #check{
-        display: none;
+    /*Start Navigation Bar*/
+    .main-header-media1200{
+        display: contents;
     }
 
-    .business-name a{ 
-        float: left;
-        margin-left: 40px;
-        font-size: 60px;
-        padding-top: 0;
-        padding-bottom: 30px;
-        color: black;
-        font-family: Playfair Display;
-    }
-
-    .nav ul li a{
-        font-size: 20px;
-    }
-
-    .nav ul li{
-        display: inline-block;
-        padding-top: 50px;
-        padding-right: 32px;
-        line-height: 12%;
-    }
-
-    .nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color:white;
-        top: 80px;
+    .main-nav-media1200{
         text-align: center;
-        z-index: 5;
+        font-size: 1.1em;
     }
 
-    .nav a{
+    .main-nav-media1200 ul{
+        margin: 0;
+        padding-bottom: 40px;
+        padding-top: 1em;
+    }
+
+    .main-nav-media1200 li{
+        display: inline;
+    }
+
+    .main-nav-media1200 a{
+        display: inline-block; /*makes space on top of inline elements - the nav*/
+        padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
         color: black;
         text-decoration: none;
     }
 
-    .main-nav ul a.active{
-        color: #FF7380FF;
-        border-bottom: 2px solid currentColor;
+    .main-nav-media1200 a:hover{
+        color: #FFA5A5FF;
     }
 
-    .main-nav ul a:hover{
-        color: #FF7380FF;
+    .main-nav-media1200 .active{
+        text-decoration: blink;
+        color: #FFA5A5FF;
     }
-    /* End Navigation Bar */
+
+    .main-nav-media1200 li{
+        padding: 0 2%;
+    }
+
+    .business-name-media1200 a{
+        float: left;
+        margin: 0;
+        margin-top: -15px;
+        font-size: 60px;
+        color: black;
+        font-family: Playfair Display;
+        font-weight: 100; 
+    }
+
+    .main-nav-media1200 .active{
+        border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
+    }
+
+    .business-name-media1200 a:hover{
+        color:#9DDFD3FF;
+    }
+    /*End Navigation Bar*/
 
 
     /* Start Bottom Navbar */
@@ -719,4 +730,236 @@ html, body{
         display: none;
     }
     /* End Bottom Navbar */
+
+
+    /* Start Slideshow */
+    .slideshow-container{
+        max-width: 100%;
+    }
+
+    .slideshow-container .text{
+        color: #f2f2f2;
+        line-height: 125px;
+        font-size: 100px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        text-align: center;
+        z-index:3;
+    }
+    /* End Slideshow */
+
+    .wave-image-group .wave-image{
+        margin-bottom: -10px;
+        margin-top: -150px;
+        vertical-align: bottom;
+    }
+
+    .wave-image-group .wave-image-flip{
+        margin-bottom: -5px;
+        margin-top: -10px;
+
+        vertical-align: top;
+    }
+
+    /* Start Wave Image */
+    .wave-image-group-media1200{
+        display: contents;
+    }
+
+    .wave-image-group-media1200 img{
+        position:relative;
+        max-width:100%;
+        margin:0;
+        z-index:3;
+    }
+
+    .wave-image-group-media1200 .wave-image-flip-media1200{
+        margin-bottom: -60px;
+        margin-top: 0px;
+        vertical-align: top;
+    }
+    /* End Wave Image */
+
+    /* Start What You Can Do */
+    .what-you-can-do h2{
+        padding-top: 20px;
+        font-size: 80px;
+        color:white;
+        margin: 0px;
+    }
+
+    .what-you-can-do .column .what-you-can-do-subtitle{
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .what-you-can-do .column .what-you-can-do-text{
+        font-size: 28px;
+        color: white;
+    }
+    
+    .what-you-can-do .row{
+        display: flex;
+
+    }
+    /* End What You Can Do */
+
+
+    /* Start Product List*/
+    .all-cakes .subtitle h2{
+        font-size: 80px;
+        padding-top: 150px;
+
+    }
+
+    .all-cakes{
+        margin-top: -200px;
+        margin-bottom: -0px;
+        padding-bottom: 200px;
+        background-color: #F4F3EFFF;
+    }
+
+    .hot-cake-baseInfo{
+        background-color: white;
+        background-position: top right;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        border-radius: 30px 30px 0 0;
+        width: 300px;
+        height: 150px;
+        margin: 0;
+        margin-bottom: 0;
+        padding: 20px;
+        box-shadow: 5px 10px 30px grey;
+    }
+
+    .hot-cake-baseInfo span{
+        margin: 0;
+    }
+
+    .hot-cake-baseInfo .price{
+        font-size: 35px;
+    }
+
+    .hot-cake-baseInfo .name{
+        font-size: 20px;
+    }
+
+    .hot-cake-description{
+        border-radius: 0 0 30px 30px;
+        text-align: center;
+        width: 300px;
+        height: 40%;
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    .all-hot-cakes{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow:1;
+    }
+
+    .hot-cake-group {
+        padding: 0px 10px;
+    }
+
+    .push-button{
+        padding-top: 50px;
+    }
+    /* End Product List*/
+
+    
+    /* Start How to Order*/
+    .how-to-order h2{
+        padding-top: 20px;
+        font-size: 80px;
+        color:white;
+        margin: 0px;
+    }
+
+    .how-to-order .row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow:1;
+        flex-basis: 0;
+        padding-top: 30px;
+        overflow-x: auto;
+        margin:0;
+    }
+
+    .how-to-order .column{
+        padding: 0 50px;
+        white-space: nowrap;
+    }
+
+    .how-to-order .row .column p{
+        font-size: 25px;
+        color:black;
+        margin:0;
+    }
+
+    .wave-image-group .how-to-order-wave{
+        margin-bottom: -70px;
+    }
+    /* End How to Order*/
+
+
+    /* Start Our Baker */
+    .baker-info{
+        padding: 40px 28px 40px 28px;
+        color: white;
+    }
+
+    .our-baker h2{
+        padding-top: 90px;
+        font-size:80px;
+        margin: 0;
+        color: white;
+    }
+
+    .baker-info p{
+        font-size: 20px;
+    }
+
+    .baker-pic{
+        background-image: url("./Assets/images/1.index/Baker.png");
+        background-size: 30%;
+        padding-bottom: 100%;
+        background-size: cover;
+    }
+
+    .baker-pic img{
+        overflow: hidden;
+        object-position: 100% 0%;
+        object-fit: cover;
+    }
+
+    .baker-profile-group{
+        background-color: white;
+        padding: 0px 0px 10px 0px;
+        background-size: contain;
+    }
+
+    .baker-profile-group p{
+        text-align: center;
+    }
+
+    .baker-profile-group .name{
+        font-size: 20px;
+    }
+
+    .baker-profile-group .description{
+        font-size: 20px;
+    }
+
+    .baker-profile-group .hierarchy{
+        color: #FF7380FF;
+    }
+    /* End Our Baker */
 }
