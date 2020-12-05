@@ -296,7 +296,7 @@ html, body{
     margin: 10% 10% 0 10%;
     margin-bottom: 0;
     padding: 20px;
-    box-shadow: 5px 10px 30px grey;
+    /* box-shadow: 5px 10px 30px grey; */
 }
 
 .hot-cake-baseInfo span{
@@ -320,7 +320,7 @@ html, body{
     margin: 0% 10% 10% 10%;
     margin-bottom: 0;
     padding: 20px;
-    box-shadow: 5px 10px 30px grey;
+    /* box-shadow: 5px 10px 30px grey; */
 }
 
 .hot-cake-description span{
@@ -847,7 +847,7 @@ html, body{
         margin: 0;
         margin-bottom: 0;
         padding: 20px;
-        box-shadow: 5px 10px 30px grey;
+        /* box-shadow: 5px 10px 30px grey; */
     }
 
     .hot-cake-baseInfo span{
