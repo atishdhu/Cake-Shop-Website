@@ -649,3 +649,74 @@ html, body{
     font-size: 18px;
 }
 /* End Bottom Navbar */
+
+@media only screen and (min-width: 800px){
+
+    /* Start Navigation Bar */
+    .main-header{
+        background-color: white;
+        padding-top: 5px;
+        padding-bottom: 80px;
+    }
+
+    .checkbtn{
+        display:none;
+    }
+
+    #check{
+        display: none;
+    }
+
+    .business-name a{ 
+        float: left;
+        margin-left: 40px;
+        font-size: 60px;
+        padding-top: 0;
+        padding-bottom: 30px;
+        color: black;
+        font-family: Playfair Display;
+    }
+
+    .nav ul li a{
+        font-size: 20px;
+    }
+
+    .nav ul li{
+        display: inline-block;
+        padding-top: 50px;
+        padding-right: 32px;
+        line-height: 12%;
+    }
+
+    .nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color:white;
+        top: 80px;
+        text-align: center;
+        z-index: 5;
+    }
+
+    .nav a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .main-nav ul a.active{
+        color: #FF7380FF;
+        border-bottom: 2px solid currentColor;
+    }
+
+    .main-nav ul a:hover{
+        color: #FF7380FF;
+    }
+    /* End Navigation Bar */
+
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
+}
