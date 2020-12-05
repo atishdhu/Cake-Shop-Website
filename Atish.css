@@ -425,10 +425,19 @@ html, body{
     object-fit: cover;
 }
 
+.baker-pic-group{
+    margin-bottom:-20px;
+}
+
 .baker-profile-group{
-    background-color: white;
     padding: 0px 0px 10px 0px;
     background-size: contain;
+}
+
+.baker-more-about{
+    background-color: white;
+    margin-top:-10px;
+    padding: 10px 0px;
 }
 
 .baker-profile-group p{
@@ -658,6 +667,10 @@ html, body{
 }
 /* End Bottom Navbar */
 
+/*---------------------------------------------------------------------------------------------*/
+/*MEDIA QUERY*/
+/*---------------------------------------------------------------------------------------------*/
+
 @media only screen and (min-width: 1200px){
 
     .main-header{
@@ -781,6 +794,7 @@ html, body{
         vertical-align: top;
     }
     /* End Wave Image */
+
 
     /* Start What You Can Do */
     .what-you-can-do h2{
@@ -916,6 +930,12 @@ html, body{
         color: white;
     }
 
+    .baker-container{
+        display: flex;
+        padding-left: 50px;
+        padding-bottom: 60px;
+    }
+
     .our-baker h2{
         padding-top: 90px;
         font-size:80px;
@@ -929,21 +949,22 @@ html, body{
 
     .baker-pic{
         background-image: url("./Assets/images/1.index/Baker.png");
-        background-size: 30%;
+        background-size: 500px;
         padding-bottom: 100%;
         background-size: cover;
     }
 
-    .baker-pic img{
-        overflow: hidden;
-        object-position: 100% 0%;
-        object-fit: cover;
+    .baker-pic-group{
+        margin-bottom:-20px;
+        width: 300px;
+    }
+
+    .baker-more-about{
+        width: 300px;
     }
 
     .baker-profile-group{
-        background-color: white;
-        padding: 0px 0px 10px 0px;
-        background-size: contain;
+        display: inline;
     }
 
     .baker-profile-group p{
@@ -962,4 +983,34 @@ html, body{
         color: #FF7380FF;
     }
     /* End Our Baker */
+
+
+    /* Start Locate Us */
+    .map .subtitle h2{
+        font-size: 80px;
+        color: #23CFA7FF;
+    }
+    /* End Locate Us */
+
+
+    /* Start Contact Us Form */
+    .contact-section h2{
+        padding-top: 20px;
+        font-size: 80px;
+        margin:0;
+        color: white;
+    }
+
+    .contact-section .subtitle p{
+        font-size: 20pt;
+    }
+
+    .contact-us{
+        background: #59D4F0FF;
+        padding: 0px 300px;
+        padding-bottom: 200px;
+        /* border-top: 10px solid #23CFA7FF; */
+    }
+
+    /* End Contact Us Form */
 }
