@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
+        <meta charset="utf-8">
         <title>MALAKO | Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
+        <!-- Animate CSS -->
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+        <script src="Javascript/swapWaveImg.js"></script>
     </head>
 
     <body>
         <!--Start Navigation Bar-->
         <header class="main-header">
             <nav class="nav main-nav">
+
+                <input type="checkbox" id="check">
+                
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars animate__animated animate__backInDown"></i>
+                </label>
+
+                <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
+
                 <ul>
                     <li><a class="active" href="index.html">HOME</a></li>
                     <li><a href="products.html">PRODUCTS</a></li>
@@ -19,62 +34,371 @@
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
-
-                <h1 class="business-name larger-name"><a href="index.html">MALAKO</a></h1>
-
             </nav>
         </header>
         <!--End Navigation Bar-->
 
+
+        <!--Start Navigation Bar @media 1200px-->
+        <header class="main-header-media1200">
+            <nav class="nav-media1200 main-nav-media1200">
+
+                <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
+
+                <ul class="animate__animated animate__backInDown">
+                    <li><a class="active" href="index.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="makeyourcake">MAKE YOUR CAKE</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--End Navigation Bar @media 1200px-->
+
+        <!--Start Wave Image-->
+        <div class="wave-image-group-media1200">
+            <div class="wave-image-flip-media1200">
+                <img src="Assets/images/1.index/NavBar_WaveWhiteThinFlip.png">
+            </div>
+        </div>
+        <!--End Wave Image-->
+
+
         <!--Start Slideshow-->
-        <div class="slideshow">
-            <img src="Assets/images/1.index/Cake_5.jpg">
-        </div>
-        <!--End Slideshow-->
+        <div class="slideshow-container">
 
-    
-
-        <div class="slideshow">
-            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-            <div class="elfsight-app-b56a7565-125a-488b-9de0-7345de1c750b"></div>
-
-        </div>
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+            <img src="Assets/images/1.index/Cake_1.jpg" style="width:100%">
+            <div class="text">EVERY BATCH FROM SCRATCH</div>
+            </div>
         
-
-        </div>
-
-        <!--Start How to Order-->
-        <div class ="hto">
-            
-            <div class="Order">
-                <h1>How To Order</h1>
-             
-                <img class= "orderBg" src="Assets/images/1.index/NavBg.png">
+            <div class="mySlides fade">
+            <img src="Assets/images/1.index/Cake_2.jpg" style="width:100%">
+            <div class="text">WE IMPLEMENT SWEET DREAMS</div>
+            </div>
+        
+            <div class="mySlides fade">
+            <img src="Assets/images/1.index/Cake_3.jpg" style="width:100%">
+            <div class="text">A LITTLE BLISS IN EVERY BITE</div>
             </div>
             
+        </div>
+
+        <script src="Javascript/SlideshowAuto.js"></script>
+        <!--End Slideshow -->
+
+        
+        <!--Start Wave Image-->
+        <div class="wave-image-group">
+            <div class="wave-image">
+                <img src="Assets/images/1.index/NavBar_WavePink.png">
+            </div>
+        </div>
+        <!--End Wave Image-->
+
+        <!--Start What You Can Do-->
+        <div class="what-you-can-do">
+            <div class="subtitle">
+                <h2>WHAT YOU CAN DO</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="column">
+                    <i class="fas fa-cookie"></i>
+                    <span class="what-you-can-do-subtitle buy-our-cake">Freshly baked cakes</span>
+                    <span class="what-you-can-do-text">Get a taste of our freshly prepared cakes by ordering online!</span>
+                </div>
+
+                <div class="column">
+                    <i class="fas fa-mitten"></i>
+                    <span class="what-you-can-do-subtitle customize-cake">Customize your cake</span>
+                    <span class="what-you-can-do-text">You can customize your cake with your favourite glazing, toppings, color and more!</span>
+                </div>
+                
+                <div class="column">
+                    <i class="fas fa-boxes"></i>
+                    <span class="what-you-can-do-subtitle create-box">Custom cake box</span>
+                    <span class="what-you-can-do-text">You can add different types of cakes in a box and we deliver it to you!</span>
+                </div>
+
+            </div>
+         </div>
+
+        </div>
+        <!--End What You Can Do-->
+
+
+         <!--Start Wave Image Flip-->
+        <div class="wave-image-group">
+            <div class="wave-image-flip">
+                <img src="Assets/images/1.index/NavBar_WavePinkFlip.png">
+            </div>
+        </div>
+        <!--End Wave Image Flip-->
+
+
+        <!--Start Products List-->
+        <div class="all-cakes">
+
+            <div class="subtitle">
+                <h2>SPECIAL OFFERS</h2>
+            </div>
             
-            <div class="htoGallery"> <!--how to order-gallery-->
-                <div class="row">
-                    <div class="column">
-                      <img src="Assets/images/1.index/cake.png"  style="width:70%">
+            <div class = "all-hot-cakes">
+                <div class ="hot-cake-group">
+                    <div class="cake1 hot-cake">
+                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
+                            <span class="price">Rs250</span>
+                            <span class="name">Cupcake</span>
+                        </div>
+                        <div class="hot-cake-description">
+                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
+                        </div>
                     </div>
-                    <div class="column">
-                      <img src="Assets/images/1.index/cart.png"  style="width:70%">
+                </div>
+
+                <div class ="hot-cake-group">
+                    <div class="cake2 hot-cake">
+                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
+                            <span class="price">Rs250</span>
+                            <span class="name">Cupcake</span>
+                        </div>
+                        <div class="hot-cake-description">
+                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
+                        </div>
                     </div>
-                    <div class="column">
-                      <img src="Assets/images/1.index/pay.png"  style="width:70%">
+                </div>
+
+                <div class ="hot-cake-group">
+                    <div class="cake3 hot-cake">
+                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
+                            <span class="price">Rs250</span>
+                            <span class="name">Cupcake</span>
+                        </div>
+                        <div class="hot-cake-description">
+                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
+                        </div>
                     </div>
-                    <div class="column">
-                      <img src="Assets/images/1.index/deliver.png"  style="width:90%">
-                    </div>
-                    <div class="column">
-                      <img src="Assets/images/1.index/gift.png"  style="width:70%">
+                </div>
+
+                <div class ="hot-cake-group">
+                    <div class="cake4 hot-cake">
+                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
+                            <span class="price">Rs250</span>
+                            <span class="name">Cupcake</span>
+                        </div>
+                        <div class="hot-cake-description">
+                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="push-button">
+                <button class="view-all-cakes">View All Cakes</button>
+            </div>
         
         </div>
+        <!--End Products List-->
+
+
+        <!--Start Wave Image-->
+        <div class="wave-image-group">
+            <div class="wave-image">
+                <img src="Assets/images/1.index/NavBar_WaveTeal.png">
+            </div>
+        </div>
+        <!--End Wave Image-->
+
+
+        <!--Start How to Order-->
+        <div class="how-to-order">
+            <div class="subtitle">
+                <h2 class="order-subtitle">HOW TO ORDER</h2>
+            </div>
+            <div class="row">
+                <div class="column">
+                  <i class="fas fa-birthday-cake"></i>
+                  <p><b>Choose your cake</b></p>
+                </div>
+                <div class="column">
+                  <i class="fas fa-cart-plus"></i>
+                  <p><b>Add to cart</b></p>
+                </div>
+                <div class="column">
+                  <i class="fas fa-money-check-alt"></i>
+                  <p><b>Checkout</b></p>
+                </div>
+                 <div class="column">
+                 <i class="fas fa-box-open"></i>
+                 <p><b>We pack it up</b></p>
+                </div>
+                  <div class="column">
+                  <i class="fas fa-shipping-fast"></i>
+                  <p><b>Fast Delivery</b></p>
+                </div>
+            </div>
+         </div>
         <!--End How to Order-->
+
+
+        <!--Start Wave Image Flip-->
+        <div class="wave-image-group">
+            <div class="wave-image-flip how-to-order-wave">
+                <img src="Assets/images/1.index/NavBar_WaveTealFlip.png">
+            </div>
+        </div>
+        <!--End Wave Image Flip-->
+
+
+        <!-- Start Our Baker-->
+        <div class="our-baker">
+
+            <div class="subtitle">
+                <h2>OUR BAKER</h2>
+            </div>
+            <div class="baker-container">
+                <div class="baker-profile-group">
+                    <!-- Contains bakers profile picture -->
+                    <div class="baker-pic-group">
+                        <div class="baker-pic"></div>
+                    </div>
+
+                    <div class = "baker-more-about">
+                        <p class="name"><b>SARAH CONNOR</b></p>
+                        <p class="hierarchy">CEO-FOUNDER</p>
+                        <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                    </div>   
+                </div>
+                    
+                <article class="baker-info">
+                    <p>
+                        We all have those moments in our lives when we feel as if everything needs to be exactly right.
+        <br><br>Dessert tiramisu tart donut macaroon. Gummi bears lollipop marzipan. Caramels gummi bears icing jelly beans cheesecake brownie topping candy sugaplum.
+                    </p>
+                </article>
+            </div>
+        </div>
+        <!-- End Our Baker-->
+
+
+        <!-- Start Google Map-->
+        <div class="map">
+            <div class="subtitle">
+                <h2>LOCATE US</h2>
+            </div>
+    
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7483.163979214587!2d57.5197261228079!3d-20.31756231290802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c4272c436d1%3A0x14c5afb30243ca4a!2sPatisserie%20Swiss%20At%20Jerningham%20and%20Royal%20Street!5e0!3m2!1sen!2smu!4v1606498197938!5m2!1sen!2smu" width="100%"" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+        <!-- End Google Map-->
+
+
+        <!-- Start Contact Us -->
+        <div class="contact-section">
+            <div class="contact-us">
+                <div class="subtitle">
+                    <h2>CONTACT US</h2>
+                    <p>Our Company is the best, meet the creative team that never sleeps. Say something to us we will answer to you.</p>
+                </div>
+                <form action="#">
+                    <label for="customerName">NAME <em>&#x2a;</em></label>
+                    <input id="customerName" name="customerName" required="" type="text" />
+                    <label for="customerEmail">EMAIL <em>&#x2a;</em></label>
+                    <input id="customerEmail" name="customerEmail" required="" type="email" />
+                    <label for="customerPhone">PHONE</label>
+                    <input id="customerPhone" name="customerPhone" pattern="[/0-9]{8}|[/0-9]{7}" type="tel" />
+                    <label for="orderNumber">ORDER NUMBER</label>
+                    <input id="orderNumber" name="orderNumber" type="text" />
+                    <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
+                    <textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
+                    <div class="push-button">
+                        <button id="submit">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact Us-->
+        
+
+        <!--Start Wave Image-->
+        <div class="wave-image-group">
+            <div class="wave-image footer-wave">
+                <img src="Assets/images/1.index/NavBar_WavePink.png">
+            </div>
+        </div>
+        <!--End Wave Image-->
+
+
+        <!--Start Footer-->
+        <footer class="footer-group">
+
+            <div class="footer">
+
+                <div class="logo">
+                    <span class="logo-name">MALAKO</span>
+                </div>
+            
+                <div class="social-media">
+                    <span class="facebook">
+                        <a href=#><i class="fab fa-facebook-square"></i></a>
+                    </span>
+                    <span class="twitter">
+                        <a href=#><i class="fab fa-twitter-square"></i></a>
+                    </span>
+                    <span class="instagram">
+                        <a href=#><i class="fab fa-instagram-square"></i></a>
+                    </span>
+                    <span class="pinterest">
+                        <a href=#><i class="fab fa-pinterest-square"></i></a>
+                    </span>
+                </div>
+
+                <hr size="2px" width="80%" color="white">
+                <hr size="2px" width="80%" color="white">
+
+                <div class="contact-links">
+                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
+                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
+                </div>
+
+                <div class="legal-links">
+                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
+                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
+                </div>
+
+                <div class="copyright">
+                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
+                </div>
+
+            </div>  
+
+        </footer>
+        <!--End Footer-->
+
+        
+        <!-- Start Bottom Nav -->
+        <div class="bottom-nav-group">
+            <nav class="bottom-nav">
+                <a href="#" class="bottom-nav-link bottom-nav-active">
+                    <i class="fas fa-user bottom-nav-icon" ></i>
+                    <span class="bottom-nav-text">Account</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="fas fa-search"></i>
+                    <span class="bottom-nav-text">Search</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="bottom-nav-text">Cart</span>
+                </a> 
+            </nav>
+        </div>
+        <!-- End Bottom Nav -->
 
     </body>
 </html>

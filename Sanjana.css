@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: Nunito;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+
+.subtitle h2{
+    text-align: center;
+    color: #FF7380FF;
+    font-size: 35px;
+    letter-spacing: 2.2pt;
+}
+
+.push-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.push-button button{
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 24pt;
+    padding: 10px 0;
+    width: 80%;
+    margin-top: 40px;
+    border: none;
+    background: #FF7380FF;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
+}
+
+/* Start Navigation Bar */
+.main-header-media1200{
+    display:none;
+}
+
+.main-header{
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 80px;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: left;
+    line-height: 60px;
+    margin-left: 40px;
+    cursor: pointer;
+    display: block;
+}
+
+#check{
+    display: none;
+}
+
+.business-name a{ 
+    float: right;
+    margin-right: 40px;
+    font-size: 40px;
+    color: black;
+    font-family: Playfair Display;
+}
+
+.nav ul li a{
+    font-size: 20px;
+}
+
+.nav ul li{
+    display: block;
+    padding-top: 50px;
+    padding-right: 32px;
+    line-height: 12%;
+}
+
+.nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 5;
+}
+
+.nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.main-nav ul a.active{
+    color: #FF7380FF;
+    border-bottom: 2px solid currentColor;
+}
+
+.main-nav ul a:hover{
+    color: #FF7380FF;
+}
+
+
+#check:checked ~ ul{
+    left:0%;
+}
+/* End Navigation Bar */
+
+
+/* Start Wave Image */
+.wave-image-group img{
+    position:relative;
+    max-width:100%;
+    margin:0;
+    z-index:3;
+}
+
+.wave-image-group .wave-image{
+    margin-bottom: -10px;
+    margin-top: -30px;
+    vertical-align: bottom;
+}
+
+.wave-image-group .wave-image-flip{
+    margin-bottom: -40px;
+    margin-top: -10px;
+    vertical-align: top;
+}
+/* End Wave Image */
+
+/* Start Footer */
+.wave-image-group .footer-wave{
+    margin-bottom: -10px;
+    margin-top: -50px;
+}
+
+.footer{
+    background-color: #FF7380FF;
+    background-size: 100%;
+    width: 100%;
+    height: 580px;
+    margin: 0;
+    margin-top: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo-name{
+    font-size: 70px;
+    font-family: Playfair Display;
+}
+
+.social-media{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.social-media a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-media span{
+    display: inline;
+    letter-spacing: 8px;
+    font-size: 40px;
+}
+
+.contact-links{
+    font-size: 22px;
+}
+
+.contact-links span{
+    display: block;
+}
+
+.contact-links .phone{
+    padding: 25px 0;
+}
+
+.contact-links .address{
+    padding-bottom: 25px;
+}
+
+.legal-links{
+    font-size:20px;
+    line-height: 35px;
+}
+
+.legal-links span{
+    display: block;
+    letter-spacing: 3px;
+}
+
+.legal-links a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.copyright{
+    padding-top: 25px;
+}
+
+.copyright span{
+    font-size: 15px;
+}
+/* End Footer */
+
+
+/* Start Bottom Navbar */
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    background-color:white;
+    display: flex;
+    overflow-x: auto;
+    z-index: 5;
+}
+
+.bottom-nav-link{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow:1;
+    min-width:50px;
+    overflow:hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.bottom-nav-active{
+    color: #FF7380FF;
+}
+
+.bottom-nav-icon{
+    font-size: 18px;
+}
+/* End Bottom Navbar */
+
+
+/*---------------------------------------------------------------------------------------------*/
+/*MEDIA QUERY for pc browser*/
+/*---------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px){
+
+    .main-header{
+        display:none;
+    }
+
+    /*Start Navigation Bar*/
+    .main-header-media1200{
+        display: contents;
+    }
+
+    .main-nav-media1200{
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .main-nav-media1200 ul{
+        margin: 0;
+        padding-bottom: 40px;
+        padding-top: 1em;
+    }
+
+    .main-nav-media1200 li{
+        display: inline;
+    }
+
+    .main-nav-media1200 a{
+        display: inline-block; /*makes space on top of inline elements - the nav*/
+        padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+        color: black;
+        text-decoration: none;
+    }
+
+    .main-nav-media1200 a:hover{
+        color: #FFA5A5FF;
+    }
+
+    .main-nav-media1200 .active{
+        text-decoration: blink;
+        color: #FFA5A5FF;
+    }
+
+    .main-nav-media1200 li{
+        padding: 0 2%;
+    }
+
+    .business-name-media1200 a{
+        float: left;
+        margin: 0;
+        margin-top: -15px;
+        font-size: 60px;
+        color: black;
+        font-family: Playfair Display;
+        font-weight: 100; 
+    }
+
+    .main-nav-media1200 .active{
+        border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
+    }
+
+    .business-name-media1200 a:hover{
+        color:#9DDFD3FF;
+    }
+    /*End Navigation Bar*/
+
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
+
+}
