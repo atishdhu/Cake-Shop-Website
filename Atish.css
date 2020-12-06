@@ -103,15 +103,11 @@ html, body{
     text-decoration: none;
 }
 
-.main-nav ul a.active{
+.main-nav .active{
+    text-decoration: blink;
     color: #FF7380FF;
     border-bottom: 2px solid currentColor;
 }
-
-.main-nav ul a:hover{
-    color: #FF7380FF;
-}
-
 
 #check:checked ~ ul{
     left:0%;
@@ -712,6 +708,7 @@ html, body{
     .main-nav-media1200 .active{
         text-decoration: blink;
         color: #FFA5A5FF;
+        border-bottom: 2px solid currentColor;
     }
 
     .main-nav-media1200 li{
@@ -726,10 +723,6 @@ html, body{
         color: black;
         font-family: Playfair Display;
         font-weight: 100; 
-    }
-
-    .main-nav-media1200 .active{
-        border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
     }
 
     .business-name-media1200 a:hover{

@@ -103,7 +103,7 @@ html, body{
     text-decoration: none;
 }
 
-.main-nav ul a.active{
+.main-nav ul a:active{
     color: #FF7380FF;
     border-bottom: 2px solid currentColor;
 }
