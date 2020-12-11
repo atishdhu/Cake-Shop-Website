@@ -1007,3 +1007,19 @@ html, body{
 
     /* End Contact Us Form */
 }
+
+/*--------------------------------------------------------------------------*/
+/*Start About Us Page*/
+/*--------------------------------------------------------------------------*/
+
+.about-us-header .banner{
+    background-image: url("./Assets/images/4.aboutus/Banner.jpg");
+    padding-bottom: 150px;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.about-us-header .about-us-subtitle{
+    text-align: center;
+    font-size: 40px;
+}
