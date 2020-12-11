@@ -1,7 +1,9 @@
+/* ========== GOOGLE FONTS =========== */
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/*___________________________________________________________________________*/
 *{
     box-sizing: border-box;
     font-family: Nunito;
@@ -42,7 +44,7 @@ html, body{
     outline: none;
 }
 
-/* Start Navigation Bar */
+/* ========== Start Navigation Bar =========== */
 .main-header-media1200{
     display:none;
 }
@@ -54,7 +56,7 @@ html, body{
 }
 
 .checkbtn{
-    font-size: 30px;
+    font-size: var(--h1-font-size);
     color: black;
     float: left;
     line-height: 60px;
@@ -67,10 +69,10 @@ html, body{
     display: none;
 }
 
-.business-name a{ 
-    float: right;
-    margin-right: 40px;
-    font-size: 40px;
+.business-name a {
+    /* float: right;
+    margin-right: 40px;*/
+    font-size: var(--h1-font-size);
     color: black;
     font-family: Playfair Display;
 }
@@ -116,10 +118,10 @@ html, body{
 #check:checked ~ ul{
     left:0%;
 }
-/* End Navigation Bar */
+/* ========== End Navigation Bar ========== */
 
 
-/* Start Wave Image */
+/* ========== Start Wave Image ========== */
 .wave-image-group img{
     position:relative;
     max-width:100%;
@@ -138,9 +140,372 @@ html, body{
     margin-top: -10px;
     vertical-align: top;
 }
-/* End Wave Image */
+/*========== End Wave Image ========== */
+/*___________________________________________________________________________*/
 
-/* Start Footer */
+/* ========== VARIABLES CSS =========== */
+
+:root{
+    --header-height: 3rem;
+    --font-semi: 600;
+    --font-bold: 700;
+}
+
+/* ========== COLOURS =========== */
+
+:root {
+    --first-color: #FF7380FF;
+    --first-color-alt: #FFA5A5FF;
+    --white-color: white;
+    --baby-pink-color: #ffd7d7;
+    --yellow-color: #ffe547;
+    --dark-color: black;
+    --dark-color-light: #2e2d2d;
+    --grey-color: #d0d0d0;
+}
+
+/* ========== FONTS AND TYPOGRAPHY =========== */
+
+:root {
+    --body-font: 'Open Sans', sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    
+}
+
+@media screen and (min-width: 768px){
+
+    :root {
+        --big-font-size: 6rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .813rem;
+    }
+
+}
+
+/* ========== MARGINS =========== */
+:root {
+    --mb-1: .5rem;
+    --mb-half: .75rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+}
+
+/* ========== Z-INDEX =========== */
+
+:root{
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* ========== BASE =========== */
+
+*, ::before, ::after{
+    box-sizing:border-box;
+}
+html{
+    scroll-behaviour: smooth;
+}
+
+body{
+    /*margin: var(--header-height) 0 0 0;*/
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1,h2,p{
+    margin: 0;
+}
+/*
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark-color);
+}*/
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== CLASS CSS =========== */
+
+.section{
+    padding: 3rem 0;
+}
+
+.section-title{
+    font-size: var(--h2-font-size);
+    color: var(--dark-color);
+    margin: var(--mb-4) 0 var(--mb-1);
+    text-align: center;
+}
+
+.section-all{
+    display: block;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi);
+    color: var(--dark-color-light);
+    text-align: center;
+    margin-bottom: var(--mb-4);
+    padding-bottom: 2rem;
+}
+
+/*========== LAYOUT ========== */
+
+.bd-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 3rem);
+    margin-left: var(--mb-3);
+    margin-right: var(--mb-3);
+}
+
+/*========== NAV ========== */
+
+.active {
+    color: var(--first-color) !important;
+    border-bottom: 2px solid currentColor !important;
+}
+
+.nav__cart{
+    font-size: 1.68rem;
+    margin: var(--mb-2) var(--mb-2) 0;
+}
+
+.display_view{
+    display: inline-flex;
+    margin-top: .5rem;
+}
+
+.business-name{
+    margin-left: 7rem;
+    margin-top: var(--mb-half);
+}
+
+/*========== SHOW MENU ========== */
+
+
+
+/*========== HOME ========== */
+
+
+
+/*========== BUTTONS ========== */
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 1rem;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi);
+    transition: .3s;
+    text-decoration: none;
+
+}
+
+.button:hover{
+    background-color: var(--dark-color);
+  
+}
+
+.button__round {
+    border-radius: 25px;
+}
+
+/*========== COLLECTIONS ========== */
+
+
+
+
+/*========== FEATURED PRODUCTS ========== */
+
+.featured__container{
+    grid-row-gap: 2rem;
+}
+
+.featured__products{
+    transition: .3s;
+}
+
+.featured__products:hover{
+    transform: translateY(-.5rem);
+}
+
+.featured__box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--baby-pink-color);
+}
+
+.featured__new{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: .3rem .75rem;
+    font-size: var(--small-font-size);
+}
+
+
+.featured__new_cart {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    /*background-color: var(--first-color);*/
+    color: var(--grey-color);
+    /*padding: .3rem .75rem;*/
+    font-size: 2rem;
+}
+
+.featured__new_cart:hover{
+    color: var(--first-color);
+}
+
+.featured__data{
+    text-align: center;
+}
+
+.featured__name{
+    margin-bottom: var(--mb-1);
+    text-transform: uppercase;
+    font-size: var(--normal-font-size);
+}
+
+.featured__price{
+    color: var(--dark-color-light);
+    font-weight: var(--font-semi);
+}
+    
+.section-all{
+    text-decoration: none;
+}
+
+.section-all:hover{
+   /* color: var(--first-color);*/
+    /*background-color: var(--dark-color);*/
+}
+
+/*========== OFFER ========== */
+
+.offer__bg {
+    background-image: url("Assets/images/products/cupcake_bg2_cropped.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    text-align: center;
+}
+
+.offer__bg2 {
+    background-image: url("Assets/images/products/christmas_2.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    text-align: center;
+}
+
+.offer__data{
+    padding: 3.5rem .25rem;
+    background: rgba(0,0,0,.25);
+    color: var(--white-color);
+}
+
+.offer__title{
+    font-size: var(--h1-font-size);
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-weight: var(--font-semi);
+}
+
+.offer__description{
+    margin-bottom: var(--mb-2);
+    letter-spacing: .2rem;
+}
+
+.offer__top {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  /*  mask-image: linear-gradient(to bottom, transparent 10%, black);*/
+}
+
+
+
+/*========== NEW ARRIVALS ========== */
+
+.new__container{
+    row-gap: 2rem;
+}
+
+.new__box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--grey-color);
+    overflow: hidden;
+}
+
+.new__box:hover .new__link{
+    bottom: 0;
+}
+
+.new__link{
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.52);
+    transition: .3s;
+}
+
+/*========== NEWSLETTER ========== */
+
+.newsletter{
+    text-align: center;
+}
+
+.newsletter__description{
+    margin-bottom: var(--mb-2);
+    font-size: var(--small-font-size);
+    color: var(--dark-color-light);
+}
+
+.newsletter__form{
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+
+.newsletter__input{
+    outline: none;
+    border: none;
+    background-color: var(--grey-color);
+    padding: 0 1rem;
+}
+
+/*___________________________________________________________________________*/
+
+/*========== START FOOTER ========== */
 .wave-image-group .footer-wave{
     margin-bottom: -10px;
     margin-top: -50px;
@@ -217,10 +582,10 @@ html, body{
 .copyright span{
     font-size: 15px;
 }
-/* End Footer */
+/* ========== End Footer ========== */
 
 
-/* Start Bottom Navbar */
+/*  ========== Start Bottom Navbar ========== */
 .bottom-nav{
     position: fixed;
     bottom: 0;
@@ -256,7 +621,7 @@ html, body{
 .bottom-nav-icon{
     font-size: 18px;
 }
-/* End Bottom Navbar */
+/*  ========== End Bottom Navbar ==========*/
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -269,7 +634,7 @@ html, body{
         display:none;
     }
 
-    /*Start Navigation Bar*/
+    /* ========== Start Navigation Bar ==========*/
     .main-header-media1200{
         display: contents;
     }
@@ -327,13 +692,51 @@ html, body{
     .business-name-media1200 a:hover{
         color:#9DDFD3FF;
     }
-    /*End Navigation Bar*/
+    /* ========== End Navigation Bar ==========*/
 
 
-    /* Start Bottom Navbar */
+    /*  ========== Start Bottom Navbar ========== */
     .bottom-nav{
         display: none;
     }
-    /* End Bottom Navbar */
+    /*  ========== End Bottom Navbar ==========*/
 
+}
+
+/*========== MEDIA QUERIES BY SANJANA ========== */
+@media screen and (min-width: 768px){
+    body{
+        margin:0;
+    }
+
+    .section-all{
+        margin-bottom: var(--mb-4);
+    }
+
+    .featured__container {
+        grid-template-columns: repeat(4, 1fr);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .offer__data{
+        padding: 5rem 0;
+    }
+
+    .new__container{
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .newsletter__form {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .newsletter__container {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
