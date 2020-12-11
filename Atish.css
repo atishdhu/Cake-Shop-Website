@@ -1013,7 +1013,7 @@ html, body{
 /*--------------------------------------------------------------------------*/
 
 .about-us-header .banner{
-    background-image: url("./Assets/images/4.aboutus/Banner.jpg");
+    background:linear-gradient(rgba(6, 0, 85, 0.5), rgba(6, 0, 85, 0.5)), url("./Assets/images/4.aboutus/Banner.jpg");
     padding-bottom: 150px;
     background-position: bottom;
     background-size: cover;
@@ -1022,4 +1022,53 @@ html, body{
 .about-us-header .about-us-subtitle{
     text-align: center;
     font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.baker-info-group{
+    text-align: center;
+    padding-bottom: 200px;
+}
+
+.baker-info-group .baker-info-title span{
+    font-size: 25px;
+    font-family: Courgette;
+}
+
+.baker-info-group .baker-name{
+    font-size: 40px;
+    padding-top: 15px;
+}
+
+.baker-info-group .baker-description{
+    padding: 0px 40px;
+    padding-bottom: 15px;
+}
+
+.baker-signature{
+    width: 150px;
+    margin: auto;
+    padding-bottom: 25px;
+}
+
+.baker-signature .signature-photo{
+    background-image: url("./Assets/images/4.aboutus/Baker_Signature.png");
+    padding-bottom: 50%;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.baker-info-group .baker-position{
+    padding-bottom: 20px;
+}
+
+.baker-info-group .baker-position span{
+    font-family: Courgette;
+}
+
+.baker-photo-group .baker-photo{
+    background-image: url("./Assets/images/4.aboutus/Baker.png");
+    padding-bottom: 100%;
+    background-size: cover;
 }
