@@ -548,7 +548,7 @@ html, body{
 /* Start Footer */
 .wave-image-group .footer-wave{
     margin-bottom: -10px;
-    margin-top: -50px;
+    margin-top: 0px;
 }
 
 .footer{
@@ -568,17 +568,17 @@ html, body{
     font-family: Playfair Display;
 }
 
-.social-media{
+.footer-group .social-media{
     padding-top: 25px;
     padding-bottom: 15px;
 }
 
-.social-media a{
+.footer-group .social-media a{
     text-decoration: none;
     color: inherit;
 }
 
-.social-media span{
+.footer-group .social-media span{
     display: inline;
     letter-spacing: 8px;
     font-size: 40px;
@@ -664,7 +664,7 @@ html, body{
 /* End Bottom Navbar */
 
 /*---------------------------------------------------------------------------------------------*/
-/*MEDIA QUERY*/
+/*START MEDIA QUERY FOR INDEX.HTML*/
 /*---------------------------------------------------------------------------------------------*/
 
 @media only screen and (min-width: 1200px){
@@ -1007,15 +1007,20 @@ html, body{
 
     /* End Contact Us Form */
 }
+/*---------------------------------------------------------------------------------------------*/
+/*END MEDIA QUERY FOR INDEX.HTML*/
+/*---------------------------------------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------------------*/
 /*Start About Us Page*/
 /*--------------------------------------------------------------------------*/
 
+/* Start About Us Header */
 .about-us-header .banner{
-    background:linear-gradient(rgba(6, 0, 85, 0.5), rgba(6, 0, 85, 0.5)), url("./Assets/images/4.aboutus/Banner.jpg");
+    background:linear-gradient(rgba(6, 0, 85, 0.3), rgba(6, 0, 85, 0.3)), url("./Assets/images/4.aboutus/Banner.jpg");
     padding-bottom: 150px;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
 }
 
@@ -1024,16 +1029,21 @@ html, body{
     font-size: 40px;
     padding-top: 20px;
     padding-bottom: 100px;
+    color:#FF7380FF;
 }
+/*End About Us Header*/
 
+
+/* Start Baker Info */
 .baker-info-group{
     text-align: center;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
 }
 
 .baker-info-group .baker-info-title span{
     font-size: 25px;
     font-family: Courgette;
+    color:#FF7380FF;
 }
 
 .baker-info-group .baker-name{
@@ -1064,7 +1074,9 @@ html, body{
 }
 
 .baker-info-group .baker-position span{
+    font-size: 20px;
     font-family: Courgette;
+    color:#FF7380FF;
 }
 
 .baker-photo-group .baker-photo{
@@ -1072,3 +1084,284 @@ html, body{
     padding-bottom: 100%;
     background-size: cover;
 }
+/* End Baker Info */
+
+
+/* Start Award Section */
+.award-section{
+    background-color: #F4F3EFFF;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    margin-top: -80px;
+}
+
+.award-title{
+    text-align: center;
+    padding-bottom: 15px;
+    color:#FF7380FF;
+}
+
+.award-subtitle{
+    text-align: center;
+}
+
+.award-subtitle span{
+    font-size: 40px;
+}
+
+.award-title span{
+    font-size: 25px;
+    font-family: Courgette;
+}
+
+.badge-photo-group{
+    width: 350px;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.badge1 .badge-photo{
+    background-image: url("./Assets/images/4.aboutus/Badge1.png");
+}
+
+.badge2 .badge-photo{
+    background-image: url("./Assets/images/4.aboutus/Badge2.png");
+}
+
+.badge3 .badge-photo{
+    background-image: url("./Assets/images/4.aboutus/Badge3.png");
+}
+
+.badge-photo{
+    padding-bottom: 150px;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.badge-info span{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.badge-info p{
+    text-align: center;
+}
+
+.badge-info .badge-title{
+    font-size: 25px;
+}
+
+.badge-info .badge-date{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-family: Courgette;
+    color:#A593C2FF;
+}
+
+.badge-info .badge-description{
+    font-size: 20px;
+}
+/* End Award Section */
+
+
+/* Start Team Info */
+.team-section{
+    background:linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("./Assets/images/4.aboutus/CakePattern.jpg");
+    background-position: center;
+    background-size:cover;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.team-section .team-subtitle{
+    font-size: 40px;
+}
+
+.team-section .team-title{
+    padding-bottom: 15px;
+    font-size:25px;
+}
+
+.team-section .team-title span{
+    font-family: Courgette;
+    color:#FF7380FF;
+}
+
+.helper1 .helper-pic{
+    background-image: url("./Assets/images/4.aboutus/Helper1.jpg");
+    padding-bottom: 100%;
+    background-size: cover;
+}
+
+.helper2 .helper-pic{
+    background-image: url("./Assets/images/4.aboutus/Helper2.jpg");
+    padding-bottom: 100%;
+    background-size: cover;
+}
+
+.helper-group{
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.helper-individual{
+    padding-top: 50px;
+}
+
+.helper-more-about{
+    padding-top: 15px;
+}
+
+.helper-more-about .name{
+    font-size: 20px;
+}
+
+.helper-more-about .description{
+    font-size: 20px;
+}
+
+
+.helper-more-about .hierarchy{
+    font-size: 20px;
+    color: #FF7380FF;
+}
+
+.helper-social-media .social-media a{
+    text-decoration: none;
+    color: black;
+}
+
+.helper-social-media .social-media span{
+    display: inline;
+    letter-spacing: 8px;
+    font-size: 25px;
+}
+/* End Team Info */
+
+
+/* Start Newsletter */
+.newsletter{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.newsletter__description{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #2e2d2d;
+}
+
+.newsletter__form{
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+
+.newsletter__input{
+    outline: none;
+    border: none;
+    background-color: #d0d0d0;
+    padding: 0 1rem;
+}
+
+.button{
+    display: inline-block;
+    background-color: #FF7380FF;
+    color: white;
+    padding: 1rem;
+    font-size: .75rem;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: black;
+  
+}
+
+.button__round {
+    border-radius: 25px;
+}
+/* End Newsletter */
+
+/*---------------------------------------------------------------------------------------------*/
+/*START MEDIA QUERY FOR ABOUTUS.HTML*/
+/*---------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px){
+    /* Start About Us Header */
+    .about-us-header .banner{
+        padding-bottom: 300px;
+    }
+    /* End About Us Header */
+
+
+    /* Start Baker Info */
+    .baker-info-group{
+        display: flex;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .baker-info-container{
+        display: inline;
+    }
+
+    .baker-info-group .baker-info-title span{
+        font-size: 25px;
+        font-family: Courgette;
+        color:#FF7380FF;
+    }
+
+    .baker-info-group .baker-name{
+        font-size: 40px;
+        padding-top: 15px;
+    }
+
+    .baker-info-group .baker-description{
+        padding: 0px 40px;
+        padding-bottom: 15px;
+    }
+
+    .baker-signature{
+        width: 150px;
+        margin: auto;
+        padding-bottom: 25px;
+    }
+
+    .baker-signature .signature-photo{
+        background-image: url("./Assets/images/4.aboutus/Baker_Signature.png");
+        padding-bottom: 50%;
+        background-size:contain;
+        background-repeat: no-repeat;
+    }
+
+    .baker-info-group .baker-position{
+        padding-bottom: 20px;
+    }
+
+    .baker-info-group .baker-position span{
+        font-size: 20px;
+        font-family: Courgette;
+        color:#FF7380FF;
+    }
+
+    .baker-photo-group .baker-photo{
+        padding-bottom: 100%;
+        background-size: 500px;
+        background-size: cover;
+    }
+    /* End Baker Info */
+
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*END MEDIA QUERY FOR ABOUTUS.HTML*/
+/*---------------------------------------------------------------------------------------------*/
