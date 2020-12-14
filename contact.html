@@ -5,9 +5,11 @@
         <title>MALAKO | Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
-        <link rel="stylesheet" type="text/css" href="Sanjana.css">
+        <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
+        <!--BOXICONS-->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
@@ -49,18 +51,86 @@
                     <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a class="active" href="contact.html">CONTACT US</a></li>
+                    <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
+                    <li><a href="#" class="user-button"><i class="far fa-user-circle"></i></a></li>
                 </ul>
             </nav>
         </header>
         <!--End Navigation Bar @media 1200px-->
 
+
+        <!--Start Page Header-->
+        <div class="about-us-header contact-us-header">
+            <div class="banner-group">
+                <div class="banner"></div>
+            </div>
+        </div>
+        <!--End Page Header-->
+
+
+        <!-- Start Google Map-->
+        <div class="map">
+            <div class="subtitle">
+                <h2>LOCATE US</h2>
+            </div>
+
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7483.163979214587!2d57.5197261228079!3d-20.31756231290802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c4272c436d1%3A0x14c5afb30243ca4a!2sPatisserie%20Swiss%20At%20Jerningham%20and%20Royal%20Street!5e0!3m2!1sen!2smu!4v1606498197938!5m2!1sen!2smu" width="100%"" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+        <!-- End Google Map-->
+
+
+        <!-- Start Contact Us -->
+        <div class="contact-section">
+            <div class="contact-us">
+                <div class="subtitle">
+                    <h2>CONTACT US</h2>
+                    <p>Our Company is the best, meet the creative team that never sleeps. Say something to us we will answer to you.</p>
+                </div>
+                <form action="#">
+                    <label for="customerName">NAME <em>&#x2a;</em></label>
+                    <input id="customerName" name="customerName" required="" type="text" />
+                    <label for="customerEmail">EMAIL <em>&#x2a;</em></label>
+                    <input id="customerEmail" name="customerEmail" required="" type="email" />
+                    <label for="customerPhone">PHONE</label>
+                    <input id="customerPhone" name="customerPhone" pattern="[/0-9]{8}|[/0-9]{7}" type="tel" />
+                    <label for="orderNumber">ORDER NUMBER</label>
+                    <input id="orderNumber" name="orderNumber" type="text" />
+                    <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
+                    <textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
+                    <div class="push-button">
+                        <button id="submit">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact Us-->
+
+
+        <!--Start Newsletter-->
+        <section class="newsletter section" id="subscribed">
+            <div class="newsletter__container bd-grid">
+                <div class="newsletter__subscribe subtitle">
+                    <h2 class="section-title">OUR NEWSLETTER</h2>
+                    <p class="newsletter__description">Be the first to get informed about our best deals!</p>
+
+                    <form action="" class="newsletter__form">
+                        <input type="email" class="newsletter__input" placeholder="Enter your email" />
+                        <a href="#" class="button">SUBSCRIBE</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--End Newsletter-->
+
         
         <!--Start Wave Image-->
-        <div class="wave-image-group">
+        <!-- <div class="wave-image-group">
             <div class="wave-image footer-wave">
                 <img src="Assets/images/1.index/NavBar_WavePink.png">
             </div>
-        </div>
+        </div> -->
         <!--End Wave Image-->
 
 

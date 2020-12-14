@@ -656,8 +656,8 @@ img{
 
     .main-nav-media1200 a{
         display: inline-block; /*makes space on top of inline elements - the nav*/
-        padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
-        padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+        padding-left: .4em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .4em;/*only makes space to left and right but not top since elements are inline*/
         color: black;
         text-decoration: none;
     }
@@ -678,7 +678,7 @@ img{
     .business-name-media1200 a{
         float: left;
         margin: 0;
-        margin-top: -15px;
+        margin-top: -10px;
         font-size: 60px;
         color: black;
         font-family: Playfair Display;
@@ -691,6 +691,10 @@ img{
 
     .business-name-media1200 a:hover{
         color:#9DDFD3FF;
+    }
+
+    .nav-media1200 .user-button{
+        font-size: 28px;
     }
     /* ========== End Navigation Bar ==========*/
 

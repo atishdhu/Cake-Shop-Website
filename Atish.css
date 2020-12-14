@@ -202,14 +202,14 @@ html, body{
 /* Start What You Can Do */
 .what-you-can-do{
     position:relative;
-    background-color: #FF7380FF;
+    background-color: white;
     margin:0;
     z-index: 3;
 }
 
 .what-you-can-do h2{
     padding-top: 28px;
-    color:white;
+    color: black;
     margin: 0px;
 }
 
@@ -245,13 +245,13 @@ html, body{
 
 .what-you-can-do .column .what-you-can-do-text{
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 .what-you-can-do .row{
     text-align: center;
     font-size: 80px;
-    color:white;
+    color:black;
     padding-bottom: 40px;
 }
 
@@ -554,7 +554,7 @@ html, body{
 
 .newsletter__description{
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 20px;
     color: #2e2d2d;
 }
 
@@ -593,11 +593,6 @@ html, body{
 
 
 /* Start Footer */
-.wave-image-group .footer-wave{
-    margin-bottom: -10px;
-    margin-top: 0px;
-}
-
 .footer{
     background-color: #FF7380FF;
     background-size: 100%;
@@ -742,8 +737,8 @@ html, body{
 
     .main-nav-media1200 a{
         display: inline-block; /*makes space on top of inline elements - the nav*/
-        padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
-        padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+        padding-left: .4em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .4em;/*only makes space to left and right but not top since elements are inline*/
         color: black;
         text-decoration: none;
     }
@@ -765,7 +760,7 @@ html, body{
     .business-name-media1200 a{
         float: left;
         margin: 0;
-        margin-top: -15px;
+        margin-top: -10px;
         font-size: 60px;
         color: black;
         font-family: Playfair Display;
@@ -774,6 +769,10 @@ html, body{
 
     .business-name-media1200 a:hover{
         color:#9DDFD3FF;
+    }
+
+    .nav-media1200 .user-button{
+        font-size: 28px;
     }
     /*End Navigation Bar*/
 
@@ -839,8 +838,8 @@ html, body{
     /* Start What You Can Do */
     .what-you-can-do h2{
         padding-top: 20px;
-        font-size: 80px;
-        color:white;
+        font-size: 40px;
+        color:black;
         margin: 0px;
     }
 
@@ -852,7 +851,7 @@ html, body{
     
     .what-you-can-do .column .what-you-can-do-text{
         font-size: 28px;
-        color: white;
+        color: black;
     }
     
     .what-you-can-do .row{
@@ -864,8 +863,8 @@ html, body{
 
     /* Start Product List*/
     .all-cakes .subtitle h2{
-        font-size: 80px;
-        padding-top: 150px;
+        font-size: 40px;
+        padding-top: 200px;
 
     }
 
@@ -1064,7 +1063,7 @@ html, body{
 
     .newsletter__description{
         margin-bottom: 1rem;
-        font-size: 1rem;
+        font-size: 20px;
         color: #2e2d2d;
     }
 
@@ -1155,7 +1154,6 @@ html, body{
 
 .baker-signature{
     width: 150px;
-    margin: auto;
     padding-bottom: 25px;
 }
 
@@ -1213,7 +1211,6 @@ html, body{
 
 .badge-photo-group{
     width: 350px;
-    margin: auto;
     padding-top: 25px;
     padding-bottom: 15px;
 }
@@ -1355,7 +1352,6 @@ html, body{
 
     /* Start Baker Info */
     .baker-info-group{
-        margin:auto;
         padding-bottom: 0px;
     }
 
@@ -1391,7 +1387,6 @@ html, body{
 
     .baker-signature{
         width: 150px;
-        margin: auto;
         padding-bottom: 25px;
     }
 
@@ -1450,7 +1445,6 @@ html, body{
 
     .badge-photo-group{
         width: 350px;
-        margin: auto;
         padding-top: 25px;
         padding-bottom: 15px;
     }
@@ -1596,3 +1590,34 @@ html, body{
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR ABOUTUS.HTML*/
 /*---------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------------*/
+/*Start Contact Us Page*/
+/*--------------------------------------------------------------------------*/
+
+/* Start Banner */
+.contact-us-header .banner{
+    background:linear-gradient(rgba(6, 0, 85, 0.3), rgba(6, 0, 85, 0.3)), url("./Assets/images/5.contactus/Banner.jpg");
+    padding-bottom: 150px;
+    background-position: bottom;
+    background-size: cover;
+}
+/* End Banner */
+
+/*--------------------------------------------------------------------------*/
+/*End Contact Us Page*/
+/*--------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------------*/
+/*Start Login Page*/
+/*--------------------------------------------------------------------------*/
+
+/* Start Login Panel*/
+
+/* End Login Panel*/
+
+/*--------------------------------------------------------------------------*/
+/*End Login Page*/
+/*--------------------------------------------------------------------------*/
