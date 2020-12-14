@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+*{
+    box-sizing: border-box;
+    font-family: Nunito;
+}
 
 /* Start Navigation Bar */
 .main-header-media1200{
@@ -9,6 +17,7 @@
     background-color: white;
     padding-top: 5px;
     padding-bottom: 80px;
+    z-index: 3;
 }
 
 .checkbtn{
@@ -62,7 +71,6 @@
 }
 
 .main-nav .active{
-    text-decoration: blink;
     color: #FF7380FF;
     border-bottom: 2px solid currentColor;
 }
@@ -71,82 +79,6 @@
     left:0%;
 }
 /* End Navigation Bar */
-
-.login-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
-}
-
-.login-page .form .login{
-    margin-top: -31px;
-    margin-bottom: 26px;
-}
-
-.form {
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.form input {
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.form button {
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background-color: #328f8a;
-    background-image: linear-gradient(45deg,#328f8a,#08ac4b);
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-}
-
-.form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
-}
-
-.form .message a {
-    color: #4CAF50;
-    text-decoration: none;
-}
-
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.login-page {
-    background-color: #328f8a;
-    background-image: linear-gradient(45deg,#328f8a,#08ac4b);
-    font-family: "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -192,7 +124,6 @@
     }
 
     .main-nav-media1200 .active{
-        text-decoration: blink;
         color: #FFA5A5FF;
         border-bottom: 2px solid currentColor;
     }
@@ -219,6 +150,102 @@
         font-size: 28px;
     }
     /*End Navigation Bar*/
+
+    /*Start Background Image*/
+    .bg-image-container .bg-image{
+        background-image: url("./Assets/images/6.login/Dessert.jpg");
+        filter: blur(8px);
+        padding-bottom: 55%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*End Background Image*/
+
+
+    /*Start Login Panel*/
+    .login-page {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 360px;
+        padding: 8% 0 0;
+        margin: auto;
+        z-index: 5;
+    }
+
+    .login-page .form .login{
+        margin-top: -31px;
+        margin-bottom: 26px;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background-color:#FFA5A5FF;
+        background-image: linear-gradient(45deg,rgb(252, 243, 243),#FFA5A5FF);
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+
+    .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+    }
+
+    .form .message a {
+        color: #FFA5A5FF;
+        text-decoration: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .login-page {
+        background-color: #328f8a;
+        background-image: linear-gradient(45deg,rgb(252, 243, 243),#FFA5A5FF);
+        font-family: "Roboto", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /*End Login Panel*/
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR LOGIN.HTML*/
