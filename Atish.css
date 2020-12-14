@@ -16,7 +16,7 @@ html, body{
 .subtitle h2{
     text-align: center;
     color: #FF7380FF;
-    font-size: 35px;
+    font-size: 40px;
     letter-spacing: 2.2pt;
 }
 
@@ -461,7 +461,7 @@ html, body{
 }
 
 .map .subtitle h2{
-    color: #23CFA7FF;
+    color: black;
 }
 /* End Locate Us */
 
@@ -474,18 +474,20 @@ html, body{
 }
 
 .contact-section .subtitle{
+    font-size: 40px;
     text-align: center;
     justify-content: center;
 }
 
 .contact-section .subtitle p{
+    color: white;
     font-size: 14pt;
 }
 
 .contact-us{
-    background: #59D4F0FF;
+    background: #282c2f;
     padding: 0px 40px;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     /* border-top: 10px solid #23CFA7FF; */
 }
 
@@ -493,6 +495,7 @@ html, body{
     display: block;
     width: 100%;
     font-size: 12pt;
+    color: white;
     line-height: 24pt;
 }
  
@@ -534,15 +537,59 @@ html, body{
     resize: none;
 }
 
-.submit-button{
-    padding-top: 20px;
-}
-
 .contact-section button:hover {
     color: white;
     border-bottom: 2px solid white;
 }
 /* End Contact Us Form */
+
+
+/* Start Newsletter */
+.newsletter{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.newsletter__description{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #2e2d2d;
+}
+
+.newsletter__form{
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+
+.newsletter__input{
+    outline: none;
+    border: none;
+    background-color: #d0d0d0;
+    padding: 0 1rem;
+}
+
+.button{
+    display: inline-block;
+    background-color: #FF7380FF;
+    color: white;
+    padding: 1rem;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: black;
+  
+}
+
+.button__round {
+    border-radius: 25px;
+}
+/* End Newsletter */
 
 
 /* Start Footer */
@@ -876,7 +923,7 @@ html, body{
     }
 
     .push-button{
-        padding-top: 50px;
+        padding-top: 15px;
     }
     /* End Product List*/
 
@@ -980,33 +1027,83 @@ html, body{
 
     /* Start Locate Us */
     .map .subtitle h2{
-        font-size: 80px;
-        color: #23CFA7FF;
+        font-size: 40px;
+        color: black;
     }
     /* End Locate Us */
 
 
     /* Start Contact Us Form */
     .contact-section h2{
-        padding-top: 20px;
-        font-size: 80px;
+        padding-top: 40px;
+        font-size: 40px;
         margin:0;
         color: white;
     }
 
     .contact-section .subtitle p{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .contact-us{
-        background: #59D4F0FF;
+        background: #282c2f;
         padding: 0px 300px;
-        padding-bottom: 200px;
-        /* border-top: 10px solid #23CFA7FF; */
+        padding-bottom: 50px;
     }
 
     /* End Contact Us Form */
+
+
+    /* Start Newsletter */
+    .newsletter{
+        text-align: center;
+        padding-bottom: 30px;
+        padding-left: 250px; 
+        padding-right: 250px; 
+    }
+
+    .newsletter__description{
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #2e2d2d;
+    }
+
+    .newsletter__form{
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+    }
+
+    .newsletter__input{
+        outline: none;
+        border: none;
+        background-color: #d0d0d0;
+        padding: 0 1rem;
+    }
+
+    .button{
+        display: inline-block;
+        background-color: #FF7380FF;
+        color: white;
+        padding: 1rem;
+        font-size: 12pt;
+        font-weight: 600;
+        transition: .3s;
+        text-decoration: none;
+    }
+
+    .button:hover{
+        background-color: black;
+    
+    }
+
+    .button__round {
+        border-radius: 25px;
+    }
+    /* End Newsletter */
+
 }
+
+
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR INDEX.HTML*/
 /*---------------------------------------------------------------------------------------------*/
@@ -1244,53 +1341,6 @@ html, body{
 /* End Team Info */
 
 
-/* Start Newsletter */
-.newsletter{
-    text-align: center;
-    padding-bottom: 30px;
-    padding-left: 20px; 
-    padding-right: 20px; 
-}
-
-.newsletter__description{
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #2e2d2d;
-}
-
-.newsletter__form{
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-}
-
-.newsletter__input{
-    outline: none;
-    border: none;
-    background-color: #d0d0d0;
-    padding: 0 1rem;
-}
-
-.button{
-    display: inline-block;
-    background-color: #FF7380FF;
-    color: white;
-    padding: 1rem;
-    font-size: .75rem;
-    font-weight: 600;
-    transition: .3s;
-    text-decoration: none;
-}
-
-.button:hover{
-    background-color: black;
-  
-}
-
-.button__round {
-    border-radius: 25px;
-}
-/* End Newsletter */
-
 /*---------------------------------------------------------------------------------------------*/
 /*START MEDIA QUERY FOR ABOUTUS.HTML*/
 /*---------------------------------------------------------------------------------------------*/
@@ -1305,13 +1355,22 @@ html, body{
 
     /* Start Baker Info */
     .baker-info-group{
-        display: flex;
-        text-align: center;
-        padding-bottom: 50px;
+        margin:auto;
+        padding-bottom: 0px;
     }
 
     .baker-info-container{
-        display: inline;
+        display: flex;
+    }
+
+    .baker-info-text{
+        padding: 0 80px;
+        width: 800px;
+    }
+
+    .baker-photo-group{
+        float: right;
+        width: 500px;
     }
 
     .baker-info-group .baker-info-title span{
@@ -1354,11 +1413,183 @@ html, body{
     }
 
     .baker-photo-group .baker-photo{
+        background-image: url("./Assets/images/4.aboutus/Baker_Transparent.png");
         padding-bottom: 100%;
         background-size: 500px;
         background-size: cover;
     }
     /* End Baker Info */
+
+
+    /* Start Award Section */
+    .award-section{
+        background-color: #F4F3EFFF;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        margin-top: 0px;
+    }
+
+    .award-title{
+        text-align: center;
+        padding-bottom: 15px;
+        color:#FF7380FF;
+    }
+
+    .award-subtitle{
+        text-align: center;
+    }
+
+    .award-subtitle span{
+        font-size: 40px;
+    }
+
+    .award-title span{
+        font-size: 25px;
+        font-family: Courgette;
+    }
+
+    .badge-photo-group{
+        width: 350px;
+        margin: auto;
+        padding-top: 25px;
+        padding-bottom: 15px;
+    }
+
+    .badge1 .badge-photo{
+        background-image: url("./Assets/images/4.aboutus/Badge1.png");
+    }
+
+    .badge2 .badge-photo{
+        background-image: url("./Assets/images/4.aboutus/Badge2.png");
+    }
+
+    .badge3 .badge-photo{
+        background-image: url("./Assets/images/4.aboutus/Badge3.png");
+    }
+
+    .badge-photo{
+        padding-bottom: 150px;
+        background-position: center;
+        background-size:contain;
+        background-repeat: no-repeat;
+    }
+
+    .badge-info span{
+        font-weight: bold;
+        text-align: center;
+        display: block;
+    }
+
+    .badge-info p{
+        text-align: center;
+    }
+
+    .badge-info .badge-title{
+        font-size: 25px;
+    }
+
+    .badge-info .badge-date{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-family: Courgette;
+        color:#A593C2FF;
+    }
+
+    .badge-info .badge-description{
+        font-size: 20px;
+    }
+    /* End Award Section */
+
+
+    /* Start Award Section */
+    .award-badge-container{
+        display:flex;
+    }
+    /* End Award Section */
+
+
+    /* Start Team Info */
+    .team-section{
+        background:linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("./Assets/images/4.aboutus/CakePattern.jpg");
+        background-position: center;
+        background-size:cover;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .team-section .team-subtitle{
+        font-size: 40px;
+    }
+
+    .team-section .team-title{
+        padding-bottom: 15px;
+        font-size:25px;
+    }
+
+    .team-section .team-title span{
+        font-family: Courgette;
+        color:#FF7380FF;
+    }
+
+    .all-helper-info{
+        margin: auto;
+        width: 1000px;
+        display: flex;
+    }
+
+    .helper1 .helper-pic{
+        background-image: url("./Assets/images/4.aboutus/Helper1.jpg");
+        padding-bottom: 100%;
+        background-size: cover;
+    }
+
+    .helper2 .helper-pic{
+        background-image: url("./Assets/images/4.aboutus/Helper2.jpg");
+        padding-bottom: 100%;
+        background-size: cover;
+    }
+
+    .helper-group{
+        width: 400px;
+        background-color: white;
+        padding-bottom: 25px;
+    }
+
+    .helper-individual{
+        padding:20px 50px;
+    }
+
+    .helper-more-about{
+        padding-top: 15px;
+    }
+
+    .helper-more-about .name{
+        font-size: 20px;
+    }
+
+    .helper-more-about .description{
+        font-size: 20px;
+    }
+
+
+    .helper-more-about .hierarchy{
+        font-size: 20px;
+        color: #FF7380FF;
+    }
+
+    .helper-social-media .social-media a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .helper-social-media .social-media span{
+        display: inline;
+        letter-spacing: 8px;
+        font-size: 25px;
+    }
+    /* End Team Info */
 
 }
 
