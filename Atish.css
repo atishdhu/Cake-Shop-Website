@@ -547,7 +547,7 @@ html, body{
 /* Start Newsletter */
 .newsletter{
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 45px;
     padding-left: 20px; 
     padding-right: 20px; 
 }
@@ -555,7 +555,7 @@ html, body{
 .newsletter__description{
     margin-bottom: 1rem;
     font-size: 20px;
-    color: #2e2d2d;
+    color:black;
 }
 
 .newsletter__form{
@@ -566,8 +566,14 @@ html, body{
 .newsletter__input{
     outline: none;
     border: none;
-    background-color: #d0d0d0;
+    color: black;
+    background-color: #dadada;
     padding: 0 1rem;
+}
+
+.newsletter__form ::placeholder{
+    color: black;
+    opacity: 0.6;
 }
 
 .button{
@@ -775,13 +781,6 @@ html, body{
         font-size: 28px;
     }
     /*End Navigation Bar*/
-
-
-    /* Start Bottom Navbar */
-    .bottom-nav{
-        display: none;
-    }
-    /* End Bottom Navbar */
 
 
     /* Start Slideshow */
@@ -1055,50 +1054,18 @@ html, body{
 
     /* Start Newsletter */
     .newsletter{
-        text-align: center;
-        padding-bottom: 30px;
+
         padding-left: 250px; 
         padding-right: 250px; 
     }
-
-    .newsletter__description{
-        margin-bottom: 1rem;
-        font-size: 20px;
-        color: #2e2d2d;
-    }
-
-    .newsletter__form{
-        display: grid;
-        grid-template-columns: 1fr .5fr;
-    }
-
-    .newsletter__input{
-        outline: none;
-        border: none;
-        background-color: #d0d0d0;
-        padding: 0 1rem;
-    }
-
-    .button{
-        display: inline-block;
-        background-color: #FF7380FF;
-        color: white;
-        padding: 1rem;
-        font-size: 12pt;
-        font-weight: 600;
-        transition: .3s;
-        text-decoration: none;
-    }
-
-    .button:hover{
-        background-color: black;
-    
-    }
-
-    .button__round {
-        border-radius: 25px;
-    }
     /* End Newsletter */
+
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
 
 }
 
@@ -1622,7 +1589,6 @@ html, body{
         padding-bottom: 300px;
 
     }
-
 }
 
 /*---------------------------------------------------------------------------------------------*/
