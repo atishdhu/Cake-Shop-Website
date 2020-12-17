@@ -291,27 +291,27 @@
 
 
         <!-- Start Google Map-->
-        <?php include './Template/GoogleMap.php';?>
+        <?php include './Includes/GoogleMap.php';?>
         <!-- End Google Map-->
 
 
         <!-- Start Contact Us -->
-        <?php include './Template/ContactUsForm.php';?>
+        <?php include './Includes/ContactUsForm.php';?>
         <!-- End Contact Us-->
         
 
         <!--Start Newsletter-->
-        <?php include './Template/NewsLetter.php';?>
+        <?php include './Includes/NewsLetter.php';?>
         <!--End Newsletter-->
 
 
         <!--Start Footer-->
-        <?php include './Template/Footer.php';?>
+        <?php include './Includes/Footer.php';?>
         <!--End Footer-->
 
         
         <!-- Start Bottom Nav -->
-        <?php include './Template/MobileBottomNav.php';?>
+        <?php include './Includes/MobileBottomNav.php';?>
         <!-- End Bottom Nav -->
 
     </body>

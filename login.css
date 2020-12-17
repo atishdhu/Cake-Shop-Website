@@ -244,7 +244,7 @@
     .bg-image-container .bg-image{
         background-image: url("./Assets/images/6.login/Dessert.jpg");
         filter: blur(8px);
-        padding-bottom: 55%;
+        padding-bottom: 70%;
         -webkit-filter: blur(4px);
         background-position: center;
         background-repeat: no-repeat;

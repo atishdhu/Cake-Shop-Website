@@ -1,3 +1,75 @@
+<?php
+    $servername = "localhost";
+    $serverUsername = "root";
+    $serverPassword = "";
+    $db_name = "demo";
+    
+    // Create connection
+    $conn = new mysqli($servername, $serverUsername, $serverPassword, $db_name);
+    
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $name = $password= "";
+    $nameErr = "username";
+    $passwordErr = "password";
+    $passwordCriteria = "";
+
+    $userNameOK = false;
+    $passwordOK = false;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["name"])) {
+            $nameErr = "Username is required";
+        } else {
+            $name = test_input($_POST["name"]);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+                $nameErr = "Only letters and white space allowed";
+            }
+            else
+            {
+                $userNameOK = true;
+            }
+        }
+
+        if (empty($_POST["password"])) {
+            $passwordErr = "Password is required";
+        } else {
+            $password = test_input($_POST["password"]);
+            // password must meet the following criterias:
+            // has to contain at least one number
+            // has to contain at least one letter
+            // has to be a number, a letter or one of the following: !@#$%
+            // there have to be 8-12 characters
+            if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
+                $passwordErr = "Password does not meet requirements";
+                $passwordCriteria  = 'The password has to contain at least <b>one number</b>, at least <b>one letter</b> or one of the following: <b>!@#$%</b> and must be between <b>8</b> to <b>12</b> characters long!';
+            }
+            else if($userNameOK == true)
+            {
+                $sql = "SELECT * FROM users WHERE user_name='$name' AND password='$password'";
+
+                $result = mysqli_query($conn, $sql);
+
+                if(mysqli_num_rows($result) === 1){
+                    echo "\nAccess Granted";
+                }
+            }
+        }
+      }
+      
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
@@ -19,6 +91,7 @@
     <body>
         <!--Start Navigation Bar-->
         <?php $page = 'login';?>
+
         <header class="main-header">
             <nav class="nav main-nav">
 
@@ -61,12 +134,14 @@
         </header>
         <!--End Navigation Bar @media 1200px-->
 
+
         <!--Start Background Image-->
         <div class="bg-image-container">
             <div class="bg-image"></div>
         </div>
         <!--End Background Image-->
 
+        
         <!--Start Login Panel-->
         <div class="login-page">
             <div class="form">
@@ -77,9 +152,11 @@
                     </div>
                 </div>
 
-                <form class="login-form">
-                    <input type="text" placeholder="username"/>
-                    <input type="password" placeholder="password"/>
+                <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <input type="text" name="name" placeholder="<?php echo $nameErr; ?>" value="<?php echo $name;?>"/>
+                    <input type="password" name="password" placeholder="<?php echo $passwordErr; ?>"/>
+                    <span class="Password-Error"><?php echo $passwordCriteria;?></span>
+                    <br><br>
                     <button>login</button>
                     <p class="message">Not registered? <a href="#">Create an account</a></p>
                     <p class="or-message"><b>OR</b></p>
