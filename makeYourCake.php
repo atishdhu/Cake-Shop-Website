@@ -2,7 +2,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | Home</title>
+        <title>MALAKO | MAKE YOUR CAKE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Atish.css">
@@ -53,7 +53,7 @@
                         <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
                         <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
                         <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
-                        <li><a href="login.php" class="<?php if($page == 'login'){echo 'active';}?>" class="user-button"><i class="far fa-user-circle"></i></a></li>
+                        <li><a href="login.php" class="<?php if($page == 'login'){echo 'active';}?> user-button"><i class="far fa-user-circle"></i></a></li>
                     </ul>
                 </nav>
         </header>

@@ -69,12 +69,11 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | LOGIN</title>
+        <title>MALAKO | JOIN</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Account.css">
@@ -84,14 +83,11 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link rel="stylesheet" href="Account.css">
-        <title>MALAKO | Login</title>
     </head>
 
     <body>
         <!--Start Navigation Bar-->
         <?php $page = 'login';?>
-
         <header class="main-header">
             <nav class="nav main-nav">
 
@@ -137,28 +133,29 @@
 
         <!--Start Background Image-->
         <div class="bg-image-container">
-            <div class="bg-image"></div>
+            <div class="bg-image-join"></div>
         </div>
         <!--End Background Image-->
 
-        
+
         <!--Start Login Panel-->
         <div class="login-page">
             <div class="form">
                 <div class="login">
                     <div class="login-header">
-                        <h3>LOGIN</h3>
-                        <p>Please enter your credentials to login.</p>
+                        <h3>JOIN</h3>
+                        <p>Please enter the required fields below to join.</p>
                     </div>
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <input type="text" name="name" placeholder="<?php echo $nameErr; ?>" value="<?php echo $name;?>"/>
+                    <input type="text" name="email" placeholder="<?php echo $emailErr; ?>" value="<?php echo $email;?>"/>
                     <input type="password" name="password" placeholder="<?php echo $passwordErr; ?>"/>
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>
                     <br><br>
-                    <button>login</button>
-                    <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
+                    <button>Join</button>
+                    <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>
 
@@ -171,6 +168,5 @@
             </div>
         </div>
         <!--End Login Panel-->
-
     </body>
 </html>

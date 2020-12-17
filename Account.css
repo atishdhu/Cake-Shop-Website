@@ -244,7 +244,17 @@
     .bg-image-container .bg-image{
         background-image: url("./Assets/images/6.login/Dessert.jpg");
         filter: blur(8px);
-        padding-bottom: 70%;
+        padding-bottom: 63%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bg-image-container .bg-image-join{
+        background-image: url("./Assets/images/6.login/Eclair.jpg");
+        filter: blur(8px);
+        padding-bottom: 63%;
         -webkit-filter: blur(4px);
         background-position: center;
         background-repeat: no-repeat;

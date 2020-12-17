@@ -2,10 +2,10 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | Home</title>
+        <title>MALAKO | MY ACCOUNT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
-        <link rel="stylesheet" type="text/css" href="Sanjana.css">
+        <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
         <!--BOXICONS-->
@@ -53,7 +53,7 @@
                         <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
                         <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
                         <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
-                        <li><a href="login.php" class="<?php if($page == 'login'){echo 'active';}?>" class="user-button"><i class="far fa-user-circle"></i></a></li>
+                        <li><a href="login.php" class="<?php if($page == 'login'){echo 'active';}?> user-button"><i class="far fa-user-circle"></i></a></li>
                     </ul>
                 </nav>
         </header>
@@ -70,69 +70,12 @@
 
 
         <!--Start Footer-->
-        <footer class="footer-group">
-
-            <div class="footer">
-
-                <div class="logo">
-                    <span class="logo-name">MALAKO</span>
-                </div>
-            
-                <div class="social-media">
-                    <span class="facebook">
-                        <a href=#><i class="fab fa-facebook-square"></i></a>
-                    </span>
-                    <span class="twitter">
-                        <a href=#><i class="fab fa-twitter-square"></i></a>
-                    </span>
-                    <span class="instagram">
-                        <a href=#><i class="fab fa-instagram-square"></i></a>
-                    </span>
-                    <span class="pinterest">
-                        <a href=#><i class="fab fa-pinterest-square"></i></a>
-                    </span>
-                </div>
-
-                <hr size="2px" width="80%" color="white">
-                <hr size="2px" width="80%" color="white">
-
-                <div class="contact-links">
-                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
-                </div>
-
-                <div class="legal-links">
-                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
-                </div>
-
-                <div class="copyright">
-                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
-                </div>
-
-            </div>  
-
-        </footer>
+        <?php include './Includes/Footer.php';?>
         <!--End Footer-->
 
         
         <!-- Start Bottom Nav -->
-        <div class="bottom-nav-group">
-            <nav class="bottom-nav">
-                <a href="login.html" class="bottom-nav-link">
-                    <i class="fas fa-user bottom-nav-icon" ></i>
-                    <span class="bottom-nav-text">Account</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">My Cart</span>
-                </a> 
-            </nav>
-        </div>
+        <?php include './Includes/MobileBottomNav.php';?>
         <!-- End Bottom Nav -->
     </body>
 </html>
