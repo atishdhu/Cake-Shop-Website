@@ -16,46 +16,12 @@
 
     <body>
         <!--Start Navigation Bar-->
-        <header class="main-header">
-            <nav class="nav main-nav">
-
-                <input type="checkbox" id="check">
-                
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars animate__animated animate__backInDown"></i>
-                </label>
-
-                <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="products.html">PRODUCTS</a></li>
-                    <li><a class="active" href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include './Template/MobileNavBar.php'; ?>
         <!--End Navigation Bar-->
 
 
-         <!--Start Navigation Bar @media 1200px-->
-         <header class="main-header-media1200">
-            <nav class="nav-media1200 main-nav-media1200">
-
-                <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul class="animate__animated animate__backInDown">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="products.html">PRODUCTS</a></li>
-                    <li><a class="active" href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
-                    <li><a href="login.html" class="user-button"><i class="far fa-user-circle"></i></a></li>
-                </ul>
-            </nav>
-        </header>
+        <!--Start Navigation Bar @media 1200px-->
+        <?php include './Template/PcNavBar.php'; ?>
         <!--End Navigation Bar @media 1200px-->
 
         

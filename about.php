@@ -16,46 +16,12 @@
 
     <body>
         <!--Start Navigation Bar-->
-        <header class="main-header">
-            <nav class="nav main-nav">
-
-                <input type="checkbox" id="check">
-                
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars animate__animated animate__backInDown"></i>
-                </label>
-
-                <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="products.html">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a class="active" href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include './Template/MobileNavBar.php'; ?>
         <!--End Navigation Bar-->
 
-        
-         <!--Start Navigation Bar @media 1200px-->
-         <header class="main-header-media1200">
-            <nav class="nav-media1200 main-nav-media1200">
 
-                <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul class="animate__animated animate__backInDown">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="products.html">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a class="active" href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
-                    <li><a href="login.html" class="user-button"><i class="far fa-user-circle"></i></a></li>
-                </ul>
-            </nav>
-        </header>
+        <!--Start Navigation Bar @media 1200px-->
+        <?php include './Template/PcNavBar.php'; ?>
         <!--End Navigation Bar @media 1200px-->
 
 
@@ -239,136 +205,28 @@
         <!--End Team Info-->
 
 
-        <!-- Start Google Map-->
-        <div class="map">
-            <div class="subtitle">
-                <h2>LOCATE US</h2>
-            </div>
-
-            <div class="google-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7483.163979214587!2d57.5197261228079!3d-20.31756231290802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c4272c436d1%3A0x14c5afb30243ca4a!2sPatisserie%20Swiss%20At%20Jerningham%20and%20Royal%20Street!5e0!3m2!1sen!2smu!4v1606498197938!5m2!1sen!2smu" width="100%"" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-        </div>
+         <!-- Start Google Map-->
+         <?php include './Template/GoogleMap.php';?>
         <!-- End Google Map-->
 
 
         <!-- Start Contact Us -->
-        <div class="contact-section">
-            <div class="contact-us">
-                <div class="subtitle">
-                    <h2>CONTACT US</h2>
-                    <p>Our Company is the best, meet the creative team that never sleeps. Say something to us we will answer to you.</p>
-                </div>
-                <form action="#">
-                    <label for="customerName">NAME <em>&#x2a;</em></label>
-                    <input id="customerName" name="customerName" required="" type="text" />
-                    <label for="customerEmail">EMAIL <em>&#x2a;</em></label>
-                    <input id="customerEmail" name="customerEmail" required="" type="email" />
-                    <label for="customerPhone">PHONE</label>
-                    <input id="customerPhone" name="customerPhone" pattern="[/0-9]{8}|[/0-9]{7}" type="tel" />
-                    <label for="orderNumber">ORDER NUMBER</label>
-                    <input id="orderNumber" name="orderNumber" type="text" />
-                    <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
-                    <textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
-                    <div class="push-button">
-                        <button id="submit">SUBMIT</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <?php include './Template/ContactUsForm.php';?>
         <!-- End Contact Us-->
-
+        
 
         <!--Start Newsletter-->
-        <section class="newsletter section" id="subscribed">
-            <div class="newsletter__container bd-grid">
-                <div class="newsletter__subscribe subtitle">
-                    <h2 class="section-title">OUR NEWSLETTER</h2>
-                    <p class="newsletter__description">Be the first to get informed about our best deals!</p>
-
-                    <form action="" class="newsletter__form">
-                        <input type="email" class="newsletter__input" placeholder="Enter your email" />
-                        <a href="#" class="button">SUBSCRIBE</a>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <?php include './Template/NewsLetter.php';?>
         <!--End Newsletter-->
 
 
-        <!--Start Wave Image-->
-        <!-- <div class="wave-image-group">
-            <div class="wave-image footer-wave">
-                <img src="Assets/images/1.index/NavBar_WavePink.png">
-            </div>
-        </div> -->
-        <!--End Wave Image-->
-
-
         <!--Start Footer-->
-        <footer class="footer-group">
-
-            <div class="footer">
-
-                <div class="logo">
-                    <span class="logo-name">MALAKO</span>
-                </div>
-            
-                <div class="social-media">
-                    <span class="facebook">
-                        <a href=#><i class="fab fa-facebook-square"></i></a>
-                    </span>
-                    <span class="twitter">
-                        <a href=#><i class="fab fa-twitter-square"></i></a>
-                    </span>
-                    <span class="instagram">
-                        <a href=#><i class="fab fa-instagram-square"></i></a>
-                    </span>
-                    <span class="pinterest">
-                        <a href=#><i class="fab fa-pinterest-square"></i></a>
-                    </span>
-                </div>
-
-                <hr size="2px" width="80%" color="white">
-                <hr size="2px" width="80%" color="white">
-
-                <div class="contact-links">
-                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
-                </div>
-
-                <div class="legal-links">
-                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
-                </div>
-
-                <div class="copyright">
-                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
-                </div>
-
-            </div>  
-
-        </footer>
+        <?php include './Template/Footer.php';?>
         <!--End Footer-->
 
         
         <!-- Start Bottom Nav -->
-        <div class="bottom-nav-group">
-            <nav class="bottom-nav">
-                <a href="login.html" class="bottom-nav-link">
-                    <i class="fas fa-user bottom-nav-icon" ></i>
-                    <span class="bottom-nav-text">Account</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">My Cart</span>
-                </a> 
-            </nav>
-        </div>
+        <?php include './Template/MobileBottomNav.php';?>
         <!-- End Bottom Nav -->
     </body>
 </html>
