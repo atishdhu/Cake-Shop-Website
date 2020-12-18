@@ -213,30 +213,6 @@ html, body{
     margin: 0px;
 }
 
-/* .what-you-can-do .fa-cookie{
-    color: #FFBB63FF;
-}
-
-.what-you-can-do .fa-mitten{
-    color: #23CFA7FF;
-}
-
-.what-you-can-do .fa-boxes{
-    color: #59D4F0FF;
-}
-
-.what-you-can-do .column .buy-our-cake{
-    color: #FFBB63FF;
-}
-
-.what-you-can-do .column .customize-cake{
-    color: #23CFA7FF;
-}
-
-.what-you-can-do .create-box{
-    color: #59D4F0FF;
-} */
-
 .what-you-can-do .column .what-you-can-do-subtitle{
     font-size: 30px;
     font-weight: bold;
@@ -773,7 +749,7 @@ html, body{
         font-weight: 100; 
     }
 
-    .business-name-media1200 a:hover{
+    .nav-media1200 .logo-business-name:hover{
         color:#9DDFD3FF;
     }
 

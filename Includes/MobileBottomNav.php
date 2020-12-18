@@ -6,10 +6,10 @@ echo '
             <i class="fas fa-user bottom-nav-icon" ></i>
             <span class="bottom-nav-text">Account</span>
         </a>
-        <a href="#" class="bottom-nav-link">
-            <i class="fas fa-search"></i>
-            <span class="bottom-nav-text">Search</span>
-        </a>
+        // <a href="#" class="bottom-nav-link">
+        //     <i class="fas fa-search"></i>
+        //     <span class="bottom-nav-text">Search</span>
+        // </a>
         <a href="#" class="bottom-nav-link">
             <i class="fas fa-shopping-cart"></i>
             <span class="bottom-nav-text">My Cart</span>

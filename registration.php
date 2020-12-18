@@ -12,9 +12,12 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $name = $password= "";
-    $nameErr = "username";
-    $passwordErr = "password";
+    $uname = $fname = $lname = $email = $password= "";
+    $unameErr = "Username";
+    $passwordErr = "Password";
+    $fnameErr = "First Name";
+    $lnameErr = "Last Name";
+    $emailErr = "Email";
     $passwordCriteria = "";
 
     $userNameOK = false;
@@ -149,7 +152,9 @@
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input type="text" name="name" placeholder="<?php echo $nameErr; ?>" value="<?php echo $name;?>"/>
+                    <input type="text" name="uname" placeholder="<?php echo $unameErr; ?>" value="<?php echo $uname;?>"/>
+                    <input type="text" name="fname" placeholder="<?php echo $fnameErr; ?>" value="<?php echo $fname;?>"/>
+                    <input type="text" name="lname" placeholder="<?php echo $lnameErr; ?>" value="<?php echo $lname;?>"/>
                     <input type="text" name="email" placeholder="<?php echo $emailErr; ?>" value="<?php echo $email;?>"/>
                     <input type="password" name="password" placeholder="<?php echo $passwordErr; ?>"/>
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>

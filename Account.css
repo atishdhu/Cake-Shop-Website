@@ -166,8 +166,46 @@
     padding-left: 30px;
     font-size: 30px;
 }
-
 /*End Login Panel*/
+
+
+/* Start Bottom Navbar */
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    background-color:white;
+    display: flex;
+    overflow-x: auto;
+    z-index: 5;
+}
+
+.bottom-nav-link{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow:1;
+    min-width:50px;
+    overflow:hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.bottom-nav-active{
+    color: #FF7380FF;
+}
+
+.bottom-nav-icon{
+    font-size: 18px;
+}
+/* End Bottom Navbar */
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -254,7 +292,7 @@
     .bg-image-container .bg-image-join{
         background-image: url("./Assets/images/6.login/Eclair.jpg");
         filter: blur(8px);
-        padding-bottom: 63%;
+        padding-bottom: 70%;
         -webkit-filter: blur(4px);
         background-position: center;
         background-repeat: no-repeat;
@@ -309,7 +347,7 @@
         text-transform: uppercase;
         outline: 0;
         background-color:#FFA5A5FF;
-        background-image: linear-gradient(45deg,rgb(252, 243, 243),#FFA5A5FF);
+        background-image: linear-gradient(45deg,rgb(252, 211, 211),#FFA5A5FF);
         width: 100%;
         border: 0;
         padding: 15px;
@@ -348,8 +386,13 @@
     .social-login i:hover{
         color: #FFA5A5FF;
     }
-
     /*End Login Panel*/
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR LOGIN.HTML*/
