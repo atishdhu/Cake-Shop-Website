@@ -8,6 +8,10 @@
     font-family: Nunito;
 }
 
+body{
+    font-family: Nunito;
+}
+
 /* Start Navigation Bar */
 .main-header-media1200{
     display:none;
@@ -81,7 +85,34 @@
 /* End Navigation Bar */
 
 
-/*Start Login Panel*/
+/* Start User Profile Subtitle*/
+.form-name-container{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.subtitle{
+    display: inline;
+    margin: auto;
+}
+
+.subtitle hr{
+    border-width: 3px;
+    color: black;
+    width: 400px;
+}
+
+.subtitle span{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    letter-spacing: 2.2pt;
+}
+/* End User Profile Subtitle*/
+
+
+/*Start Login & Registration Panel*/
 .login-page {
     width: 100%;
     padding: 10px 0;
@@ -100,6 +131,11 @@
 .login-page .form .login{
     margin-top: -31px;
     margin-bottom: 26px;
+}
+
+.login-form span{
+    font-size: 15px;
+    color: red;
 }
 
 .form {
@@ -166,7 +202,7 @@
     padding-left: 30px;
     font-size: 30px;
 }
-/*End Login Panel*/
+/*End Login & Registration Panel*/
 
 
 /* Start Bottom Navbar */
@@ -278,7 +314,7 @@
     }
     /*End Navigation Bar*/
 
-    /*Start Background Image*/
+    /*Start Background Image For Login Page*/
     .bg-image-container .bg-image{
         background-image: url("./Assets/images/6.login/Dessert.jpg");
         filter: blur(8px);
@@ -288,7 +324,9 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    /*End Background Image For Login Page*/
 
+    /*Start Background Image For Registration Page*/
     .bg-image-container .bg-image-join{
         background-image: url("./Assets/images/6.login/Eclair.jpg");
         filter: blur(8px);
@@ -298,7 +336,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    /*End Background Image*/
+    /*End Background Image For Registration Page*/
 
 
     /*Start Login Panel*/
@@ -387,6 +425,7 @@
         color: #FFA5A5FF;
     }
     /*End Login Panel*/
+
 
     /* Start Bottom Navbar */
     .bottom-nav{

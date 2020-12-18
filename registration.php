@@ -13,52 +13,117 @@
     }
 
     $uname = $fname = $lname = $email = $password= "";
-    $unameErr = "Username";
-    $passwordErr = "Password";
-    $fnameErr = "First Name";
-    $lnameErr = "Last Name";
-    $emailErr = "Email";
     $passwordCriteria = "";
-
-    $userNameOK = false;
-    $passwordOK = false;
+    $fnameCriteria = "";
+    $lnameCriteria = "";
+    $unameCriteria = "";
+    $emailCriteria = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["name"])) {
-            $nameErr = "Username is required";
-        } else {
-            $name = test_input($_POST["name"]);
-            // check if name only contains letters and whitespace
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-                $nameErr = "Only letters and white space allowed";
-            }
-            else
-            {
-                $userNameOK = true;
-            }
-        }
 
-        if (empty($_POST["password"])) {
-            $passwordErr = "Password is required";
+        $unameOK = false;
+        $fnameOK = false;
+        $lnameOK = false;
+        $emailOK = false;
+
+        if(empty($_POST["uname"])){
+            $unameCriteria = "Username is required!";
         } else {
-            $password = test_input($_POST["password"]);
-            // password must meet the following criterias:
-            // has to contain at least one number
-            // has to contain at least one letter
-            // has to be a number, a letter or one of the following: !@#$%
-            // there have to be 8-12 characters
-            if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
-                $passwordErr = "Password does not meet requirements";
-                $passwordCriteria  = 'The password has to contain at least <b>one number</b>, at least <b>one letter</b> or one of the following: <b>!@#$%</b> and must be between <b>8</b> to <b>12</b> characters long!';
+            $uname = test_input($_POST["uname"]);
+
+            // check for english chars + numbers only
+            // and alphanumeric & longer than or equals 5 chars
+            if(!preg_match('/^[a-zA-Z0-9]{5,}$/', $uname)) { 
+                $unameCriteria = "Username must have only alphanumeric characters and must be minimum 5 characters long.";
             }
-            else if($userNameOK == true)
-            {
-                $sql = "SELECT * FROM users WHERE user_name='$name' AND password='$password'";
+            else {
+                // check if username already in database
+                $sql = "SELECT * FROM users WHERE uname='$uname'";
 
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) === 1){
-                    echo "\nAccess Granted";
+                    $unameCriteria = "Username Already Exist!";
+                }
+                else
+                {
+                    $unameOK = true;
+                }
+            }
+        }
+
+        if (empty($_POST["fname"])) {
+            $fnameCriteria = "First name is required";
+        } else {
+            $fname = test_input($_POST["fname"]);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+                $fnameCriteria = "Only letters and white space allowed";
+            }
+            else
+            {
+                $fnameOK = true;
+            }
+        }
+
+        if (empty($_POST["lname"])) {
+            $lnameCriteria = "Last name is required";
+        } else {
+            $lname = test_input($_POST["lname"]);
+            // check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+                $lnameCriteria = "Only letters and white space allowed";
+            }
+            else
+            {
+                $lnameOK = true;
+            }
+        }
+
+        if (empty($_POST["email"])) {
+            $emailCriteria = "Email is required";
+        } else {
+            $email = test_input($_POST["email"]);
+            // check if name only contains letters and whitespace
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailCriteria = "Invalid email format";
+            }
+            else
+            {
+                // check if username already in database
+                $sql = "SELECT * FROM users WHERE email='$email'";
+
+                $result = mysqli_query($conn, $sql);
+
+                if(mysqli_num_rows($result) === 1){
+                    $emailCriteria = "Email Already Exist!";
+                }
+                else
+                {
+                    $emailOK = true;
+                }
+            }
+        }
+
+        if (empty($_POST["password"])) {
+            $passwordCriteria = "Password is required";
+        } else {
+            $password = test_input($_POST["password"]);
+            // password must meet the following criterias:
+            // has to contain at least one number
+            // has to contain at least one capital letter
+            // has to be a number, a letter or one of the following: !@#$%
+            // there have to be between 8 to 20 characters
+            if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $password)) {
+                $passwordCriteria = 'Password must have at least <b>one number</b>, at least <b>one capital letter</b>, at least of the following <b>!@#$%</b> and must be between <b>8</b> to <b>20</b> characters long!';
+            }
+            else if($unameOK == true && $fnameOK == true && $lnameOK == true && $emailOK == true)
+            {
+                $sql = "INSERT INTO users (uname, pass, fname, lname, email)
+                VALUES ('$uname', '$password', '$fname', '$lname', '$email')";
+
+                if(mysqli_query($conn, $sql)){
+                    echo "\nRecord Added";
                 }
             }
         }
@@ -152,13 +217,21 @@
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input type="text" name="uname" placeholder="<?php echo $unameErr; ?>" value="<?php echo $uname;?>"/>
-                    <input type="text" name="fname" placeholder="<?php echo $fnameErr; ?>" value="<?php echo $fname;?>"/>
-                    <input type="text" name="lname" placeholder="<?php echo $lnameErr; ?>" value="<?php echo $lname;?>"/>
-                    <input type="text" name="email" placeholder="<?php echo $emailErr; ?>" value="<?php echo $email;?>"/>
-                    <input type="password" name="password" placeholder="<?php echo $passwordErr; ?>"/>
+                    <span class="Uname-Error"><?php echo $unameCriteria;?></span>
+                    <br>    
+                    <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
+                    <span class="FirstName-Error"><?php echo $fnameCriteria;?></span>
+                    <br>
+                    <input type="text" name="fname" placeholder="First Name" value="<?php echo $fname;?>"/>
+                    <span class="LastName-Error"><?php echo $lnameCriteria;?></span>
+                    <br>
+                    <input type="text" name="lname" placeholder="Last Name" value="<?php echo $lname;?>"/>
+                    <span class="Email-Error"><?php echo $emailCriteria;?></span>
+                    <br>
+                    <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"/>
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>
-                    <br><br>
+                    <br>
+                    <input type="password" name="password" placeholder="Password"/>
                     <button>Join</button>
                     <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->
