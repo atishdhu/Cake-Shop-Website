@@ -119,7 +119,10 @@ body{
 
 .change-password-container h3{
     color: red;
+    font-size:25px;
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /* End User Profile Subtitle*/

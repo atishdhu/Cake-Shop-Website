@@ -141,7 +141,7 @@
                         //send mail
                         $to = $email;
                         $subject = "Email Verification";
-                        $message = "<a href='http://localhost/MyFiles/Cake%20Shop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                        $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
                         $headers = "From: malako.cakeshop@gmail.com \r\n";
                         $headers .= "MIME-Version: 1.0" . "\r\n";
                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
