@@ -18,6 +18,7 @@
     $lnameCriteria = "";
     $unameCriteria = "";
     $emailCriteria = "";
+    $confirmPasswordCriteria = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -25,6 +26,7 @@
         $fnameOK = false;
         $lnameOK = false;
         $emailOK = false;
+        $passwordOK = false;
 
         if(empty($_POST["uname"])){
             $unameCriteria = "Username is required!";
@@ -117,18 +119,44 @@
             if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $password)) {
                 $passwordCriteria = 'Password must have at least <b>one number</b>, at least <b>one capital letter</b>, at least of the following <b>!@#$%</b> and must be between <b>8</b> to <b>20</b> characters long!';
             }
-            else if($unameOK == true && $fnameOK == true && $lnameOK == true && $emailOK == true)
-            {
-                $sql = "INSERT INTO users (uname, pass, fname, lname, email)
-                VALUES ('$uname', '$password', '$fname', '$lname', '$email')";
+            else {
+                $passwordOK = true;
+            }
 
-                if(mysqli_query($conn, $sql)){
-                    echo "\nRecord Added";
+            if (empty($_POST["confirmPassword"])) {
+                $confirmPasswordCriteria = "Please confirm your password.";
+            }
+            else if (($_POST["confirmPassword"]) == $password){
+                if($unameOK == true && $passwordOK == true && $fnameOK == true && $lnameOK == true && $emailOK == true)
+                {
+                    //Generate VKey
+                    $vkey = md5(time().$uname);
+
+                    $passHash = password_hash($password, PASSWORD_BCRYPT);
+
+                    $sql = "INSERT INTO users (uname, pass, fname, lname, email, vkey)
+                    VALUES ('$uname', '$passHash', '$fname', '$lname', '$email', '$vkey')";
+
+                    if(mysqli_query($conn, $sql)){
+                        //send mail
+                        $to = $email;
+                        $subject = "Email Verification";
+                        $message = "<a href='http://localhost/MyFiles/Cake%20Shop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                        $headers = "From: malako.cakeshop@gmail.com \r\n";
+                        $headers .= "MIME-Version: 1.0" . "\r\n";
+                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                        mail($to, $subject, $message, $headers);
+                        header('location: login.php');
+                    }
                 }
             }
+            else {
+                $confirmPasswordCriteria = "Passwords do not match!";
+            }
         }
-      }
-      
+    }
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -232,6 +260,9 @@
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>
                     <br>
                     <input type="password" name="password" placeholder="Password"/>
+                    <span class="Password-Error"><?php echo $confirmPasswordCriteria;?></span>
+                    <br>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password"/>
                     <button>Join</button>
                     <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->

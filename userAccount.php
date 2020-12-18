@@ -1,9 +1,19 @@
+<?php 
+    session_start();
+
+    if(isset($_SESSION['fname'])){
+        $fname = strtoupper($_SESSION['fname']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
         <title>MALAKO | MY ACCOUNT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap Core CSS -->
+        <link href="./Cake Shop/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
@@ -12,8 +22,6 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <!-- Bootstrap Core CSS -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     </head>
 
     <body>
@@ -73,73 +81,51 @@
                 <div class="form-name-container">
                     <div class="subtitle">
                         <span><i class="fas fa-address-card"></i></span>
-                        <span>USER PROFILE</span>
+                        <span>&nbspHELLO <?php echo $fname; ?></span>
+                        <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
                         <hr>
                     </div>
                 </div>
                 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-5 control-label" for="Name (Full name)">Name (Full name)</label>  
+                    <label class="col-md-5 control-label" for="First Name">First Name</label>  
                     <div class="col-md-5">
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-user"></i>
                             </div>
-                                <input id="Name (Full name)" name="Name (Full name)" type="text" placeholder="Name (Full name)" class="form-control input-md">
+                                <input id="First Name" name="First Name" type="text" placeholder="First Name" class="form-control input-md">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Text input-->
+
                     <div class="form-group">
-                        <label class="col-md-5 control-label" for="Date Of Birth">Date Of Birth</label>  
+                        <label class="col-md-5 control-label" for="Last Name ">Last Name </label>  
                         <div class="col-md-5">
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-birthday-cake"></i>    
+                                    <i class="fa fa-user"></i>
                                 </div>
-                                <input id="Date Of Birth" name="Date Of Birth" type="text" placeholder="Date Of Birth" class="form-control input-md">
+                                <input id="Last Name " name="Last Name " type="text" placeholder="Last Name " class="form-control input-md">
                             </div>
                         </div>
                     </div>
 
 
-                    <!-- Multiple Radios (inline) -->
                     <div class="form-group">
-                        <label class="col-md-5 control-label" for="Gender">Gender</label>
-                        <div class="col-md-5"> 
-                            <label class="radio-inline" for="Gender-0">
-                                <input type="radio" name="Gender" id="Gender-0" value="1" checked="checked">
-                                Male
-                            </label> 
-                            <label class="radio-inline" for="Gender-1">
-                                <input type="radio" name="Gender" id="Gender-1" value="2">
-                                Female
-                            </label> 
-                            <label class="radio-inline" for="Gender-2">
-                                <input type="radio" name="Gender" id="Gender-2" value="3">
-                                Other
-                            </label>
+                        <label class="col-md-5 control-label" for="Address ">Address </label>  
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <input id="Address " name="Address " type="text" placeholder="Address " class="form-control input-md">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-md-5 control-label col-xs-12" for="Permanent Address">Address</label>  
-                        <div class="col-md-3  col-xs-4">
-                            <input id="Permanent Address" name="Permanent Address" type="text" placeholder="District" class="form-control input-md ">
-                        </div>
-                        <div class="col-md-2 col-xs-4">
-                            <input id="Permanent Address" name="Permanent Address" type="text" placeholder="Area" class="form-control input-md ">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-5 control-label" for="Permanent Address"></label>  
-                        <div class="col-md-5  col-xs-4">
-                            <input id="Permanent Address" name="Permanent Address" type="text" placeholder="Street" class="form-control input-md ">
-                        </div>
-                    </div>
 
                     <!-- Text input-->
                     <div class="form-group">
@@ -149,16 +135,11 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-phone"></i> 
                                 </div>
-                                <input id="Phone number " name="Phone number " type="text" placeholder="Primary Phone number " class="form-control input-md">
-                            </div>
-                            <div class="input-group othertop">
-                                <div class="input-group-addon">
-                                    <i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
-                                </div>
-                                <input id="Phone number " name="Secondary Phone number " type="text" placeholder=" Secondary Phone number " class="form-control input-md">
+                                <input id="Phone number " name="Phone number " type="text" placeholder="Phone number " class="form-control input-md">
                             </div>
                         </div>
                     </div>
+
 
                     <!-- Text input-->
                     <div class="form-group">
@@ -166,20 +147,80 @@
                         <div class="col-md-5">
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-envelope-o"></i>
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <input id="Email Address" name="Email Address" type="text" placeholder="Email Address" class="form-control input-md">
                             </div>
                         </div>
                     </div>
 
+
                     <!-- Textarea -->
                     <div class="form-group">
                         <label class="col-md-5 control-label" for="Overview (max 200 words)">Little bit about myself</label>
                         <div class="col-md-5">                     
-                            <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="Overview (max 200 words)">Overview</textarea>
+                            <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="Overview (max 200 words)" placeholder="Overview (max 200 words)"></textarea>
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-5 control-label" ></label>  
+                        <div class="col-md-5">
+                            <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</a>
+                            <a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-repeat"></span> Revert</a>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <br>
+                    <hr>
+                    <div class="change-password-container">
+                        <div class="change-password-subtitle">
+                            <h3>Change Password</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-5 control-label" for="Current Password ">Current Password </label>  
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-unlock-alt"></i>
+                                </div>
+                                <input id="Current Password " name="Current Password " type="text" placeholder="Enter Current Password " class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-5 control-label" for="New Password ">New Password </label>  
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <input id="New Password " name="New Password " type="text" placeholder="Enter New Password " class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-5 control-label" for="Confirm Password ">Confirm Password </label>  
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <input id="Confirm Password " name="Confirm Password " type="text" placeholder="Confirm Password " class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <label class="col-md-5 control-label" ></label>  
@@ -193,6 +234,10 @@
         </form>
         </div>
         </div>
+        </div>
+
+        <div class="form-spacer">
+            <br><br><br><br><br>
         </div>
         <!-- jQuery Version 1.11.1 -->
         <!-- <script src="js/jquery.js"></script> -->

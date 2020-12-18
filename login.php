@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $servername = "localhost";
     $serverUsername = "root";
     $serverPassword = "";
@@ -12,53 +14,46 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $name = $password= "";
-    $nameErr = "username";
-    $passwordErr = "password";
-    $passwordCriteria = "";
-
-    $userNameOK = false;
-    $passwordOK = false;
+    $uname = $password= "";
+    $errCriteria = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["name"])) {
-            $nameErr = "Username is required";
+
+        if ((empty($_POST['uname'])) || (empty($_POST['password']))){
+            $errCriteria = "Incorrect Username or Password!";
         } else {
-            $name = test_input($_POST["name"]);
-            // check if name only contains letters and whitespace
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-                $nameErr = "Only letters and white space allowed";
-            }
-            else
-            {
-                $userNameOK = true;
-            }
-        }
+            $uname = test_input($_POST['uname']);
+            $password = test_input($_POST['password']);
 
-        if (empty($_POST["password"])) {
-            $passwordErr = "Password is required";
-        } else {
-            $password = test_input($_POST["password"]);
-            // password must meet the following criterias:
-            // has to contain at least one number
-            // has to contain at least one letter
-            // has to be a number, a letter or one of the following: !@#$%
-            // there have to be 8-12 characters
-            if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
-                $passwordErr = "Password does not meet requirements";
-                $passwordCriteria  = 'The password has to contain at least <b>one number</b>, at least <b>one letter</b> or one of the following: <b>!@#$%</b> and must be between <b>8</b> to <b>12</b> characters long!';
-            }
-            else if($userNameOK == true)
-            {
-                $sql = "SELECT * FROM users WHERE user_name='$name' AND password='$password'";
+            // select row
+            $sql = "SELECT * FROM users WHERE uname='$uname'";
+            $result= mysqli_query($conn, $sql);
 
-                $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) === 1){
+                $row = mysqli_fetch_assoc($result);
 
-                if(mysqli_num_rows($result) === 1){
-                    echo "\nAccess Granted";
+                // check if user has verified his email
+                if($row['verified'] == 1)
+                {
+                    // check if hashed passwords match
+                    if(password_verify($password, $row['pass']))
+                    {
+                        // store the users first name
+                        $_SESSION['fname'] = $row['fname'];
+                        header('location: userAccount.php');
+                    } else {
+                        $errCriteria = "Incorrect Username or Password!";
+                    }
                 }
+                else
+                {
+                    $errCriteria = "Please verify you email address before you log in.";
+                }
+            } else {
+                $errCriteria = "Incorrect Username or Password!";
             }
         }
+        
       }
       
     function test_input($data) {
@@ -153,9 +148,9 @@
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input type="text" name="name" placeholder="<?php echo $nameErr; ?>" value="<?php echo $name;?>"/>
-                    <input type="password" name="password" placeholder="<?php echo $passwordErr; ?>"/>
-                    <span class="Password-Error"><?php echo $passwordCriteria;?></span>
+                    <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
+                    <input type="password" name="password" placeholder="Password"/>
+                    <span class="Password-Error"><?php echo $errCriteria;?></span>
                     <br><br>
                     <button>login</button>
                     <p class="message">Not registered? <a href="registration.php">Create an account</a></p>

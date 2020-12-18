@@ -86,21 +86,10 @@ body{
 
 
 /* Start User Profile Subtitle*/
-.form-name-container{
-    display: flex;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
 .subtitle{
     display: inline;
     margin: auto;
-}
-
-.subtitle hr{
-    border-width: 3px;
-    color: black;
-    width: 400px;
+    margin-left: 280px;
 }
 
 .subtitle span{
@@ -109,6 +98,30 @@ body{
     font-size: 40px;
     letter-spacing: 2.2pt;
 }
+.user-logout{
+    padding-left: 100px;
+}
+
+.user-logout span{
+    color:white;
+}
+
+.user-logout i{
+    color:white;
+}
+
+.change-password-container{
+    padding-top: 1px;
+    padding-bottom: 15px;
+    margin-left: 60px;
+    text-align: center;
+}
+
+.change-password-container h3{
+    color: red;
+    font-weight: bold;
+}
+
 /* End User Profile Subtitle*/
 
 
