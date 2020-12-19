@@ -39,8 +39,10 @@
                     if(password_verify($password, $row['pass']))
                     {
                         session_start();
-                        // store the users first name
-                        $_SESSION['fname'] = $row['fname'];
+
+                        // store the users data in this session
+                        $_SESSION['uname'] = $row['uname'];
+                        
                         header('location: checkAccount.php');
                     } else {
                         $errCriteria = "Incorrect Username or Password!";

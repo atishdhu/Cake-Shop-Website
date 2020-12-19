@@ -290,6 +290,7 @@ body{
     }
     /*End Navigation Bar*/
 
+
     /*Start Background Image For Login Page*/
     .bg-image-container .bg-image{
         background-image: url("./Assets/images/6.login/Dessert.jpg");
@@ -301,6 +302,7 @@ body{
         background-size: cover;
     }
     /*End Background Image For Login Page*/
+
 
     /*Start Background Image For Registration Page*/
     .bg-image-container .bg-image-join{
@@ -404,6 +406,16 @@ body{
 
 
     /* Start User Profile Subtitle*/
+    .user-profile-container .input-error{
+        font-weight: bold;
+        color: red;
+    }
+
+    .user-profile-container .message{
+        font-weight: bold;
+        color: green;
+    }
+
     .subtitle{
         display: inline;
         margin: auto;
@@ -428,19 +440,25 @@ body{
         color:white;
     }
 
-    .change-password-container{
-        padding-top: 1px;
-        padding-bottom: 15px;
-        margin-left: 60px;
-        text-align: center;
-    }
-
     .change-password-container h3{
-        color: red;
+        color: orangered;
         font-size:25px;
         font-weight: bold;
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+    
+    .danger-zone {
+        border: solid red;
+        border-style: groove;
+    }
+
+    .danger-zone .change-password-container h3{
+        color: red;
+    }
+
+    .danger-zone-inside {
+        padding: 15px;
     }
 
     /* End User Profile Subtitle*/

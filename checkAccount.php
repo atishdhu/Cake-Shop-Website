@@ -4,8 +4,7 @@
         session_start();
     }
     
-    if(isset($_SESSION['fname'])){
-        $fname = strtoupper($_SESSION['fname']);
+    if(isset($_SESSION['uname'])){
         define('Access', TRUE);
         include ".\userAccount.php";
     }

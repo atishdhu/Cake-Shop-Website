@@ -1,3 +1,5 @@
+<?php define('Access', TRUE);?>
+
 <?php
     $servername = "localhost";
     $serverUsername = "root";
