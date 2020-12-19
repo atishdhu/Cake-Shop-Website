@@ -7,7 +7,7 @@
     if(isset($_SESSION['fname'])){
         $fname = strtoupper($_SESSION['fname']);
         define('Access', TRUE);
-        include "./userAccount.php";
+        include ".\userAccount.php";
     }
     else {
         echo 'Access Denied!';

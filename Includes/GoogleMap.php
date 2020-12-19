@@ -1,4 +1,4 @@
-<?php include "./checkAccess.php"; ?>
+<?php include "./AdditionalPHP/checkAccess.php"; ?>
 
 <div class="map">
     <div class="subtitle">

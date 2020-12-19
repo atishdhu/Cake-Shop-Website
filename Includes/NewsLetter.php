@@ -1,4 +1,4 @@
-<?php include "./checkAccess.php"; ?>
+<?php include "./AdditionalPHP/checkAccess.php"; ?>
 
 <section class="newsletter section" id="subscribed">
     <div class="newsletter__container bd-grid">

@@ -1,4 +1,4 @@
-<?php include "./checkAccess.php"; ?>
+<?php include "./AdditionalPHP/checkAccess.php"; ?>
 
 <?php 
     if(!isset($_SESSION))
@@ -8,8 +8,10 @@
     
     if(isset($_SESSION['fname'])){
         $href = 'checkAccount.php';
+        $icon = 'fas fa-user-circle';
     } else {
         $href = 'login.php';
+        $icon = 'far fa-user-circle';
     }
 ?>
 
@@ -25,7 +27,7 @@
             <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
             <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
             <li><a href="#" class="user-button"><i class="bx bx-cart nav__cart"></i></a></li>
-            <li><a href="<?php echo $href;?>" class="<?php if($page == 'login'){echo 'active';}?> user-button"><i class="far fa-user-circle"></i></a></li>
+            <li><a href="<?php echo $href;?>" class="<?php if($page == 'login'){echo 'active';}?> user-button"><i class="<?php echo $icon;?>"></i></a></li>
         </ul>
     </nav>
 </header>

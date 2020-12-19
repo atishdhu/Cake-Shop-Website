@@ -1,4 +1,4 @@
-<?php include "./checkAccess.php"; ?>
+<?php include "./AdditionalPHP/checkAccess.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en-MU">
@@ -203,31 +203,6 @@
         <div class="form-spacer">
             <br><br><br><br><br>
         </div>
-        <!-- jQuery Version 1.11.1 -->
-        <!-- <script src="js/jquery.js"></script> -->
-
-        <!-- Bootstrap Core JavaScript -->
-        <!-- <script src="js/bootstrap.min.js"></script> -->
-        <!--End User Profile-->
-
-        
-        <!-- Start Bottom Nav -->
-        <div class="bottom-nav-group">
-            <nav class="bottom-nav">
-                <a href="login.php" class="<?php if($page == 'useraccount'){echo 'bottom-nav-active';}?> bottom-nav-link">
-                    <i class="fas fa-user bottom-nav-icon" ></i>
-                    <span class="bottom-nav-text">Account</span>
-                </a>
-                <!-- <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
-                </a> -->
-                <a href="#" class="<?php if($page == 'cart'){echo 'bottom-nav-active';}?> bottom-nav-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">My Cart</span>
-                </a> 
-            </nav>
-        </div>
-        <!-- End Bottom Nav -->
+    
     </body>
 </html>
