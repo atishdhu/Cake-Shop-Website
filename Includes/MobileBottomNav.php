@@ -1,5 +1,5 @@
-<?php 
-echo '
+<?php include "./checkAccess.php"; ?>
+
 <div class="bottom-nav-group">
     <nav class="bottom-nav">
         <a href="login.php" class="bottom-nav-link">
@@ -12,5 +12,3 @@ echo '
         </a> 
     </nav>
 </div>
-'
-?>

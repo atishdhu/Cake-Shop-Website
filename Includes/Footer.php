@@ -1,5 +1,5 @@
-<?php 
-echo '
+<?php include "./checkAccess.php"; ?>
+
 <footer class="footer-group">
     <div class="footer">
         <div class="footer-container">
@@ -41,5 +41,3 @@ echo '
         </div>
     </div>  
 </footer>
-'
-?>

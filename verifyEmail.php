@@ -1,3 +1,5 @@
+<?php include "./checkAccess.php"; ?>
+
 <?php 
     $servername = "localhost";
     $serverUsername = "root";

@@ -1,5 +1,5 @@
-<?php 
-echo '
+<?php include "./checkAccess.php"; ?>
+
 <section class="newsletter section" id="subscribed">
     <div class="newsletter__container bd-grid">
         <div class="newsletter__subscribe subtitle">
@@ -13,5 +13,3 @@ echo '
         </div>
     </div>
 </section>
-'
-?>

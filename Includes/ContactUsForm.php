@@ -1,5 +1,5 @@
-<?php 
-echo '
+<?php include "./checkAccess.php"; ?>
+
 <div class="contact-section">
     <div class="contact-us">
         <div class="subtitle">
@@ -23,5 +23,3 @@ echo '
         </form>
     </div>
 </div>
-'
-?>
