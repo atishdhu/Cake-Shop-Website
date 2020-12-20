@@ -21,6 +21,7 @@
     $unameCriteria = "";
     $emailCriteria = "";
     $confirmPasswordCriteria = "";
+    $recaptchaCriteria = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -29,9 +30,10 @@
         $lnameOK = false;
         $emailOK = false;
         $passwordOK = false;
+        $confirmPasswordOK = false;
 
         if(empty($_POST["uname"])){
-            $unameCriteria = "Username is required!";
+            $unameCriteria = "Username is required";
         } else {
             $uname = test_input($_POST["uname"]);
 
@@ -47,7 +49,7 @@
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) === 1){
-                    $unameCriteria = "Username Already Exist!";
+                    $unameCriteria = "Username Already Exist";
                 }
                 else
                 {
@@ -124,39 +126,54 @@
             else {
                 $passwordOK = true;
             }
-
+            
             if (empty($_POST["confirmPassword"])) {
                 $confirmPasswordCriteria = "Please confirm your password.";
             }
             else if (($_POST["confirmPassword"]) == $password){
-                if($unameOK == true && $passwordOK == true && $fnameOK == true && $lnameOK == true && $emailOK == true)
-                {
-                    //Generate VKey
-                    $vkey = md5(time().$uname);
-
-                    $passHash = password_hash($password, PASSWORD_BCRYPT);
-
-                    $sql = "INSERT INTO users (uname, pass, fname, lname, email, vkey)
-                    VALUES ('$uname', '$passHash', '$fname', '$lname', '$email', '$vkey')";
-
-                    if(mysqli_query($conn, $sql)){
-                        //send mail
-                        $to = $email;
-                        $subject = "Email Verification";
-                        $message = "<a href='http://localhost/MyFiles/CakeShop/AdditionalPHP/verifyEmail.php?vkey=$vkey'>Register Account</a>";
-                        $headers = "From: malako.cakeshop@gmail.com \r\n";
-                        $headers .= "MIME-Version: 1.0" . "\r\n";
-                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-                        mail($to, $subject, $message, $headers);
-                        header('location: login.php');
-                    }
-                }
+                $confirmPasswordOK = true;
             }
             else {
                 $confirmPasswordCriteria = "Passwords do not match!";
             }
         }
+
+        $captcha = $_POST["g-recaptcha-response"];
+        $secretkey = "6Ld1nA0aAAAAAJps4LCRTs7jfshN9GNjZAghnt0f";
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret='.urldecode($secretkey).'&response='.urldecode($captcha).'';
+        $response = file_get_contents($url);
+        $responseKey = json_decode($response, TRUE);
+
+        if($responseKey['success'])
+        {
+            if($unameOK == true && $passwordOK == true && $fnameOK == true && $lnameOK == true && $emailOK == true)
+            {
+                //Generate VKey
+                $vkey = md5(time().$uname);
+
+                $passHash = password_hash($password, PASSWORD_BCRYPT);
+
+                $sql = "INSERT INTO users (uname, pass, fname, lname, email, vkey)
+                VALUES ('$uname', '$passHash', '$fname', '$lname', '$email', '$vkey')";
+
+                if(mysqli_query($conn, $sql)){
+                    //send mail
+                    $to = $email;
+                    $subject = "Email Verification";
+                    $message = "<a href='http://localhost/MyFiles/CakeShop/AdditionalPHP/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                    $headers = "From: malako.cakeshop@gmail.com \r\n";
+                    $headers .= "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                    mail($to, $subject, $message, $headers);
+                    header('location: login.php');
+                }
+            }
+        }
+        else {
+            $recaptchaCriteria = "Please confirm the reCAPTCHA";
+        }
+        
     }
 
     function test_input($data) {
@@ -181,6 +198,8 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <!-- Animate CSS -->
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!--reCAPTCHA-->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
     <body>
@@ -204,7 +223,7 @@
 
 
         <!--Start Login Panel-->
-        <div class="login-page">
+        <div class="login-page reg-page">
             <div class="form">
                 <div class="login">
                     <div class="login-header">
@@ -232,6 +251,10 @@
                     <span class="Password-Error"><?php echo $confirmPasswordCriteria;?></span>
                     <br>
                     <input type="password" name="confirmPassword" placeholder="Confirm Password"/>
+                    <span class=recaptcha-Error"><?php echo $recaptchaCriteria;?></span>
+                    <br>
+                    <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6Ld1nA0aAAAAAA7F7eJOY7CMwg7aaQAfg3WZy6P0"></div>
+                    <br/>
                     <button>Join</button>
                     <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->

@@ -86,6 +86,13 @@ body{
 
 
 /* Start User Profile Subtitle*/
+.col-md-15 {
+    width: 100%;
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
 .subtitle{
     display: inline;
     margin: auto;
@@ -109,6 +116,16 @@ body{
     color:white;
 }
 
+.user-profile-container .input-error{
+    font-weight: bold;
+    color: red;
+}
+
+.user-profile-container .message{
+    font-weight: bold;
+    color: green;
+}
+
 .change-password-container{
     padding-top: 1px;
     padding-bottom: 15px;
@@ -117,11 +134,24 @@ body{
 }
 
 .change-password-container h3{
-    color: red;
+    color: orangered;
     font-size:25px;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.danger-zone {
+    border: solid red;
+    border-style: groove;
+}
+
+.danger-zone .change-password-container h3{
+    color: red;
+}
+
+.danger-zone-inside {
+    padding: 15px;
 }
 
 /* End User Profile Subtitle*/
@@ -308,7 +338,7 @@ body{
     .bg-image-container .bg-image-join{
         background-image: url("./Assets/images/6.login/Eclair.jpg");
         filter: blur(8px);
-        padding-bottom: 70%;
+        padding-bottom: 90%;
         -webkit-filter: blur(4px);
         background-position: center;
         background-repeat: no-repeat;
@@ -401,6 +431,18 @@ body{
     
     .social-login i:hover{
         color: #FFA5A5FF;
+    }
+
+    .login-form .g-recaptcha{
+        transform:scale(0.89);
+        -webkit-transform:scale(0.89);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+
+    .reg-page{
+        padding-top: 30px;
+        margin-top:30px;
     }
     /*End Login Panel*/
 

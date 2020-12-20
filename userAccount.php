@@ -109,13 +109,13 @@
                 $phoneCriteria = "Phone number is required";
             } else {
                 $phone = test_input($_POST["phone"]);
-                // check if name only contains letters and whitespace
 
-                if (!preg_match("/^[0-9]{8}|[0-9]{7}$/",$phone)) {
+                if (!preg_match("/^([0-9]{8}|[0-9]{7}\D)*$/",$phone)) {
                     $phoneCriteria = "Enter a valid phone number";
                 }
                 else
                 {
+                    echo "phoneOK";
                     $phoneOK = true;
                 }   
             }
@@ -198,41 +198,7 @@
             }
         }
     }
-        
-    $width = '<script>document.getElementById("test").value = screen.width; </script>';
-
-    echo $width;
-
-    
-
-    $screenWidth = intval($width);
-
-    $columnWidth = "";
-
-    if($screenWidth >= 1200)
-    {
-        $columnWidth = "col-md-15";
-    }
-    else
-    {
-        $columnWidth = "col-md-10";
-    }
 ?>
-
-<script type="text/javascript">
-    var findWidth = screen.width;
-
-    if(findWidth >= 1200)
-    {
-        document.getElementById("screenRes").className = "col-md-15"; 
-    }
-    else
-    {
-        document.getElementById("screenRes").className = "col-md-10";
-    }
-</script>
-
-<input id="test" value=""></input>
 
 <!DOCTYPE html>
 <html lang="en-MU">
@@ -268,7 +234,7 @@
         <!--Start User Profile-->
         <div class="container user-profile-container">
         <div class="row">
-        <div id="screenRes" class="">
+        <div id="screenRes" class="col-md-15">
         <form class="form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <fieldset>
                 <!-- Form Name -->
