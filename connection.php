@@ -2,7 +2,9 @@
 //<!--========== PHP CONNECTION TO DATABASE ==========-->
     $host = "localhost";
     $username = "root";
-    $pass = "malako123";
+    // $pass = "malako123";
+    $pass = "";
+
     $dbname = "malako";
     //create connection
     $conn = mysqli_connect($host, $username, $pass, $dbname);
