@@ -6,8 +6,13 @@
         session_start();
     }
     
+    $uname = "Account";
+    $icon = "fas fa-user bottom-nav-icon";
+
     if(isset($_SESSION['fname'])){
         $href = 'checkAccount.php';
+        $uname = $_SESSION['uname'];
+        $icon = "fas fa-user-check";
     } else {
         $href = 'login.php';
     }
@@ -15,8 +20,8 @@
 <div class="bottom-nav-group">
     <nav class="bottom-nav">
         <a href="<?php echo $href;?>" class="bottom-nav-link">
-            <i class="fas fa-user bottom-nav-icon" ></i>
-            <span class="bottom-nav-text">Account</span>
+            <i class="<?php echo $icon;?>" ></i>
+            <span class="bottom-nav-text"><?php echo $uname;?></span>
         </a>
         <a href="#" class="bottom-nav-link">
             <i class="fas fa-shopping-cart"></i>

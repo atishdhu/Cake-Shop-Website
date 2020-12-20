@@ -433,6 +433,11 @@ body{
         color: #FFA5A5FF;
     }
 
+    .login-form .forget-text a{
+        color:black;
+        text-decoration: underline;
+    }
+
     .login-form .g-recaptcha{
         transform:scale(0.89);
         -webkit-transform:scale(0.89);

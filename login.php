@@ -112,7 +112,7 @@
                 <div class="login">
                     <div class="login-header">
                         <h3>LOGIN</h3>
-                        <p>Please enter your credentials to login.</p>
+                        <p>Please enter your credentials to login</p>
                     </div>
                 </div>
 
@@ -123,6 +123,7 @@
                     <br><br>
                     <button>login</button>
                     <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
+                    <br><span class="forget-text"><a href="forgetPassword.php">Forgot Password?</a></span>
                     <!-- <p class="or-message"><b>OR</b></p> -->
                 </form>
 

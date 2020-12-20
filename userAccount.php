@@ -2,19 +2,8 @@
     include "./AdditionalPHP/checkAccess.php";
 
     $uname = $_SESSION['uname'];
-
-    $servername = "localhost";
-    $serverUsername = "root";
-    $serverPassword = "";
-    $db_name = "demo";
-
-    // Create connection
-    $conn = new mysqli($servername, $serverUsername, $serverPassword, $db_name);
-
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    }
+    
+    include "connection.php";
 
     $sql = "SELECT * FROM users WHERE uname='$uname'";
     $result= mysqli_query($conn, $sql);
@@ -115,7 +104,6 @@
                 }
                 else
                 {
-                    echo "phoneOK";
                     $phoneOK = true;
                 }   
             }
@@ -433,7 +421,7 @@
                                         <div class="input-group-addon">
                                             <i class="fas fa-unlock-alt"></i>
                                         </div>
-                                        <input type="password" id="Current Password " name="delPassword" type="text" placeholder="Confirm Your Password Before Deleting " class="form-control input-md">
+                                        <input type="password" id="Current Password " name="delPassword" type="text" placeholder="Confirm Your Password" class="form-control input-md">
                                     </div>
                                 </div>
                             </div>
