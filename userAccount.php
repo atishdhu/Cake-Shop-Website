@@ -1,4 +1,4 @@
-<?php 
+<?php
     include "./AdditionalPHP/checkAccess.php";
 
     $uname = $_SESSION['uname'];
@@ -12,25 +12,16 @@
         $row = mysqli_fetch_assoc($result);
     }
 
-    $_SESSION['uname'] = $row['uname'];
-    $_SESSION['pass'] = $row['pass'];
-    $_SESSION['fname'] = $row['fname'];
-    $_SESSION['lname'] = $row['lname'];
-    $_SESSION['email'] = $row['email'];
-    $_SESSION['address'] = $row['address'];
-    $_SESSION['phone'] = $row['phone'];
-    $_SESSION['description'] = $row['description'];
+    $uname = $row['uname'];
+    $password = $row['pass'];
+    $fname = $row['fname'];
+    $lname = $row['lname'];
+    $email = $row['email'];
+    $address = $row['address'];
+    $phone = $row['phone'];
+    $description = $row['description'];
 
-    $uname = $_SESSION['uname'];
-    $password = $_SESSION['pass'];
-    $fname = $_SESSION['fname'];
-    $lname = $_SESSION['lname'];
-    $email = $_SESSION['email'];
-    $address = $_SESSION['address'];
-    $phone = $_SESSION['phone'];
-    $description = $_SESSION['description'];
-
-    $titleName = strtoupper($_SESSION['fname']);
+    $titleName = strtoupper($fname);
 
     function test_input($data) {
         $data = trim($data);
@@ -99,7 +90,7 @@
             } else {
                 $phone = test_input($_POST["phone"]);
 
-                if (!preg_match("/^([0-9]{8}|[0-9]{7}\D)*$/",$phone)) {
+                if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/",$phone)) {
                     $phoneCriteria = "Enter a valid phone number";
                 }
                 else
@@ -118,7 +109,6 @@
 
                 if(mysqli_query($conn, $sql))
                 {
-                    // Header('Location: '.$_SERVER['PHP_SELF']);
                     $updateMessage = '<i class="fas fa-check-square"></i>&nbsp&nbspRecord Updated!';
                 }
                 else {

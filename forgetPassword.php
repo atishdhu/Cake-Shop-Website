@@ -23,7 +23,7 @@
                 $response = file_get_contents($url);
                 $responseKey = json_decode($response, TRUE);
 
-                if($responseKey)
+                if($responseKey['success'])
                 {
                     $sql = "SELECT * FROM users WHERE email='$email'";
                     $result= mysqli_query($conn, $sql);
@@ -38,7 +38,9 @@
                         $symbols = range('@', '#', '$', '%');
 
                         $newPassword = "";
-                        for($i = 0; $i <=rand(8,20); $i++)
+                        $passLength = rand(8,20);
+
+                        for($i = 0; $i <= $passLength; $i++)
                         {
                             $a = $alphas[rand(0,25)];
                             $n = $numbers[rand(0,25)];
@@ -65,6 +67,8 @@
                         if(mysqli_query($conn, $sql)){
                             header("Location: login.php");
                         }
+                    } else {
+                        $errCriteria = "Cannot find your account!";
                     }
                     
                 } else {
@@ -86,7 +90,7 @@
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | Reset Password</title>
+        <title>MALAKO | RESET PASSWORD</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Account.css">

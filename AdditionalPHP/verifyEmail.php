@@ -1,14 +1,9 @@
 <?php 
-    $servername = "localhost";
-    $serverUsername = "root";
-    $serverPassword = "";
-    $db_name = "demo";
+    include "connection.php";
 
     if(isset($_GET['vkey'])){
         // Process Verification
         $vkey = $_GET['vkey'];
-
-        $conn = new mysqli($servername, $serverUsername, $serverPassword, $db_name);
 
         $sql = "SELECT verified,vkey FROM users WHERE verified = 0 AND vkey = '$vkey' LIMIT 1";
 

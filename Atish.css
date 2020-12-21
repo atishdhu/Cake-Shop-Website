@@ -11,6 +11,7 @@ html, body{
     margin: 0;
     padding: 0;
     background-color:white;
+    scroll-behavior: smooth;
 }
 
 .subtitle h2{
@@ -30,9 +31,9 @@ html, body{
     font-size: 15pt;
     font-weight: bold;
     line-height: 24pt;
-    padding: 10px 0;
-    width: 80%;
-    margin-top: 40px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 23px;
     border: none;
     background: #FF7380FF;
     color: white;
@@ -443,6 +444,16 @@ html, body{
 
 
 /* Start Contact Us Form */
+.contact-section .input-error{
+    font-size: 12pt;
+    color: red;
+}
+
+.contact-section .send-input-message{
+    font-size: 12pt;
+    color: green;
+}
+
 .contact-section h2{
     padding-top: 28px;
     margin:0;
@@ -476,6 +487,7 @@ html, body{
 }
  
 .contact-section input {
+    color: black;
     margin-bottom: 24pt;
 }
   
@@ -510,6 +522,7 @@ html, body{
 }
   
 .contact-section textarea {
+    color: black;
     resize: none;
 }
 
@@ -517,10 +530,27 @@ html, body{
     color: white;
     border-bottom: 2px solid white;
 }
+
+.contact-section .g-recaptcha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+}
 /* End Contact Us Form */
 
 
 /* Start Newsletter */
+.newsletter-section .input-error{
+    font-size: 13pt;
+    color: red;
+}
+
+.newsletter-section .send-input-message{
+    font-size: 13pt;
+    color: green;
+}
+
 .newsletter{
     text-align: center;
     padding-bottom: 45px;
@@ -540,6 +570,7 @@ html, body{
 }
 
 .newsletter__input{
+    border-radius: 25px;
     outline: none;
     border: none;
     color: black;
@@ -552,8 +583,9 @@ html, body{
     opacity: 0.6;
 }
 
-.button{
+.subscribe-button{
     display: inline-block;
+    border: none;
     background-color: #FF7380FF;
     color: white;
     padding: 1rem;
@@ -563,12 +595,12 @@ html, body{
     text-decoration: none;
 }
 
-.button:hover{
+.subscribe-button:hover{
     background-color: black;
   
 }
 
-.button__round {
+.subscribe-button {
     border-radius: 25px;
 }
 /* End Newsletter */
@@ -1019,6 +1051,10 @@ html, body{
         font-size: 15pt;
     }
 
+    .contact-section button{
+        padding-top: 15px;
+    }
+
     .contact-us{
         background: #282c2f;
         padding: 0px 300px;
@@ -1031,8 +1067,8 @@ html, body{
     /* Start Newsletter */
     .newsletter{
 
-        padding-left: 250px; 
-        padding-right: 250px; 
+        padding-left: 400px; 
+        padding-right: 400px; 
     }
     /* End Newsletter */
 

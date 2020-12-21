@@ -6,7 +6,7 @@
         session_start();
     }
     
-    if(isset($_SESSION['fname'])){
+    if(isset($_SESSION['uname'])){
         $href = 'checkAccount.php';
         $icon = 'fas fa-user-circle';
     } else {
