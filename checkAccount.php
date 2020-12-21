@@ -6,7 +6,14 @@
     
     if(isset($_SESSION['uname'])){
         define('Access', TRUE);
-        include ".\userAccount.php";
+        if($_SESSION['isAdmin'] == 1)
+        {
+            include ".\adminPanel.php";
+        }
+        else
+        {
+            include ".\userAccount.php";
+        }
     }
     else {
         echo 'Access Denied!';

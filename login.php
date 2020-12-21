@@ -31,7 +31,8 @@
 
                         // store the users data in this session
                         $_SESSION['uname'] = $row['uname'];
-                        
+                        $_SESSION['isAdmin'] = $row['isAdmin'];
+
                         header('location: checkAccount.php');
                     } else {
                         $errCriteria = "Incorrect Username or Password!";

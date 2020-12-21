@@ -58,19 +58,19 @@
 ?>
 
 <section class="newsletter newsletter-section" id="subscribed">
-    <div id="subscribe-section" onclick="window.location.hash='back-subscribe'; class="newsletter__container bd-grid">
+    <div id="subscribe-section" class="newsletter__container bd-grid" onclick="window.location.hash='back-subscribe';" style="cursor: pointer;">
         <div class="newsletter__subscribe subtitle">
             <h2 class="section-title">OUR NEWSLETTER</h2>
             <p class="newsletter__description">Be the first to get informed about our best deals!</p>
-            <span class="send-input-message"><?php echo $emailCriteria;?></span>
-            <span class="input-error"><?php echo $errorCriteria;?></span>
-            <br><br>
             <form class="newsletter__form" method="POST" actions="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
                 <input class="newsletter__input"  name="email" required="" type="email" placeholder="Enter your email"/>
-                <div class="subscribe-button-container" onclick="location.href='#subscribe-section';" style="cursor: pointer;">
+                <div class="subscribe-button-container">
                     <span><button class="subscribe-button" name="subscribe">SUBSCRIBE</button></span>
                 </div>
             </form>
+            <br>
+            <span class="send-input-message"><?php echo $emailCriteria;?></span>
+            <span class="input-error"><?php echo $errorCriteria;?></span>
         </div>
     </div>
 </section>

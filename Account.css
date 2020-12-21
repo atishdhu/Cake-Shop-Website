@@ -98,6 +98,27 @@ body{
     margin: auto;
 }
 
+.adminPanelContainer{
+    padding: 25px 0px;
+    padding-bottom: 50px;
+    margin: 0px 380px;
+    
+}
+
+.adminPanelSubtitle{
+    padding: 0 15px;
+    border-width: 2px;
+}
+
+.form-name-container h2{
+    text-align: center;
+    color: orangered;
+    border-bottom: 3px solid orangered;
+    padding: 0 0 2px;
+    font-size: 40px;
+    letter-spacing: 2.2pt;
+}
+
 .subtitle span{
     text-align: center;
     color: black;
@@ -415,6 +436,10 @@ body{
         text-decoration: none;
     }
 
+    .form .message a:hover{
+        text-decoration: underline;
+    }
+
     .social-login{
         padding-top: 5px;
     }
@@ -435,6 +460,11 @@ body{
 
     .login-form .forget-text a{
         color:black;
+        text-decoration: none;
+    }
+
+    .login-form .forget-text a:hover{
+        color:#FFA5A5FF;
         text-decoration: underline;
     }
 
@@ -509,7 +539,12 @@ body{
     }
 
     /* End User Profile Subtitle*/
+
+    /* Start Admin Panel */
+
+    
+    /* End Admin Panel */
 }
 /*---------------------------------------------------------------------------------------------*/
-/*END MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP*/
+/*END MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP, ADMINPANEL.PHP*/
 /*---------------------------------------------------------------------------------------------*/
