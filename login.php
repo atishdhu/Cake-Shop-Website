@@ -68,6 +68,7 @@
         <title>MALAKO | LOGIN</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -82,7 +83,7 @@
         <?php $page = 'login';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
@@ -112,7 +113,6 @@
                     <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
                     <input type="password" name="password" placeholder="Password"/>
                     <span class="Password-Error"><?php echo $errCriteria;?></span>
-                    <br><br>
                     <button>login</button>
                     <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
                     <br><span class="forget-text"><a href="forgetPassword.php">Forgot Password?</a></span>

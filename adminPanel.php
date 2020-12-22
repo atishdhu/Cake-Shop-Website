@@ -50,6 +50,7 @@
         <title>MALAKO | ADMIN PANEL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -59,7 +60,12 @@
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
         <!-- include libraries(jQuery, bootstrap) -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+        <!-- Bootstrap CDN -->
+        <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+        
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -72,12 +78,26 @@
         <?php $page = 'checkaccount';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
         <!--Start Navigation Bar @media 1200px-->
-        <?php include './Includes/PcNavBar.php';?>
+        <header class="main-header-media1200">
+            <nav class="nav-media1200 main-nav-media1200">
+
+                <h1 class="business-name-media1200"><a href="index.php" class="animate__animated animate__backInDown">Malako</a></h1>
+
+                <ul class="animate__animated animate__backInDown">
+                    <li><a href="index.php" class="<?php if($page == 'index'){echo 'active';}?>">HOME</a></li>
+                    <li><a href="products.php" class="<?php if($page == 'products'){echo 'active';}?>">PRODUCTS</a></li>
+                    <li><a href="makeyourcake.php" class="<?php if($page == 'makeyourcake'){echo 'active';}?>">MAKE YOUR CAKE</a></li>
+                    <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
+                    <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
+                    <li><a href="checkAccount.php" class="active user-button"><i class="fas fa-user-circle"></i></a></li>
+                </ul>
+            </nav>
+        </header>
         <!--End Navigation Bar @media 1200px-->
 
         
@@ -365,5 +385,16 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Start Bottom Nav -->   
+        <div class="bottom-nav-group">
+            <nav class="bottom-nav">
+                <a href="checkAccount.php" class="bottom-nav-link">
+                    <i class="fas fa-user-check" ></i>
+                    <span class="bottom-nav-text"><?php echo $uname;?></span>
+                </a>
+            </nav>
+        </div>
+        <!-- End Bottom Nav --> 
     </body>
 </html>

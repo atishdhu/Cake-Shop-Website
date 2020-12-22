@@ -17,6 +17,7 @@
     ?>
 
     <!--========== CSS FILES ==========-->
+    <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="sanj2.css">
 
     <!--========== BOOTSTRAP ==========-->

@@ -36,6 +36,7 @@
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -49,7 +50,7 @@
         <?php $page = 'checkaccount';?>
         
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 

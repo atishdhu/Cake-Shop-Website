@@ -1,7 +1,7 @@
 <?php include "./AdditionalPHP/checkAccess.php"; ?>
 
 <header class="main-header">
-    <nav class="nav main-nav">
+    <nav class="main-nav">
 
         <input type="checkbox" id="check">
         

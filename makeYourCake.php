@@ -10,6 +10,7 @@
         <title>MALAKO | MAKE YOUR CAKE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -23,7 +24,7 @@
         <?php $page = 'makeyourcake';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
