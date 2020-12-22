@@ -151,7 +151,7 @@ session_start();
                <!--========== CATEGORIES BUTTON ==========-->
             <?php 
             
-            $result_cat = mysqli_query($conn, $Q_fetch_categories);
+                $result_cat = mysqli_query($conn, $Q_fetch_categories);
 
             ?>
             <div class="row category-title">

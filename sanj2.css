@@ -14,12 +14,13 @@ html, body{
     margin: 0;
     padding: 0;
     background-color:white;
+    scroll-behavior: smooth;
 }
 
 .subtitle h2{
     text-align: center;
     color: #FF7380FF;
-    font-size: 35px;
+    font-size: 40px;
     letter-spacing: 2.2pt;
 }
 
@@ -33,9 +34,9 @@ html, body{
     font-size: 15pt;
     font-weight: bold;
     line-height: 24pt;
-    padding: 10px 0;
-    width: 80%;
-    margin-top: 40px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 23px;
     border: none;
     background: #FF7380FF;
     color: white;
@@ -53,16 +54,11 @@ html, body{
 .main-header{
     background-color: white;
     padding-top: 5px;
-    padding-bottom: 9px;
-}
-.main-header-products{
-    background-color: white;
-    padding-top: 5px;
     padding-bottom: 80px;
 }
 
 .checkbtn{
-    font-size: var(--h1-font-size);
+    font-size: 30px;
     color: black;
     float: left;
     line-height: 60px;
@@ -75,10 +71,10 @@ html, body{
     display: none;
 }
 
-.business-name a {
-    /* float: right;
-    margin-right: 40px;*/
-    font-size: var(--h1-font-size);
+.business-name a{ 
+    float: right;
+    margin-right: 40px;
+    font-size: 40px;
     color: black;
     font-family: Playfair Display;
 }
@@ -111,15 +107,11 @@ html, body{
     text-decoration: none;
 }
 
-.main-nav ul a:active{
+.main-nav .active{
+    text-decoration: blink;
     color: #FF7380FF;
     border-bottom: 2px solid currentColor;
 }
-
-.main-nav ul a:hover{
-    color: #FF7380FF;
-}
-
 
 #check:checked ~ ul{
     left:0%;
@@ -366,8 +358,8 @@ img{
       padding-top: .3rem;
       color: var(--white-color);
       background-color: var(--dark-color-light);
-      top:1.3rem !important;
-      right: 4.7rem;
+      top:1rem !important;
+      right: 10rem;
       font-weight: 300;
       
   }
@@ -788,7 +780,6 @@ img{
 /*========== PRODUCTS DETAILS ========== */
 
 /*========== INPUT  ========== */
-
 .input-quantity{
     border:none;
     outline: none;
@@ -1007,15 +998,27 @@ display: flex;
 }
 
 /*========== NEWSLETTER ========== */
+.newsletter-section .input-error{
+    font-size: 13pt;
+    color: red;
+}
+
+.newsletter-section .send-input-message{
+    font-size: 13pt;
+    color: green;
+}
 
 .newsletter{
     text-align: center;
+    padding-bottom: 45px;
+    padding-left: 20px; 
+    padding-right: 20px; 
 }
 
 .newsletter__description{
-    margin-bottom: var(--mb-2);
-    font-size: var(--small-font-size);
-    color: var(--dark-color-light);
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color:black;
 }
 
 .newsletter__form{
@@ -1024,20 +1027,42 @@ display: flex;
 }
 
 .newsletter__input{
+    border-radius: 25px;
     outline: none;
     border: none;
-    background-color: var(--grey-color);
+    color: black;
+    background-color: #dadada;
     padding: 0 1rem;
 }
 
+.newsletter__form ::placeholder{
+    color: black;
+    opacity: 0.6;
+}
+
+.subscribe-button{
+    display: inline-block;
+    border: none;
+    background-color: #FF7380FF;
+    color: white;
+    padding: 1rem;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.subscribe-button:hover{
+    background-color: black;
+  
+}
+
+.subscribe-button {
+    border-radius: 25px;
+}
 /*___________________________________________________________________________*/
 
 /*========== START FOOTER ========== */
-.wave-image-group .footer-wave{
-    margin-bottom: -10px;
-    margin-top: -50px;
-}
-
 .footer{
     background-color: #FF7380FF;
     background-size: 100%;
@@ -1055,17 +1080,17 @@ display: flex;
     font-family: Playfair Display;
 }
 
-.social-media{
+.footer-group .social-media{
     padding-top: 25px;
     padding-bottom: 15px;
 }
 
-.social-media a{
+.footer-group .social-media a{
     text-decoration: none;
     color: inherit;
 }
 
-.social-media span{
+.footer-group .social-media span{
     display: inline;
     letter-spacing: 8px;
     font-size: 40px;
@@ -1159,7 +1184,6 @@ display: flex;
 
     .main-header{
         display:none;
-        
     }
 
     /* ========== Start Navigation Bar ==========*/
@@ -1184,8 +1208,8 @@ display: flex;
 
     .main-nav-media1200 a{
         display: inline-block; /*makes space on top of inline elements - the nav*/
-        padding-left: .7em;/*only makes space to left and right but not top since elements are inline*/
-        padding-right: .7em;/*only makes space to left and right but not top since elements are inline*/
+        padding-left: .4em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .4em;/*only makes space to left and right but not top since elements are inline*/
         color: black;
         text-decoration: none;
     }
@@ -1197,6 +1221,7 @@ display: flex;
     .main-nav-media1200 .active{
         text-decoration: blink;
         color: #FFA5A5FF;
+        border-bottom: 2px solid currentColor;
     }
 
     .main-nav-media1200 li{
@@ -1206,19 +1231,19 @@ display: flex;
     .business-name-media1200 a{
         float: left;
         margin: 0;
-        margin-top: 10px;
-        font-size: 50px;
+        margin-top: 5px;
+        font-size: 60px;
         color: black;
         font-family: Playfair Display;
         font-weight: 100; 
     }
 
-    .main-nav-media1200 .active{
-        border-bottom: 2px solid currentColor; /* underline below active page in navigation*/
+    .nav-media1200 .logo-business-name:hover{
+        color:#9DDFD3FF;
     }
 
-    .business-name-media1200 a:hover{
-        color:#9DDFD3FF;
+    .nav-media1200 .user-button{
+        font-size: 28px;
     }
     /* ========== End Navigation Bar ==========*/
 
@@ -1229,6 +1254,20 @@ display: flex;
     }
     /*  ========== End Bottom Navbar ==========*/
 
+    /* Start Newsletter */
+    .newsletter{
+
+        padding-left: 400px; 
+        padding-right: 400px; 
+    }
+    /* End Newsletter */
+
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
 }
 
 /*========== MEDIA QUERIES BY SANJANA ========== */

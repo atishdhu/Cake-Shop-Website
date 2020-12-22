@@ -165,32 +165,9 @@ function pre_r($array){
         </header>
         
         <!--End Navigation Bar-->
+        
         <!--Start Navigation Bar @media 1200px-->
-        <header class="main-header-media1200">
-            <nav class="nav-media1200 main-nav-media1200 details-header" >
-
-                <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul class="animate__animated animate__backInDown">
-                <li><a href="index.php">HOME</a></li>
-            
-                <li><a class="active" href="products.php">PRODUCTS</a></li>
-                
-                <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
-                <li><a href="about.php">ABOUT</a></li>
-                <li><a href="contact.php">CONTACT US</a></li>
-                <li><a href="cart.php"><i class="bx bx-cart nav__cart"></i></a>
-                <p class="cart-number"><?php echo $_SESSION['item_quantity']; ?></p></li> <!--cart icon-->
-                
-            </ul>
-
-                
-
-
-                
-            </nav>
-        </header>
-
+        <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
 
