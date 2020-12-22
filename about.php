@@ -1,4 +1,7 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en-MU">

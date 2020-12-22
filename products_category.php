@@ -1,6 +1,6 @@
-<?php
-session_start();
-
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
 ?>
 
 <!DOCTYPE html>

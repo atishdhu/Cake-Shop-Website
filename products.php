@@ -1,18 +1,7 @@
-﻿<?php define('Access', TRUE);?>
-
-<!-- <?php
-// Start the session
-session_start();
-// if($_SESSION['p_id']!=""){
-//     unset($_SESSION['p_id']);   
-//     // $_SESSION['p_id'] = $_REQUEST['p_id'];  
-//     $_SESSION['p_id'] = $_GET['id'];
-//     }
-//     else {
-//     $_SESSION['p_id'] = $_REQUEST['p_id'];  
-//     }
-
-?> -->
+﻿<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en-MU">

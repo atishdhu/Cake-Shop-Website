@@ -1,8 +1,5 @@
 <?php
-    if(!isset($_session))
-    {
-        session_start();
-    }
+    include "./AdditionalPHP/startSession.php";
     
     if(isset($_SESSION['uname'])){
         define('Access', TRUE);

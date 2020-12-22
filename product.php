@@ -1,6 +1,9 @@
 <?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
-session_start();
+<?php
 $product_ids = array();
 if(!isset($_SESSION['p_id'])){
 
