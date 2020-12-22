@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 *{
     box-sizing: border-box;
@@ -113,6 +114,171 @@ html, body{
 #check:checked ~ ul{
     left:0%;
 }
+
+/* Start Nav Sanjana===========================================================================*/
+
+
+/* ========== VARIABLES CSS =========== */
+
+:root{
+    --header-height: 3rem;
+    --font-semi: 600;
+    --font-bold: 700;
+}
+
+/* ========== IMAGES USED IN CSS =========== */
+
+:root{
+    --offer-1: url("Assets/images/products/cupcake_bg2_cropped.jpg");
+    --offer-2: url("Assets/images/products/christmas_2.jpg");
+}
+
+/* ========== COLOURS =========== */
+
+:root {
+    --first-color: #FF7380FF;
+    --first-color-alt: #FFA5A5FF;
+    --white-color: white;
+    --baby-pink-color: #ffd7d7;
+    --yellow-color: #ffe547;
+    --dark-color: black;
+    --dark-color-light: #2e2d2d;
+    --grey-color: #d0d0d0;
+}
+
+/* ========== FONTS AND TYPOGRAPHY =========== */
+
+:root {
+    --body-font: 'Open Sans', sans-serif;
+    --font-alt: Nunito;
+    --big-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    
+}
+
+@media screen and (min-width: 768px){
+
+    :root {
+        --big-font-size: 6rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .813rem;
+    }
+
+}
+
+/* ========== MARGINS =========== */
+:root {
+    --mb-1: .5rem;
+    --mb-half: .75rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+}
+
+/* ========== Z-INDEX =========== */
+
+:root{
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+.active {
+    color: var(--first-color) !important;
+    border-bottom: 2px solid currentColor !important;
+}
+
+.nav__cart{
+    font-size: 1.68rem;
+    margin: var(--mb-2) var(--mb-2) 0;
+    position: relative;
+}
+
+.display_view{
+    display: inline-flex;
+    margin-top: .5rem;
+}
+
+.business-name{
+    margin-left: 7rem;
+    margin-top: var(--mb-half);
+}
+
+.details-header{
+
+    box-shadow: 0 3px 8px 0 rgba(80, 80, 80, 0.05), 0 3px 8px 0 rgba(90, 90, 90, 0.03) ;
+
+    
+}
+
+/*========== NAV CART ========== */
+#cart__active {
+    border-radius: 40px;
+    border: 2px solid var(--first-color);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    color: var(--first-color);
+    
+  }
+
+
+  #cart__active:hover {
+    border-radius: 25px;
+    border: 2px solid var(--white-color);
+    background-color: var(--first-color-alt);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    color: var(--white-color);
+    
+  }
+
+  .cart-number{
+      font-size: 1rem !important;
+      position: absolute !important;
+      border-radius: 50% 50%;
+      width: 2rem;
+      height: 2rem;
+      text-align: center;
+      padding-top: .3rem;
+      color: var(--white-color);
+      background-color: var(--dark-color-light);
+      top:1rem !important;
+      right: 10rem;
+      font-weight: 300;
+      margin-top: 0rem !important;
+      
+  }
+
+  .cart-number:hover{
+    
+    background-color: var(--first-color-alt);
+    font-weight: 700;
+  }
+
+  
+  .cart-number-mob{
+    font-size: .6rem !important;
+    position: absolute !important;
+    border-radius: 50% 50%;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    padding-top: .15rem;
+    color: var(--white-color);
+    background-color: var(--dark-color-light);
+    top:1.3rem !important;
+    left: 6rem;
+    font-weight: 300;
+    
+}
+/* End Nav Sanjana==================================================================================*/
+
 /* End Navigation Bar */
 
 
@@ -774,7 +940,7 @@ html, body{
     .business-name-media1200 a{
         float: left;
         margin: 0;
-        margin-top: -10px;
+        margin-top: 5px;
         font-size: 60px;
         color: black;
         font-family: Playfair Display;
@@ -1080,8 +1246,6 @@ html, body{
     /* End Bottom Navbar */
 
 }
-
-
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR INDEX.HTML*/
 /*---------------------------------------------------------------------------------------------*/
