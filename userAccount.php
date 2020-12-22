@@ -221,7 +221,7 @@
                             </div>
                             
                             <div class="subtitle">
-                                <span><i class="fas fa-users-cog"></i></span>
+                                <span><i class="fas fa-id-card"></i></span>
                                 <span>&nbspHELLO <?php echo $titleName;?></span>
                                 <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
                                 <hr>

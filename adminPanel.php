@@ -115,10 +115,11 @@
                     $updateMessage = "Error Updating Records. Please try again later.";
                 }
             }
-        } else if(isset($_POST['revertProfile'])){
+        } 
+        else if(isset($_POST['revertProfile'])){
             Header('Location: '.$_SERVER['PHP_SELF']);
-
-        } else if(isset($_POST['updatePassword'])){
+        } 
+        else if(isset($_POST['updatePassword'])){
             if (empty($_POST["currentPassword"])) {
                 $currentPasswordCriteria = "Current password empty!";
             } else {
@@ -150,12 +151,15 @@
                     $currentPasswordCriteria = "Current Password Incorrect!";
                 }
             }
-        } else if(isset($_POST['clearPassword'])){
+        } 
+
+        else if(isset($_POST['clearPassword'])){
             $_POST['currentPassword'] = "";
             $_POST['newPassword'] = "";
             $_POST['confirmPassword'] = "";
+        } 
 
-        } else if(isset($_POST['deleteAccount'])){
+        else if(isset($_POST['deleteAccount'])){
             if (empty($_POST["delPassword"])) {
                 $delPasswordCriteria = "Current password empty!";
             } else {
@@ -172,6 +176,22 @@
                 else
                 {
                     $delPasswordCriteria = "Password Incorrect";
+                }
+            }
+        }
+
+        else if(isset($_POST['sendMail'])){
+            if(!empty($_POST['message'])) {
+                $sql = "SELECT email FROM users";
+                $result= mysqli_query($conn, $sql);
+
+                if(mysqli_num_rows($result) > 0){
+                    $row = mysqli_fetch_assoc($result);
+
+                    for($i = 0; $i < mysqli_num_rows($result); $i++)
+                    {
+                        
+                    }
                 }
             }
         }
@@ -215,6 +235,7 @@
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
+        
         <div id="screenRes" class="col-md-15">
             <div class="form-name-container">
                 <div class="adminPanelContainer">

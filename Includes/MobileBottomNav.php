@@ -17,6 +17,7 @@
         $href = 'login.php';
     }
 ?>
+
 <div class="bottom-nav-group">
     <nav class="bottom-nav">
         <a href="<?php echo $href;?>" class="bottom-nav-link">
