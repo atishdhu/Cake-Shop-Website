@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 /*___________________________________________________________________________*/
 *{
     box-sizing: border-box;
@@ -397,26 +398,35 @@ img{
 .title-cart{
     margin-top: 3rem;
     margin-bottom: 3rem;
-    padding-left: 3rem;
+    padding-left: 1.9rem;
     border-bottom: 2px solid var(--dark-color-light);
+    display: flex;
    
 }
 .title-cart h1{
     font-size: 2.1rem !important;
-    font-family: Playfair Display !important;
     font-weight: 300 !important;
+    
 }
-.title-cart h1 span{
-    font-size: var(--h2-font-size) !important;
-    font-family: var(--body-font) !important;
-    font-weight: 100 !important;
+.title-cart i{
+    font-size: 2.2rem !important;
+    font-weight: 300 !important;
+    margin-bottom: 1rem !important;
+    margin-top: .12rem !important;
+    transition: .3s;
 }
+
+.title-cart i:hover{
+    color: var(--first-color-alt);
+    padding-left: 5rem;
+}
+
 .cart_img{
     grid-column: 1/2;
 }
 
 .cart_img img{
-    width: 200px;
+    max-width: 85% !important;
     
 }
 .cart_title_bar{
@@ -583,6 +593,36 @@ img{
 .button__round {
     border-radius: 25px;
 }
+.continue-shop{
+    display: inline-block;
+    /* background-color: rgba(148, 148, 148, 0.479) !important; */
+    color: grey !important;
+    padding: .8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-family: var(--body-font);
+    font-size: var(--small-font-size);
+    /* font-weight: var(--font-semi) !important; */
+    transition: .3s !important;
+    text-decoration: none !important;
+    border: 1px solid grey !important;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+
+.continue-shop:hover{
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+  
+}
+
+.continue-shop-div{
+    margin-top: 1rem !important;
+    margin-left: .1rem !important;
+    max-width: 10%;
+    border-radius: 25px;
+}
 
 /*========== DROP DOWN BUTTONS ========== */
 
@@ -712,7 +752,7 @@ img{
 }
 
 .featured__name{
-    margin-bottom: var(--mb-1);
+    
     text-transform: uppercase;
     font-size: var(--normal-font-size);
     font-family: var(--font-alt);
@@ -721,7 +761,10 @@ img{
 
 .featured__price{
     color: var(--dark-color-light);
-    font-weight: var(--font-semi);
+    font-family: 'Old Standard TT', serif;
+    font-weight: 2.5rem !important;
+    font-size: 1.5rem;
+    
 }
     
 .section-all{
@@ -732,7 +775,7 @@ img{
 .product__name{
     color: var(--dark-color-light);
     font-weight: var(--font-semi);
-    margin-bottom: var(--mb-4);
+    /* margin-bottom: var(--mb-4); */
     text-transform: uppercase;
     font-size: var(--normal-font-size);
     font-family: var(--font-alt);
@@ -805,6 +848,52 @@ img{
 .nice-number button:hover, .nice-number button:focus{
     background: var(--dark-color);
     
+}
+
+/*========== CATEGORY ========== */
+.category-title{
+padding: .8rem;
+margin-bottom: 3rem !important;
+margin-left: 10rem !important;
+margin-right: 10rem !important;
+background-color: linen ;
+border-left: 15px solid var(--first-color-alt);
+display: flex;
+/* border-bottom: 5px solid var(--first-color-alt); */
+}
+.category{
+    padding-left: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+}
+
+.category-name{
+    padding-left: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+}
+
+#cat-but{
+    padding: .8rem !important;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    outline: none; 
+    text-transform:uppercase;
+    font-weight:100 !important;
+    font-size: 1rem !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: var(--dark-color-light) !important;
+    border: 1px solid var(--dark-color-light) !important;
+    transition: .3s;
+    margin-top: .5rem !important;
+    
+}
+
+#cat-but:hover{
+    color: white !important;
+    background-color: var(--first-color) !important;
+    border: 1px solid linen !important;
 }
 
 /*========== OFFER ========== */
@@ -1301,6 +1390,14 @@ img{
         grid-column: 4/5;
     }
 
+        
+    .cart_img img{
+        max-width: 100% !important;
+        width: 65px;
+        height: auto;
+        
+        
+    }
     .remove-button{
         grid-column: 5/6;
         
@@ -1310,19 +1407,32 @@ img{
     }
     .rem-but{
     font-size: .5rem !important;
-    
-    
+    width: 2rem !important;
+    height: 2rem !important;
+    position: relative;
     }
-
+    .rem-but-x{
+        position: absolute;
+        right: .3rem;
+        bottom: .3rem;
+    }
+    /* div containing title and cart icon */
     .title-cart{
         margin-bottom: 0 !important;
         margin-top: 1rem !important;
         border-bottom: .5px solid var(--dark-color-light) !important;
     }
 
-
+    /* my cart title */
     .title-cart h1{
-    font-size: 1.2rem !important;  
+    font-size: 1.2rem !important; 
+    margin-bottom: 0px !important; 
+    padding-top: 4px;
     }
+    
+    /* cart icon next to 'My Cart' */
+    .title-cart i{
+        font-size: 1.5rem !important;  
+        }
 
 }

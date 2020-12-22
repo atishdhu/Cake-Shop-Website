@@ -72,7 +72,7 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
 
 }
 
-pre_r($_SESSION);
+//pre_r($_SESSION);
 
 function pre_r($array){
     echo '<pre>';
@@ -92,6 +92,7 @@ function pre_r($array){
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
     <?php 
         include_once 'connection.php';
+        include_once 'numOfItemsInCart.php';
     ?>
 
     <!--========== CSS FILES ==========-->
@@ -108,7 +109,8 @@ function pre_r($array){
 
 
     <!--========== BOOTSTRAP ==========-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -145,16 +147,17 @@ function pre_r($array){
                     <label for="check" class="checkbtn">
                         <i class="fas fa-bars animate__animated animate__backInDown"></i>
                     </label>
-                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i><p class="cart-number-mob">3</p></a>
+                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i>
+                    <p class="cart-number-mob"><?php echo $_SESSION['item_quantity']; ?></p></a>
                     <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">M A L A K O</a></h1>
                 </div>
 
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.php">HOME</a></li>
                     <li><a class="active" href="products.php">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="contact.php">CONTACT US</a></li>
                 </ul>
 
                 
@@ -169,14 +172,17 @@ function pre_r($array){
                 <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
 
                 <ul class="animate__animated animate__backInDown">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a class="active" href="products.php">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="cart.php"><i class="bx bx-cart nav__cart"></i></a><p class="cart-number">3</p></li> <!--cart icon-->
-                    
-                </ul>
+                <li><a href="index.php">HOME</a></li>
+            
+                <li><a class="active" href="products.php">PRODUCTS</a></li>
+                
+                <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
+                <li><a href="about.php">ABOUT</a></li>
+                <li><a href="contact.php">CONTACT US</a></li>
+                <li><a href="cart.php"><i class="bx bx-cart nav__cart"></i></a>
+                <p class="cart-number"><?php echo $_SESSION['item_quantity']; ?></p></li> <!--cart icon-->
+                
+            </ul>
 
                 
 
@@ -218,6 +224,9 @@ function pre_r($array){
         
         <div class="container mx-auto mt-0 pt-0 ">
             <!-- <form method="POST" action="index.php?action=add&id=<?php echo $product_id; ?>"> -->
+                <div class="row continue-shop-div text-center">
+                    <a href="products.php" class="continue-shop">Continue</a>
+                </div>
                 <div class="row">
                     <div class="col-md mt-4 mx-auto ">
                         <img src="<?php echo $p_img;?>" class="product-image" />
@@ -238,6 +247,9 @@ function pre_r($array){
 
                             </div>
                         </form>
+                        <!-- <div>
+                            <a href="products.php" class="continue-shop">Continue shopping</a>
+                        </div> -->
                         <!-- <button type="button" class="btn btn-primary btn-lg my-4 button">Add to cart</button> -->
                     </div>
                 </div>
@@ -258,6 +270,6 @@ function pre_r($array){
 
         </div>
 
-        <script src="Javascript\main.js?<?php echo filemtime('Javascript\main.js'); ?>" ></script>
+        <!-- <script src="Javascript\main.js?<?php //echo filemtime('Javascript\main.js'); ?>" ></script> -->
     </body>
 </html>

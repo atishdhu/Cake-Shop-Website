@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+//Remove button
+//The remove button loads the same page but carries some additional info in url
+//cart.php?action=delete&product_id=<?php echo ...
+//checks if url contains action=delete
+if(filter_input(INPUT_GET, 'action') == 'delete'){
+    //loops through all products in shopping cart session array until id matches url
+    foreach($_SESSION['shopping_cart'] as $key => $product){
+
+        //checks if product_id in url (when remove button clicked) matches the one
+        //in the shopping cart session array
+        if($product['id'] == filter_input(INPUT_GET, 'product_id')){
+            //remove product from shopping cart session array
+            unset($_SESSION['shopping_cart'][$key]);
+        }//end if
+    }//end foreach
+    //reset session array keys so they match with $product_ids numeric array
+    $_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
+}//end if
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +32,7 @@
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
     <?php 
         include_once 'connection.php';
+        include_once 'numOfItemsInCart.php';
     ?>
 
     <!--========== CSS FILES ==========-->
@@ -46,6 +71,7 @@
             $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
             $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
             $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
+            $Q_fetch__all_products = "SELECT * FROM products";
         
         ?>
 
@@ -62,17 +88,17 @@
                     <label for="check" class="checkbtn">
                         <i class="fas fa-bars animate__animated animate__backInDown"></i>
                     </label>
-                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i><p class="cart-number-mob">3</p></a>
+                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i><p class="cart-number-mob"><?php echo $_SESSION['item_quantity']; ?></p></a>
                     <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">M A L A K O</a></h1>
                 </div>
 
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a class="active" href="products.php">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                </ul>
+                <li><a href="index.php">HOME</a></li>
+                <li><a class="" href="products.php">PRODUCTS</a></li>
+                <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
+                <li><a href="about.php">ABOUT</a></li>
+                <li><a href="contact.php">CONTACT US</a></li>
+            </ul>
 
                 
             </nav>
@@ -86,13 +112,15 @@
                 <h1 class="business-name-media1200"><a href="index.html" class="animate__animated animate__backInDown">Malako</a></h1>
 
                 <ul class="animate__animated animate__backInDown">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a class="" href="products.php">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.html">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
-                    <li><a href="cart.php"><i class="bx bx-cart nav__cart" id="cart__active"></i><p class="cart-number">3</p></a></li> <!--cart icon-->
+                    <li><a href="index.php">HOME</a></li>
+                
+                    <li><a class="active" href="products.php">PRODUCTS</a></li>
                     
+                    <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="contact.php">CONTACT US</a></li>
+                    <li><a href="cart.php"><i class="bx bx-cart nav__cart" id="cart__active"></i><p class="cart-number"><?php echo $_SESSION['item_quantity']; ?></p></a></li> <!--cart icon-->
+                        
                 </ul>
 
                 
@@ -107,13 +135,15 @@
         <!--========== CART STRUCTURE ==========-->
         <div class="row mx-auto">
             <!-- Cart items -->
-            <div class="col-lg ">
+            <div class="col-lg">
 
                 <!-- title -->
-                <div class="row-md mx-auto px-auto title-cart">
-                    <h1>M Y &nbsp C A R T</h1>
+                <div class="row-md  title-cart">
+                    <!-- <h1>M Y &nbsp C A R T</h1> -->
+                    <h1 text-center>MY CART &nbsp</h1>
+                    <i class='bx bxs-cart-download bx-tada-hover'></i>
                 </div>
-
+                <!-- header of order details -->
                 <div class="cart_title_bar mx-1 ">
                     <div class="cart-title-1">
                         <h2 class="section-title hide-wave"> </h2>
@@ -133,44 +163,87 @@
                     </div>
                     
                 </div>
-
+                <!-- Loop through session shopping cart -->
+                <?php
+                //if shopping cart not empty
+                if(!empty($_SESSION['shopping_cart'])){
+                    //create total variable 
+                    $total = 0;
+                    $_SESSION['total_quantity'] = 0;
+                    //loop through each item in shopping cart
+                    foreach($_SESSION['shopping_cart'] as $key => $product){ 
+                
+                ?>
 
                 <!-- Receipt item card -->
-                <div class="receipt-card my-2 mx-1 py-3">
+                <div class="receipt-card mt-2 mb-3 mx-1 py-3">
+
                     <!-- product image -->
-                    <div class=" cart_img">
+                    <?php
+                    
+                    $result_product = mysqli_query($conn, $Q_fetch__all_products);
+                    $check = mysqli_num_rows($result_product);
+
+                    if($check>0){ //checks if $result empty in database
+                          //loops through all items in products table in database
+                        while($product_row = mysqli_fetch_assoc($result_product)){
+
+                              //compare if id in database in current loop is equal to  
+                              //id in current session shopping cart foreach loop
+                            if($product_row['p_id'] == $product['id']){
+                                ?>
+                                <!-- prints image from database of corresponding id -->
+                                <div class="cart_img">
+                                    <img src="<?php  echo $product_row['p_img']; ?>" class="img-fluid">
+                                </div>
+
+                                <?php
+                            }//end if
+                        }//end while
+                    }//end if check
+                    ?>
+
+                    <!-- <div class="cart_img">
                         <img src="Assets\images\products\Cake_2.jpg" class="img-fluid">
-                    </div>
+                    </div> -->
 
                     <!-- product details -->
                     <div class="">
                         <!-- product name -->
                         <div class="product-name">
                             <div class="product-name-det">
-                                <h6>Cheese Cake</h6>
-                                <h6>Rs 400</h6>
+                                <h6><?php echo $product['name'];?></h6>
+                                <h6>Rs <?php echo number_format($product['price'], 2);?> / unit</h6>
                             </div>
                         </div>
                     </div>
 
                         <!-- quantity -->
                         <div class="quantity-value">
-                             <h6>3</h6>
+                             <h6><?php echo $product['quantity'];?></h6>
                         </div>
 
 
                     <!-- product total price -->
                     <div class="tot-price-per-item ">
-                        <h6>Rs 1200</h6>
+                        <h6>Rs <?php echo number_format($product['quantity'] * $product['price'], 2); ?></h6>
                     </div>
 
                       <!-- Remove -->
                     <div class="remove-button">
-                        
-                        <button type="button" class="btn btn-primary btn-lg my-4 button rem-but"> X </button>
-                        
+                        <!-- product['id'] is fetching id from session shopping cart array -->
+                        <a href="cart.php?action=delete&product_id=<?php echo $product['id'];?>"> 
+                        <button type="button" class="btn btn-primary btn-lg my-4 button rem-but"><i class='bx bx-x rem-but-x' style='color:#ffffff; font-size: 1.3rem ;'></i></button>
+                        </a>
                     </div>
                 </div>
+
+                <?php
+                    $total = $total + ($product['quantity'] * $product['price']);
+                    //total num of items
+                   // $_SESSION['total_quantity'] = $_SESSION['total_quantity'] + $product['quantity'];
+                }//end foreach
+                ?>
             </div>
 
             <!-- Receipt -->
@@ -183,42 +256,78 @@
                     <!-- subtotal -->
                     <div class="row container subtotal-area my-1">
                         <div class="col">
-                            <h4 class="subtitle text-left title-checkout">SUBTOTAL: </h4>
+                            <h4 class="subtitle title-checkout">SUBTOTAL: </h4>
                         </div>
-                        <div class="col"><h4 class="subtitle text-left">Rs</h4></div>
+                        
                         <div class="col">
-                            <h4 class="subtitle text-right">400.00</h4>
+                            <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     <!-- delivery -->
                     <div class="row container delivery-area my-1">
                         <div class="col">
-                            <h4 class="subtitle text-left title-checkout">DELIVERY: </h4>
+                            <h4 class="subtitle title-checkout">DELIVERY: </h4>
                         </div>
-                        <div class="col"><h4 class="subtitle text-left">Rs</h4></div>
+                        
                         <div class="col">
-                            <h4 class="subtitle text-right">70.00</h4>
+                            <h4 class="subtitle">Rs 0.00</h4>
                         </div>
                     </div>
                     <!-- total -->
                     <div class="row container total-area my-1 pt-2">
                         <div class="col">
-                            <h4 class="subtitle text-left title-checkout">TOTAL: </h4>
+                            <h4 class="subtitle title-checkout">TOTAL: </h4>
                         </div>
-                        <div class="col"><h4 class="subtitle text-left">Rs</h4></div>
+                        
                         <div class="col">
-                            <h4 class="subtitle text-right">470.00</h4>
+                           <h4 class="subtitle">Rs <?php echo number_format($total, 2); ?></h4>
                         </div>
                     </div>
                     
                     
                     <!-- checkout -->
+                    <!-- show checkout if shopping cart array not empty -->
+                    <?php
+                    //check if shopping cart not empty
+                    if(isset($_SESSION['shopping_cart']));{
+                        //check if shopping cart contains more than 0 products
+                        if(count($_SESSION['shopping_cart'])>0){
+                    
+                    ?>
                     <div class="row checkout-area">
                         <button type="button" class="btn btn-primary btn-lg my-4 button">Checkout</button>
                     </div>
+                    <?php
+                     }//end count if
+                     if(count($_SESSION['shopping_cart']) == 0) {
+                        echo('<h1 class="subtitle">Your cart is empty!</h1>');
+                     }
+                    }//end isset if
+                    if(!isset($_SESSION['shopping_cart'])) {
+                        echo('<h1 class="subtitle">Your cart is empty!</h1>');
+                     }
+                    
+                    ?>
                 </div>
             </div>
-
+            <?php  
+                }//end if at start
+                //Displays msg if cart is emty
+                if(isset($_SESSION['shopping_cart'])) {
+                    if(count($_SESSION['shopping_cart']) == 0) {
+                        
+                        echo('<h1 class="text-center my-3">Your cart is empty!</h1>');
+                        echo('<div class="text-center py-3"><img src="Assets\images\cart\sad.png" class="img-fluid" style="max-width:17%;"></div>');
+                        echo('<div class="text-center py-3"><a href="products.php" class="button button__round">SHOP NOW</a></div>');
+                     }//end if session shopping cart == 0
+                 }//end if isset
+                 else { //if shopping cart is not set
+                    echo('<h1 class="text-center my-3">Your cart is empty!</h1>');
+                    echo('<div class="text-center py-3"><img src="Assets\images\cart\sad.png" class="img-fluid" style="max-width:17%;"></div>');
+                    echo('<div class="text-center py-3"><a href="products.php" class="button button__round">SHOP NOW</a></div>');
+                 }
+                
+            ?>
         </div>
 
            
@@ -288,6 +397,6 @@
         </div>
         <!-- End Bottom Nav -->
 
-        <script src="Javascript\main.js?<?php echo filemtime('Javascript\main.js'); ?>" ></script>
+        <!-- <script src="Javascript\main.js?<?php //echo filemtime('Javascript\main.js'); ?>" ></script> -->
     </body>
 </html>
