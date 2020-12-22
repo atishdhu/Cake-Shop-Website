@@ -93,16 +93,9 @@ body{
     padding-left: 20px;
 }
 
-.subtitle{
-    display: inline;
-    margin: auto;
-}
-
 .adminPanelContainer{
-    padding: 25px 0px;
-    padding-bottom: 50px;
-    margin: 0px 380px;
-    
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .adminPanelSubtitle{
@@ -111,11 +104,10 @@ body{
 }
 
 .form-name-container h2{
-    text-align: center;
     color: orangered;
     border-bottom: 3px solid orangered;
     padding: 0 0 2px;
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: 2.2pt;
 }
 
@@ -498,6 +490,40 @@ body{
         margin: auto;
         margin-left: 280px;
     }
+    
+    .admin-subtitle{
+        display: inline;
+        margin: auto;
+        margin-left: 380px;
+    }
+
+    .adminPanelContainer{
+        padding: 25px 0px;
+        padding-bottom: 50px;
+        margin: 0px 380px;
+        
+    }
+    
+    .adminPanelSubtitle{
+        padding: 0 15px;
+        border-width: 2px;
+    }
+    
+    .form-name-container h2{
+        text-align: center;
+        color: orangered;
+        border-bottom: 3px solid orangered;
+        padding: 0 0 2px;
+        font-size: 40px;
+        letter-spacing: 2.2pt;
+    }
+
+    .admin-subtitle span{
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        letter-spacing: 2.2pt;
+    }
 
     .subtitle span{
         text-align: center;
@@ -505,6 +531,7 @@ body{
         font-size: 40px;
         letter-spacing: 2.2pt;
     }
+    
     .user-logout{
         padding-left: 100px;
     }

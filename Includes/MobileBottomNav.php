@@ -9,7 +9,7 @@
     $uname = "Account";
     $icon = "fas fa-user bottom-nav-icon";
 
-    if(isset($_SESSION['fname'])){
+    if(isset($_SESSION['uname'])){
         $href = 'checkAccount.php';
         $uname = $_SESSION['uname'];
         $icon = "fas fa-user-check";

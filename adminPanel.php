@@ -215,7 +215,7 @@
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
-        <div class="container mt-5 mb-5">
+        <div id="screenRes" class="col-md-15">
             <div class="form-name-container">
                 <div class="adminPanelContainer">
                     <div class="adminPanelSubtitle">
@@ -223,7 +223,7 @@
                     </div>
                 </div>
                 
-                <div class="subtitle">
+                <div class="admin-subtitle">
                     <span><i class="fas fa-users-cog"></i></span>
                     <span>&nbspHELLO <?php echo $titleName;?></span>
                     <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
