@@ -1,4 +1,4 @@
-<?php include "./AdditionalPHP/checkAccess.php"; ?>
+<?php include "../AdditionalPHP/checkAccess.php"; ?>
 
 <?php
 

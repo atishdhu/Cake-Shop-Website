@@ -1,4 +1,4 @@
-<?php include "./AdditionalPHP/checkAccess.php"; ?>
+<?php include "../AdditionalPHP/checkAccess.php"; ?>
 
 <footer class="footer-group">
     <div class="footer">

@@ -213,8 +213,8 @@
         <!--End Team Info-->
 
 
-         <!-- Start Google Map-->
-         <?php include './Includes/GoogleMap.php';?>
+        <!-- Start Google Map-->
+        <?php include './Includes/GoogleMap.php';?>
         <!-- End Google Map-->
 
 
