@@ -334,7 +334,12 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -10px;
+}
+
+.contact-us .captcha-error-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* End Contact Us Form */
 
