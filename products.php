@@ -21,10 +21,10 @@
     <link rel='stylesheet' type='text/css' href='sanj2.css' />
 
      <!--========== BOOTSTRAP ==========-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
 
- 
+     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -302,89 +302,21 @@
                 
             </div>
         </section>
-        <!--========== NEWSLETTER ==========-->
-        <section class="newsletter section" id="subscribed">
-            <div class="newsletter__container bd-grid">
-                <div class="newsletter__subscribe">
-                    <h2 class="section-title">OUR NEWSLETTER</h2>
-                    <p class="newsletter__description">Be the first to get informed about our best deals!</p>
 
-                    <form action="" class="newsletter__form">
-                        <input type="email" class="newsletter__input" placeholder="Enter your email" />
-                        <a href="#" class="button">SUBSCRIBE</a>
-                    </form>
-                </div>
-            </div>
-        </section>
+        
+          <!--Start Newsletter-->
+          <?php include './Includes/NewsLetter.php';?>
+        <!--End Newsletter-->
 
-    </main>
 
-    <!--___________________________________________________________________________-->
-    <!--========== FOOTER ==========-->
-    <!--Start Footer-->
-    <footer class="footer-group">
+        <!--Start Footer-->
+        <?php include './Includes/Footer.php';?>
+        <!--End Footer-->
 
-        <div class="footer">
-
-            <div class="logo">
-                <span class="logo-name">MALAKO</span>
-            </div>
-
-            <div class="social-media">
-                <span class="facebook">
-                    <a href=#><i class="fab fa-facebook-square"></i></a>
-                </span>
-                <span class="twitter">
-                    <a href=#><i class="fab fa-twitter-square"></i></a>
-                </span>
-                <span class="instagram">
-                    <a href=#><i class="fab fa-instagram-square"></i></a>
-                </span>
-                <span class="pinterest">
-                    <a href=#><i class="fab fa-pinterest-square"></i></a>
-                </span>
-            </div>
-
-            <hr size="2px" width="80%" color="white">
-            <hr size="2px" width="80%" color="white">
-
-            <div class="contact-links">
-                <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
-            </div>
-
-            <div class="legal-links">
-                <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
-            </div>
-
-            <div class="copyright">
-                <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
-            </div>
-
-        </div>
-
-    </footer>
-    <!--End Footer-->
-    <!--========== BOTTOM-MENU-PHONE ==========-->
-    <!-- Start Bottom Nav -->
-    <div class="bottom-nav-group">
-        <nav class="bottom-nav">
-            <a href="#" class="bottom-nav-link bottom-nav-active">
-                <i class="fas fa-user bottom-nav-icon"></i>
-                <span class="bottom-nav-text">Account</span>
-            </a>
-            <a href="#" class="bottom-nav-link">
-                <i class="fas fa-search"></i>
-                <span class="bottom-nav-text">Search</span>
-            </a>
-            <a href="#" class="bottom-nav-link">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="bottom-nav-text">Cart</span>
-            </a>
-        </nav>
-    </div>
-    <!-- End Bottom Nav -->
+        
+        <!-- Start Bottom Nav -->
+        <?php include './Includes/MobileBottomNav.php';?>
+        <!-- End Bottom Nav -->
 
     <!--___________________________________________________________________________-->
 

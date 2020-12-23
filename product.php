@@ -1,4 +1,3 @@
-<?php define('Access', TRUE);?>
 <?php 
     define('Access', TRUE);
     include "./AdditionalPHP/startSession.php";
