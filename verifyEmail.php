@@ -37,7 +37,6 @@
                 setcookie("verifiedEmailCookie", "emailInvalid", time()+(3600*24*2));
                 include "accountInvalidPage.php";
             }
-
             
         }
 

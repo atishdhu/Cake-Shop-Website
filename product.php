@@ -1,4 +1,3 @@
-<?php define('Access', TRUE);?>
 <?php 
     define('Access', TRUE);
     include "./AdditionalPHP/startSession.php";
@@ -54,13 +53,9 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
                         //add item quantity from form to the existing product in the array
                         // $_SESSION['shopping_cart'][$i]['quantity'] += filter_input(INPUT_POST, 'input-quantity');
                         $_SESSION['shopping_cart'][$i]['quantity'] += $_POST['input_quantity'];
-                        
-
                     }
                 }
             }
-        
-
     }
     else { //if shopping cart does not exist, create first product with array key 0
         //create array using submitted form data, start from key 0 and fill it with values
@@ -101,7 +96,7 @@ function pre_r($array){
 
     <!--========== CSS FILES ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
-    <link rel="stylesheet" type="text/css" href="sanj2.css">
+    <link rel="stylesheet" type="text/css" href="Sanjana.css">
     <link href="jquery.nice-number.css" rel="stylesheet">
     <!--========== JQUERY CDN ==========-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -114,8 +109,11 @@ function pre_r($array){
 
 
     <!--========== BOOTSTRAP ==========-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -140,37 +138,13 @@ function pre_r($array){
         ?>
 
 
-          <!--========== HEADER ==========-->
+        <!--========== HEADER ==========-->
+        <?php $page = 'product'?>
         <!--Start Navigation Bar-->
-        
-        <header class="main-header">
-            <nav class="nav main-nav details-header">
-
-                <input type="checkbox" id="check">
-
-                <div class="display_view">
-                    <label for="check" class="checkbtn">
-                        <i class="fas fa-bars animate__animated animate__backInDown"></i>
-                    </label>
-                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i>
-                    <p class="cart-number-mob"><?php echo $_SESSION['item_quantity']; ?></p></a>
-                    <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">M A L A K O</a></h1>
-                </div>
-
-                <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a class="active" href="products.php">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.php">ABOUT</a></li>
-                    <li><a href="contact.php">CONTACT US</a></li>
-                </ul>
-
-                
-            </nav>
-        </header>
-        
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
-        
+
+
         <!--Start Navigation Bar @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
