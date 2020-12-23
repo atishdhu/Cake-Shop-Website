@@ -209,10 +209,10 @@ session_start();
 
                                     <div class="featured__data">
                                         <?php $product_id = $featured_row['p_id']; ?>
-                                        <form action="product.php?product_id=<?php echo $product_id; ?>"  method="POST"> 
+                                        <!-- <form action="product.php?product_id=<?php echo $product_id; ?>"  method="POST">  -->
                                             <!-- set session to product id value  -->
-                                            <input type="submit" name="view-product"  value="View Product" class="btn btn-primary btn-lg my-4 button" />
-                                        </form>
+                                            <!-- <input type="submit" name="view-product"  value="View Product" class="btn btn-primary btn-lg my-4 button" />
+                                        </form> -->
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" style="text-decoration: none;">
                                         <h4 class="product__name" id="product__name"><?php echo $featured_row['p_name']; ?></h4>
                                         </a>
@@ -253,10 +253,39 @@ session_start();
             </div>
         </section>
 
+
+        <!--========== CATEGORIES BUTTON ==========-->
+        <?php 
+        
+        $result_cat = mysqli_query($conn, $Q_fetch_categories);
+
+        ?>
+        <div class="row category-title" style="margin-top: 1rem;">
+                <div class="col">
+                    <h2 class="category">new</h2>
+                    <h2 class="category-name ">products</h2>
+                </div>
+                <div class="dropdown col-auto">
+                    <button class="dropbtn button" id="cat-but">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                    <div class="dropdown-content">
+                        <?php
+                        while($row_categories = mysqli_fetch_assoc($result_cat)){
+                            $p_cat_id = $row_categories['p_cat_id'];
+                            ?>
+                            <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                            <?php
+                        }
+                        
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+
         <!--========== ATTEMPT TO QUERY NEW PRODUCTS ==========-->
         <section class="new section" id="new">
-            <h2 class="section-title">FRESHLY OUT OF THE OVEN - PHP method</h2>
-            <a href="#" class="section-all">View All</a>
+            <!-- <h2 class="section-title">FRESHLY OUT OF THE OVEN - PHP method</h2>
+            <a href="#" class="section-all">View All</a> -->
 
             <div class="new__container bd-grid">
                 <?php

@@ -185,24 +185,25 @@ session_start();
                 <?php
                          $run_get_product_by_cat_id = mysqli_query($conn, $Q_fetch_product_by_cat_id); 
                         while($row_product = mysqli_fetch_assoc($run_get_product_by_cat_id)){
-
+                             $product_id = $row_product['p_id'];
                             ?>
 
                                 <div class="featured__products" id="product__card">
                                     <div class="featured__box">
                                         <div class="featured__new">NEW</div>
-                                        <div class=""><a href="#"><i class='bx bxs-cart-add bx-tada-hover featured__new_cart'></i></a></div>
-                                        
+                                        <div class=""><a href="product.php?product_id=<?php echo $product_id; ?>"><i class='bx bxs-cart-add bx-tada-hover featured__new_cart'></i></a></div>
+                                        <a href="product.php?product_id=<?php echo $product_id; ?>" >
                                             <img src="<?php echo $row_product['p_img']; ?>" alt="" class="featured__img avoid__clicks"
                                             style="
                                                 object-fit: cover;
                                                 width:  232px;
                                                 height: 232px;" />
+                                        </a>
                                     </div>
 
                                     <div class="featured__data">
                                         <?php $product_id = $row_product['p_id']; ?>
-                                        <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"><?php echo $row_product['p_name']; ?></a></br>
+                                        <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"style="text-decoration: none;"><?php echo $row_product['p_name']; ?></a></br>
                                         <span class="featured__price">Rs <?php echo $row_product['p_price']; ?></span>
                                        
                                     </div>

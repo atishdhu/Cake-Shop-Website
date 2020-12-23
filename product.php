@@ -1,3 +1,4 @@
+<?php define('Access', TRUE);?>
 <?php 
 
 session_start();
