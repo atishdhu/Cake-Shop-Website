@@ -1,6 +1,6 @@
-<?php
-session_start();
-
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ session_start();
     ?>
 
     <!--========== CSS FILES ==========-->
+    <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="sanj2.css">
 
     <!--========== BOOTSTRAP ==========-->

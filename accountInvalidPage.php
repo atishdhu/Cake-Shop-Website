@@ -1,14 +1,12 @@
-<?php define('Access', TRUE);?>
-
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | Template</title>
+        <title>MALAKO | ACCOUNT INVALID</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
-        <link rel="stylesheet" type="text/css" href="Atish.css">
+        <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
         <!--BOXICONS-->
@@ -18,7 +16,7 @@
     </head>
 
     <body>
-        <?php $page = 'makeyourcake';?>
+        <?php $page = 'accountinvalidpage';?>
 
         <!--Start Navigation Bar-->
         <?php include './Includes/MobileNavBar.php';;?>
@@ -30,28 +28,21 @@
         <!--End Navigation Bar @media 1200px-->
 
 
-        <!-- Start Google Map-->
-        <?php include './Includes/GoogleMap.php';?>
-        <!-- End Google Map-->
+        <div class="mail-sent-group">
+            <div class="mail-sent-container">
+                <div class="mail-sent-image-container">
+                    <div class="mail-sent-image mail-invalid-image"></div>
+                </div>
 
-
-        <!-- Start Contact Us -->
-        <?php include './Includes/ContactUsForm.php';?>
-        <!-- End Contact Us-->
-        
-
-        <!--Start Newsletter-->
-        <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
-
-
-        <!--Start Footer-->
-        <?php include './Includes/Footer.php';?>
-        <!--End Footer-->
-
-        
-        <!-- Start Bottom Nav -->
-        <?php include './Includes/MobileBottomNav.php';?>
-        <!-- End Bottom Nav -->
+                <div class="mail-sent-text">
+                    <h1>Email verification failed.</h1>
+                    <span class="message">Either the link expired or you did not copy the URL properly.</span>
+                    <br><br>
+                    <div class="resend-button-container">
+                        <span><a href="login.php"><button class="resend-button" name="resendLink">Log in to resend confirmation link</button></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

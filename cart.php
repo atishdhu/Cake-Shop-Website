@@ -1,8 +1,9 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <?php
-session_start();
-
 //Remove button
 //The remove button loads the same page but carries some additional info in url
 //cart.php?action=delete&product_id=<?php echo ...
@@ -38,8 +39,9 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
     ?>
 
     <!--========== CSS FILES ==========-->
+    <link rel="stylesheet" type="text/css" href="Common.css">
     <link rel="stylesheet" type="text/css" href="sanj2.css">
-  
+
     <link href="jquery.nice-number.css" rel="stylesheet">
     <!--========== JQUERY CDN ==========-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

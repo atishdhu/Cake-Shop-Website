@@ -1,4 +1,7 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <?php
     include "connection.php";
@@ -93,6 +96,7 @@
         <title>MALAKO | RESET PASSWORD</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>

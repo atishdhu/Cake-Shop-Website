@@ -1,4 +1,7 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <?php
     include "connection.php";
@@ -149,13 +152,14 @@
                     //send mail
                     $to = $email;
                     $subject = "Email Verification";
-                    $message = "<a href='http://localhost/MyFiles/CakeShop/AdditionalPHP/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                    $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
                     $headers = "From: malako.cakeshop@gmail.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                     mail($to, $subject, $message, $headers);
-                    header('location: login.php');
+                    setcookie("thankYouCookie", "verificationEmailSent");
+                    header('location: thankYouPage.php');
                 }
             }
         }
@@ -180,6 +184,7 @@
         <title>MALAKO | JOIN</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -195,7 +200,7 @@
         <?php $page = 'login';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
@@ -222,28 +227,20 @@
                 </div>
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <span class="Uname-Error"><?php echo $unameCriteria;?></span>
-                    <br>    
+                    <span class="Uname-Error"><?php echo $unameCriteria;?></span>  
                     <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
                     <span class="FirstName-Error"><?php echo $fnameCriteria;?></span>
-                    <br>
                     <input type="text" name="fname" placeholder="First Name" value="<?php echo $fname;?>"/>
                     <span class="LastName-Error"><?php echo $lnameCriteria;?></span>
-                    <br>
                     <input type="text" name="lname" placeholder="Last Name" value="<?php echo $lname;?>"/>
                     <span class="Email-Error"><?php echo $emailCriteria;?></span>
-                    <br>
                     <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"/>
                     <span class="Password-Error"><?php echo $passwordCriteria;?></span>
-                    <br>
                     <input type="password" name="password" placeholder="Password"/>
                     <span class="Password-Error"><?php echo $confirmPasswordCriteria;?></span>
-                    <br>
                     <input type="password" name="confirmPassword" placeholder="Confirm Password"/>
                     <span class=recaptcha-Error"><?php echo $recaptchaCriteria;?></span>
-                    <br>
                     <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6Ld1nA0aAAAAAA7F7eJOY7CMwg7aaQAfg3WZy6P0"></div>
-                    <br/>
                     <button>Join</button>
                     <p class="message">Already have an account? <a href="login.php">Sign In</a></p>
                     <!-- <p class="or-message"><b>OR</b></p> -->

@@ -111,6 +111,7 @@
                     $orderNumber = "";
                     $message = "";
                     $errorCriteria = "";
+                    header("location: $_SERVER[PHP_SELF]");
                     $sendCriteria = "Thank you for your message. We will get back to you soon!";
                 } else {
                     $errorCriteria = "Message Not Sent!";
@@ -153,7 +154,9 @@
             <span class="input-error"><?php echo $messageCriteria;?></span>
             <textarea id="customerNote" name="customerMessage" required="" rows="4"><?php echo $message;?></textarea>
             <br>
-            <span class="input-error"><?php echo $recaptchaCriteria;?></span>
+            <div class="captcha-error-container">
+                <span class="input-error"><?php echo $recaptchaCriteria;?></span>
+            </div>
             <br>
             <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6Lfz1g4aAAAAAAzP8WsmD_FI4TTNX7mZ2gdeHIJF"></div>
             <div class="push-button" onclick="location.href='#contact-submission';" style="cursor: pointer;">

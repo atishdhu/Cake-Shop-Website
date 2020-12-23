@@ -1,4 +1,7 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <?php
     include "connection.php";
@@ -24,10 +27,12 @@
                 // check if user has verified his email
                 if($row['verified'] == 1)
                 {
+                    setcookie("thankYouCookie", "verificationEmailSent", time() - 3600);
+                    setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
                     // check if hashed passwords match
                     if(password_verify($password, $row['pass']))
                     {
-                        session_start();
+                        include "./AdditionalPHP/startSession.php";
 
                         // store the users data in this session
                         $_SESSION['uname'] = $row['uname'];
@@ -38,9 +43,40 @@
                         $errCriteria = "Incorrect Username or Password!";
                     }
                 }
+                else if(isset($_COOKIE['verifiedEmailCookie']))
+                {
+                    if(password_verify($password, $row['pass'])){
+
+                        include "./AdditionalPHP/startSession.php";
+
+                        $vkey = md5(time().$uname);
+
+                        $sql = "UPDATE users SET vkey = '$vkey' WHERE uname = '$uname'";
+
+                        if(mysqli_query($conn, $sql)){
+
+                            $to = $row['email'];
+                            $subject = "Email Verification";
+                            $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                            $headers = "From: malako.cakeshop@gmail.com \r\n";
+                            $headers .= "MIME-Version: 1.0" . "\r\n";
+                            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        
+                            mail($to, $subject, $message, $headers);
+
+                            setcookie("thankYouCookie", "verificationEmailSent");
+                            setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
+                            header('location: thankYouPage.php');
+
+                        }
+                    } 
+                    else {
+                        $errCriteria = "Incorrect Username or Password!";
+                    }
+                }
                 else
                 {
-                    $errCriteria = "Please verify you email address before you log in.";
+                    $errCriteria = "Please verify your email address before you log in.";
                 }
             } else {
                 $errCriteria = "Incorrect Username or Password!";
@@ -65,6 +101,7 @@
         <title>MALAKO | LOGIN</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -79,7 +116,7 @@
         <?php $page = 'login';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
@@ -108,8 +145,8 @@
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
                     <input type="password" name="password" placeholder="Password"/>
-                    <span class="Password-Error"><?php echo $errCriteria;?></span>
-                    <br><br>
+                    <span class="Password-Error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
+                    
                     <button>login</button>
                     <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
                     <br><span class="forget-text"><a href="forgetPassword.php">Forgot Password?</a></span>

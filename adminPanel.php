@@ -1,4 +1,5 @@
-<?php 
+<?php
+    include "./AdditionalPHP/startSession.php";
     include "./AdditionalPHP/checkAccess.php";
 
     $uname = $_SESSION['uname'];
@@ -23,155 +24,39 @@
 
     $titleName = strtoupper($fname);
 
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    $fnameCriteria = "";
-    $lnameCriteria = "";
-    $addressCriteria = "";
-    $phoneCriteria = "";
-    $currentPasswordCriteria = "";
-    $newPasswordCriteria = "";
-    $confirmPasswordCriteria = "";
-    $delPasswordCriteria = "";
-
-    $updateMessage = "";
-    $passwordMessage = "";
+    include "./AdditionalPHP/updateProfile.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST['sendMail'])){
+            if(!empty($_POST['message'])) {
 
-        if(isset($_POST['updateProfile'])){
-            $fnameOK = false;
-            $lnameOK = false;
-            $addressOK = false;
-            $phoneOK = false;
+                $message = test_input($_POST['message']);
+                
+                $sql = "SELECT email FROM users";
+                $result = mysqli_query($conn, $sql);
 
-            if (empty($_POST["fname"])) {
-                $fnameCriteria = "First name is required";
-            } else {
-                $fname = test_input($_POST["fname"]);
-                // check if name only contains letters and whitespace
-                if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-                    $fnameCriteria = "Only letters and white space allowed";
-                }
-                else
+                if(mysqli_num_rows($result) > 0)
                 {
-                    $fnameOK = true;
-                }
-            }
+                    $emailArray = Array();
 
-            if (empty($_POST["lname"])) {
-                $lnameCriteria = "Last name is required";
-            } else {
-                $lname = test_input($_POST["lname"]);
-                // check if name only contains letters and whitespace
-                if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-                    $lnameCriteria = "Only letters and white space allowed";
-                }
-                else
-                {
-                    $lnameOK = true;
-                }
-            }
+                    while ($row =  mysqli_fetch_assoc($result)) {
+                        $emailArray[] =  $row['email'];
+                    }
 
-            if (empty($_POST["address"])) {
-                $addressCriteria = "Address is required";
-            } else {
-                $address = test_input($_POST["address"]);
-                $addressOK = true;
-            }
-
-            if (empty($_POST["phone"])) {
-                $phoneCriteria = "Phone number is required";
-            } else {
-                $phone = test_input($_POST["phone"]);
-
-                if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/",$phone)) {
-                    $phoneCriteria = "Enter a valid phone number";
-                }
-                else
-                {
-                    $phoneOK = true;
-                }   
-            }
-
-            if (!empty($_POST["description"])) {
-                $description = test_input($_POST["description"]);
-            }
-
-            if($fnameOK == true && $lnameOK == true && $addressOK == true && $phoneOK == true)
-            {
-                $sql = "UPDATE users SET fname='$fname', lname='$lname', address='$address', phone='$phone', description='$description' WHERE uname='$uname'";
-
-                if(mysqli_query($conn, $sql))
-                {
-                    $updateMessage = '<i class="fas fa-check-square"></i>&nbsp&nbspRecord Updated!';
-                }
-                else {
-                    $updateMessage = "Error Updating Records. Please try again later.";
-                }
-            }
-        } else if(isset($_POST['revertProfile'])){
-            Header('Location: '.$_SERVER['PHP_SELF']);
-
-        } else if(isset($_POST['updatePassword'])){
-            if (empty($_POST["currentPassword"])) {
-                $currentPasswordCriteria = "Current password empty!";
-            } else {
-                $currentPassword = test_input($_POST["currentPassword"]);
-
-                if(password_verify($currentPassword, $password)){
-
-                    $newPassword = $_POST['newPassword'];
-                    $confirmPassword = $_POST['confirmPassword'];
-
-                    if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $newPassword)) {
-                        $newPasswordCriteria = 'Password does not meet requirements!';
-                    } else if (!($newPassword == $confirmPassword))
+                    $to = "malako.cakeshop@gmail.com";
+                    if(isset($_POST['subject']))
                     {
-                        $confirmPasswordCriteria = 'Passwords do not match';
-                    } else {
-                        $passHash = password_hash($newPassword, PASSWORD_BCRYPT);
-
-                        $sql = "UPDATE users SET pass='$passHash' WHERE uname='$uname'";
-                        if(mysqli_query($conn, $sql)){
-                            $passwordMessage = "Password Updated!";
-                            include "logout.php";
-                            header("Location: login.php");
-                        }
+                        $subject = test_input($_POST['subject']);
                     }
-                }
-                else
-                {
-                    $currentPasswordCriteria = "Current Password Incorrect!";
-                }
-            }
-        } else if(isset($_POST['clearPassword'])){
-            $_POST['currentPassword'] = "";
-            $_POST['newPassword'] = "";
-            $_POST['confirmPassword'] = "";
+                    $message = $message;
+                    $headers = "From: malako.cakeshop@gmail.com \r\n";
+                    $headers .= "Bcc: " . implode(",", $emailArray) . "\r\n";
+                    $headers .= "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        } else if(isset($_POST['deleteAccount'])){
-            if (empty($_POST["delPassword"])) {
-                $delPasswordCriteria = "Current password empty!";
-            } else {
-                $delPassword = test_input($_POST["delPassword"]);
-
-                if(password_verify($delPassword, $password)){
-                    $sql = "DELETE FROM users WHERE uname='$uname'";
-
-                    if(mysqli_query($conn, $sql)){
-                        include "logout.php";
-                        header("Location: index.php");
-                    }
-                }
-                else
-                {
-                    $delPasswordCriteria = "Password Incorrect";
+                    mail($to, $subject, $message, $headers);
+                    // Used to prevent the mail from sending each time the page is refreshed
+                    header("location: $_SERVER[PHP_SELF]");
                 }
             }
         }
@@ -185,6 +70,7 @@
         <title>MALAKO | ADMIN PANEL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -194,7 +80,12 @@
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
         <!-- include libraries(jQuery, bootstrap) -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+        <!-- Bootstrap CDN -->
+        <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+        
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -207,7 +98,7 @@
         <?php $page = 'checkaccount';?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
@@ -215,6 +106,7 @@
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
+        
         <div id="screenRes" class="col-md-15">
             <div class="form-name-container">
                 <div class="adminPanelContainer">
@@ -463,12 +355,16 @@
                 <div id="sendMail" class="tab-pane fade">
                     <h3>Send Mail To Subscribers</h3>
                     <div class="container mt-5 mb-5">
-                        <div class="sendMailBtnContainer">
-                            <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Send Mail</button>
-                        </div>
-
-                        <br>
                         <form method="POST" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+                            <div class="sendMailBtnContainer">
+                                <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Send Mail</button>
+                            </div>
+                            <br>
+                            <label>Subject:</label>
+                            <input class="form-control input-md" name="subject" type="text" placeholder="Enter mail subject" required>
+                            <br>
+                            
                             <div class="textAreaContainer">
                                 <textarea rows="10" id="summernote" name="message">
                                     
@@ -489,7 +385,7 @@
                                     ['style', ['bold', 'italic', 'underline', 'clear']],
                                     ['font', ['strikethrough', 'superscript', 'subscript']],
                                     ['color', ['color']],
-                                    ['media', ['link', 'picture', 'video', 'table', 'hr']],
+                                    ['media', ['link', 'table', 'hr']],
                                     ['para', ['ul', 'ol', 'paragraph']],
                                     ['height', ['height', 'codeview', 'fullscreen', 'undo', 'redo']]
                                 ]

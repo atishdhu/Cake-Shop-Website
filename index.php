@@ -1,4 +1,7 @@
-<?php define('Access', TRUE);?>
+<?php 
+    define('Access', TRUE);
+    include "./AdditionalPHP/startSession.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en-MU">
@@ -7,6 +10,7 @@
         <title>MALAKO | HOME</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
+        <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
         <link rel="stylesheet" type="text/css" href="offer.css">
         <!-- Font Awesome -->
@@ -22,7 +26,7 @@
         <?php $page = 'index'?>
 
         <!--Start Navigation Bar-->
-        <?php include './Includes/MobileNavBar.php';;?>
+        <?php include './Includes/MobileNavBar.php';?>
         <!--End Navigation Bar-->
 
 
