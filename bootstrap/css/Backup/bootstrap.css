@@ -1084,6 +1084,7 @@ html {
 body {
   font-family: Nunito;
   font-size: 16px;
+  line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
 }
@@ -1184,6 +1185,7 @@ h6,
 .h6 {
   font-family: inherit;
   font-weight: 500;
+  line-height: 1.1;
   color: inherit;
 }
 h1 small,

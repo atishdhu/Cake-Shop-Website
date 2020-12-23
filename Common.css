@@ -53,7 +53,7 @@ html, body{
 .main-header{
     background-color: white;
     padding-top: 5px;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
 .checkbtn{
@@ -365,7 +365,7 @@ html, body{
 
 .newsletter__form{
     display: grid;
-    grid-template-columns: 1fr .5fr;
+    grid-template-columns: 1fr 0fr;
 }
 
 .newsletter__input{
@@ -401,6 +401,10 @@ html, body{
 
 .subscribe-button {
     border-radius: 25px;
+}
+
+.subscribe-button-container{
+    width: 150px;
 }
 /* End Newsletter */
 
@@ -587,6 +591,10 @@ html, body{
     .main-nav-media1200 .user-button{
         font-size: 32px;
     }
+
+    .indexNav ul{
+        padding-bottom: 0px;
+    }
     /*End Navigation Bar*/
 
 
@@ -644,6 +652,7 @@ html, body{
     }
 
     .contact-section button{
+        border-radius: 30px;
         padding-top: 15px;
     }
 
@@ -661,6 +670,10 @@ html, body{
 
         padding-left: 400px; 
         padding-right: 400px; 
+    }
+
+    .subscribe-button-container{
+        width: 150px;
     }
     /* End Newsletter */
 

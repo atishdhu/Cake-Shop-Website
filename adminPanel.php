@@ -26,21 +26,41 @@
 
     include "./AdditionalPHP/updateProfile.php";
 
-    // if(isset($_POST['sendMail'])){
-    //     if(!empty($_POST['message'])) {
-    //         $sql = "SELECT email FROM users";
-    //         $result= mysqli_query($conn, $sql);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(isset($_POST['sendMail'])){
+            if(!empty($_POST['message'])) {
 
-    //         if(mysqli_num_rows($result) > 0){
-    //             $row = mysqli_fetch_assoc($result);
+                $message = test_input($_POST['message']);
+                
+                $sql = "SELECT email FROM users";
+                $result = mysqli_query($conn, $sql);
 
-    //             for($i = 0; $i < mysqli_num_rows($result); $i++)
-    //             {
-                    
-    //             }
-    //         }
-    //     }
-    // }
+                if(mysqli_num_rows($result) > 0)
+                {
+                    $emailArray = Array();
+
+                    while ($row =  mysqli_fetch_assoc($result)) {
+                        $emailArray[] =  $row['email'];
+                    }
+
+                    $to = "malako.cakeshop@gmail.com";
+                    if(isset($_POST['subject']))
+                    {
+                        $subject = test_input($_POST['subject']);
+                    }
+                    $message = $message;
+                    $headers = "From: malako.cakeshop@gmail.com \r\n";
+                    $headers .= "Bcc: " . implode(",", $emailArray) . "\r\n";
+                    $headers .= "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                    mail($to, $subject, $message, $headers);
+                    // Used to prevent the mail from sending each time the page is refreshed
+                    header("location: $_SERVER[PHP_SELF]");
+                }
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -83,21 +103,7 @@
 
 
         <!--Start Navigation Bar @media 1200px-->
-        <header class="main-header-media1200">
-            <nav class="nav-media1200 main-nav-media1200">
-
-                <h1 class="business-name-media1200"><a href="index.php" class="animate__animated animate__backInDown">Malako</a></h1>
-
-                <ul class="animate__animated animate__backInDown">
-                    <li><a href="index.php" class="<?php if($page == 'index'){echo 'active';}?>">HOME</a></li>
-                    <li><a href="products.php" class="<?php if($page == 'products'){echo 'active';}?>">PRODUCTS</a></li>
-                    <li><a href="makeyourcake.php" class="<?php if($page == 'makeyourcake'){echo 'active';}?>">MAKE YOUR CAKE</a></li>
-                    <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
-                    <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
-                    <li><a href="checkAccount.php" class="active user-button"><i class="fas fa-user-circle"></i></a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
         
@@ -349,12 +355,16 @@
                 <div id="sendMail" class="tab-pane fade">
                     <h3>Send Mail To Subscribers</h3>
                     <div class="container mt-5 mb-5">
-                        <div class="sendMailBtnContainer">
-                            <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Send Mail</button>
-                        </div>
-
-                        <br>
                         <form method="POST" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+                            <div class="sendMailBtnContainer">
+                                <button name="sendMail" class="btn btn-info"><span class="glyphicon glyphicon-send"></span> Send Mail</button>
+                            </div>
+                            <br>
+                            <label>Subject:</label>
+                            <input class="form-control input-md" name="subject" type="text" placeholder="Enter mail subject" required>
+                            <br>
+                            
                             <div class="textAreaContainer">
                                 <textarea rows="10" id="summernote" name="message">
                                     
@@ -375,7 +385,7 @@
                                     ['style', ['bold', 'italic', 'underline', 'clear']],
                                     ['font', ['strikethrough', 'superscript', 'subscript']],
                                     ['color', ['color']],
-                                    ['media', ['link', 'picture', 'video', 'table', 'hr']],
+                                    ['media', ['link', 'table', 'hr']],
                                     ['para', ['ul', 'ol', 'paragraph']],
                                     ['height', ['height', 'codeview', 'fullscreen', 'undo', 'redo']]
                                 ]
