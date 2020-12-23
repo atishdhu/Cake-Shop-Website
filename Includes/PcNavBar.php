@@ -16,7 +16,7 @@
     }
 ?>
 
-<header class="<?php if($page == 'index'){echo 'indexNav';}?> main-header-media1200">
+<header class="<?php if($page == 'index' || $page == 'products'){echo 'indexNav';}?> main-header-media1200">
     <nav class="nav-media1200 main-nav-media1200">
 
         <h1 class="business-name-media1200"><a href="index.php" class="animate__animated animate__backInDown">Malako</a></h1>
