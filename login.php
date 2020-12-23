@@ -27,10 +27,12 @@
                 // check if user has verified his email
                 if($row['verified'] == 1)
                 {
+                    setcookie("thankYouCookie", "verificationEmailSent", time() - 3600);
+                    setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
                     // check if hashed passwords match
                     if(password_verify($password, $row['pass']))
                     {
-                        session_start();
+                        include "./AdditionalPHP/startSession.php";
 
                         // store the users data in this session
                         $_SESSION['uname'] = $row['uname'];
@@ -41,9 +43,40 @@
                         $errCriteria = "Incorrect Username or Password!";
                     }
                 }
+                else if(isset($_COOKIE['verifiedEmailCookie']))
+                {
+                    if(password_verify($password, $row['pass'])){
+
+                        include "./AdditionalPHP/startSession.php";
+
+                        $vkey = md5(time().$uname);
+
+                        $sql = "UPDATE users SET vkey = '$vkey' WHERE uname = '$uname'";
+
+                        if(mysqli_query($conn, $sql)){
+
+                            $to = $row['email'];
+                            $subject = "Email Verification";
+                            $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                            $headers = "From: malako.cakeshop@gmail.com \r\n";
+                            $headers .= "MIME-Version: 1.0" . "\r\n";
+                            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        
+                            mail($to, $subject, $message, $headers);
+
+                            setcookie("thankYouCookie", "verificationEmailSent");
+                            setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
+                            header('location: thankYouPage.php');
+
+                        }
+                    } 
+                    else {
+                        $errCriteria = "Incorrect Username or Password!";
+                    }
+                }
                 else
                 {
-                    $errCriteria = "Please verify you email address before you log in.";
+                    $errCriteria = "Please verify your email address before you log in.";
                 }
             } else {
                 $errCriteria = "Incorrect Username or Password!";
@@ -112,7 +145,8 @@
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <input type="text" name="uname" placeholder="Username" value="<?php echo $uname;?>"/>
                     <input type="password" name="password" placeholder="Password"/>
-                    <span class="Password-Error"><?php echo $errCriteria;?></span>
+                    <span class="Password-Error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
+                    
                     <button>login</button>
                     <p class="message">Not registered? <a href="registration.php">Create an account</a></p>
                     <br><span class="forget-text"><a href="forgetPassword.php">Forgot Password?</a></span>

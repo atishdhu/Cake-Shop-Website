@@ -5,11 +5,11 @@
         define('Access', TRUE);
         if($_SESSION['isAdmin'] == 1)
         {
-            include ".\adminPanel.php";
+            include "adminPanel.php";
         }
         else
         {
-            include ".\userAccount.php";
+            include "userAccount.php";
         }
     }
     else {

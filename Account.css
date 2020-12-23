@@ -180,6 +180,75 @@
 }
 /*End Login & Registration Panel*/
 
+/* Start Thank You Page */
+.mail-sent-group{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mail-sent-container{
+    display:block;
+}
+
+.mail-sent-image-container{
+    display:inline-block;
+    align-items: center;
+    justify-content: center;
+    width:250px;
+}
+
+.mail-sent-image{
+    background-image: url("./Assets/images/6.login/MailSent.png");
+    padding-bottom: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mail-sent-text{
+    padding: 15px;
+}
+
+.mail-sent-text h1{
+    font-size: 50px;
+}
+
+.mail-sent-text .message{
+    font-size: 20px;
+}
+/* End Thank You Page */
+
+/* Start Email Verification Page */
+.mail-verified-image{
+    background-image: url("./Assets/images/6.login/emailVerified.png");
+}
+
+.mail-invalid-image{
+    margin-top: -15px;
+    background-image: url("./Assets/images/6.login/emailInvalid.png");
+}
+
+.resend-button{
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding: 1rem;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.resend-button:hover{
+    background-color: black;
+    text-decoration: none;
+}
+
+/* End Email Verification Page */
 
 /*---------------------------------------------------------------------------------------------*/
 /*START MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP*/

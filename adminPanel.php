@@ -395,16 +395,5 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Start Bottom Nav -->   
-        <div class="bottom-nav-group">
-            <nav class="bottom-nav">
-                <a href="checkAccount.php" class="bottom-nav-link">
-                    <i class="fas fa-user-check" ></i>
-                    <span class="bottom-nav-text"><?php echo $uname;?></span>
-                </a>
-            </nav>
-        </div>
-        <!-- End Bottom Nav --> 
     </body>
 </html>

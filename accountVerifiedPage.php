@@ -1,14 +1,16 @@
-<?php define('Access', TRUE);?>
+<?php
+    header("refresh:5;url=checkAccount.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | Template</title>
+        <title>MALAKO | EMAIL VERIFIED</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
-        <link rel="stylesheet" type="text/css" href="Atish.css">
+        <link rel="stylesheet" type="text/css" href="Account.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
         <!--BOXICONS-->
@@ -18,7 +20,7 @@
     </head>
 
     <body>
-        <?php $page = 'makeyourcake';?>
+        <?php $page = 'thankyoupage';?>
 
         <!--Start Navigation Bar-->
         <?php include './Includes/MobileNavBar.php';;?>
@@ -30,28 +32,19 @@
         <!--End Navigation Bar @media 1200px-->
 
 
-        <!-- Start Google Map-->
-        <?php include './Includes/GoogleMap.php';?>
-        <!-- End Google Map-->
+        <div class="mail-sent-group">
+            <div class="mail-sent-container">
+                <div class="mail-sent-image-container">
+                    <div class="mail-sent-image mail-verified-image"></div>
+                </div>
 
-
-        <!-- Start Contact Us -->
-        <?php include './Includes/ContactUsForm.php';?>
-        <!-- End Contact Us-->
-        
-
-        <!--Start Newsletter-->
-        <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
-
-
-        <!--Start Footer-->
-        <?php include './Includes/Footer.php';?>
-        <!--End Footer-->
-
-        
-        <!-- Start Bottom Nav -->
-        <?php include './Includes/MobileBottomNav.php';?>
-        <!-- End Bottom Nav -->
+                <div class="mail-sent-text">
+                    <h1>Your email address has been verified.</h1>
+                    <span class="message">You will now be redirected to the login page.</span>
+                    <br><br>
+                    <span class="tip">Redirecting........</span>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

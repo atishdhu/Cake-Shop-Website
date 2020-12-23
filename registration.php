@@ -152,13 +152,14 @@
                     //send mail
                     $to = $email;
                     $subject = "Email Verification";
-                    $message = "<a href='http://localhost/MyFiles/CakeShop/AdditionalPHP/verifyEmail.php?vkey=$vkey'>Register Account</a>";
+                    $message = "<a href='http://localhost/MyFiles/CakeShop/verifyEmail.php?vkey=$vkey'>Register Account</a>";
                     $headers = "From: malako.cakeshop@gmail.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                     mail($to, $subject, $message, $headers);
-                    header('location: login.php');
+                    setcookie("thankYouCookie", "verificationEmailSent");
+                    header('location: thankYouPage.php');
                 }
             }
         }

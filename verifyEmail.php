@@ -17,13 +17,28 @@
             
             if($resultSet)
             {
-                echo "Your account has been verified. You may now login.";
+                define('Access', TRUE);
+                include "accountVerifiedPage.php";
             } else {
                 echo $conn->error;
             }
 
         } else {
-            echo "This account is invalid or already verified!";
+
+            $sql = "SELECT verified,vkey FROM users WHERE verified = 1 AND vkey = '$vkey' LIMIT 1";
+
+            $result = mysqli_query($conn, $sql);
+
+            if(mysqli_num_rows($result) === 1){
+                define('Access', TRUE);
+                include "accountVerifiedPage.php";
+            } else {
+                define('Access', TRUE);
+                setcookie("verifiedEmailCookie", "emailInvalid", time()+(3600*24*2));
+                include "accountInvalidPage.php";
+            }
+
+            
         }
 
     } else {
