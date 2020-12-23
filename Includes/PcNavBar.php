@@ -16,7 +16,7 @@
     }
 ?>
 
-<header class="<?php if($page == 'index'){echo 'indexNav';}?> main-header-media1200">
+<header class="<?php if($page == 'index' || $page == 'products'){echo 'indexNav';}?> main-header-media1200">
     <nav class="nav-media1200 main-nav-media1200">
 
         <h1 class="business-name-media1200"><a href="index.php" class="animate__animated animate__backInDown">Malako</a></h1>
@@ -27,10 +27,9 @@
             <li><a href="makeyourcake.php" class="<?php if($page == 'makeyourcake'){echo 'active';}?>">MAKE YOUR CAKE</a></li>
             <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
             <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
-            <li class="cart-container"><a href="cart.php" class="user-button"><i id="<?php if($page == 'cart'){echo 'cart__active';}?>" class="bx bx-cart nav__cart"></i></a>
+            <li><a href="cart.php" class="<?php if($page == 'cart'){echo 'active';}?>"><i class="bx bx-cart nav__cart"></i></a>
             <p class="cart-number"><?php //echo $_SESSION['item_quantity']; ?></p></li>
             <li><a href="<?php echo $href;?>" class="<?php if($page == 'login' || $page == 'checkaccount'){echo 'active';}?> user-button"><i class="<?php echo $icon;?>"></i></a></li>
-            
         </ul>
     </nav>
 </header>

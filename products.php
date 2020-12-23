@@ -18,14 +18,15 @@
 
     <!--========== CSS FILE ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
-    <link rel='stylesheet' type='text/css' href='sanj2.css' />
+    <link rel='stylesheet' type='text/css' href='Sanjana.css' />
 
-     <!--========== BOOTSTRAP ==========-->
-     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <!--========== BOOTSTRAP ==========-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
 
-     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+ 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
     <!-- Font Awesome -->
@@ -53,44 +54,11 @@
 
 
     <!--========== HEADER ==========-->
+    <?php $page = 'products'?>
     <!--Start Navigation Bar-->
-    <header class="main-header">
-        <nav class="nav main-nav">
-
-            <input type="checkbox" id="check">
-
-
-            <!--<label for="check" class="checkbtn">
-                <i class="fas fa-bars animate__animated animate__backInDown"></i>
-            </label>-->
-
-            <div class="display_view">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars animate__animated animate__backInDown"></i>
-                </label>
-                <a href="cart.php">
-                    <i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i>
-                    <p class="cart-number-mob"><?php echo $_SESSION['item_quantity']; ?></p>
-                </a>
-                <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">M A L A K O</a></h1>
-            </div>
-
-           
-
-
-            <ul>
-                <li><a href="index.php">HOME</a></li>
-                <li><a class="active" href="products.php">PRODUCTS</a></li>
-                <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
-                <li><a href="about.php">ABOUT</a></li>
-                <li><a href="contact.php">CONTACT US</a></li>
-            </ul>
-
-
-
-        </nav>
-    </header>
+    <?php include './Includes/MobileNavBar.php';?>
     <!--End Navigation Bar-->
+
 
     <!--Start Navigation Bar @media 1200px-->
     <?php include './Includes/PcNavBar.php';?>
@@ -303,9 +271,8 @@
             </div>
         </section>
 
-        
-          <!--Start Newsletter-->
-          <?php include './Includes/NewsLetter.php';?>
+        <!--Start Newsletter-->
+        <?php include './Includes/NewsLetter.php';?>
         <!--End Newsletter-->
 
 

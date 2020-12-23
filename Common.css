@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -44,6 +45,7 @@ html, body{
     border-bottom: 2px solid transparent;
     outline: none;
 }
+
 
 /* Start Navigation Bar */
 .main-header-media1200{
@@ -116,13 +118,6 @@ html, body{
     left:0%;
 }
 
-/* Start Nav Sanjana===========================================================================*/
-/* .active {
-    color: #FF7380FF !important;
-    border-bottom: 2px solid currentColor !important;
-} */
-
-
 .nav__cart{
     font-size: 1.68rem;
     margin: 1rem 1rem;
@@ -137,54 +132,30 @@ html, body{
 .details-header{
     box-shadow: 0 3px 8px 0 rgba(80, 80, 80, 0.05), 0 3px 8px 0 rgba(90, 90, 90, 0.03) ;
 }
-
-/*========== NAV CART ========== */
-#cart__active {
-    border-radius: 40px;
-    border: 2px solid  #FFA5A5FF;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    color: #FFA5A5FF;
-    
-  }
-
-
-  #cart__active:hover {
-    border-radius: 25px;
-    border: 2px solid white;
-    background-color:  #FFA5A5FF;
-    padding: 10px;
-    width: 50px;
-    height: 50px;
+.cart-number{
+    font-size: 1rem !important;
+    position: absolute !important;
+    border-radius: 50% 50%;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    padding-top: .3rem;
     color: white;
+    background-color: #2e2d2d;
+    top:1rem !important;
+    right: 10rem;
+    font-weight: 300;
+    margin-top: 0rem !important;
     
-  }
+}
 
-  .cart-number{
-      font-size: 1rem !important;
-      position: absolute !important;
-      border-radius: 50% 50%;
-      width: 2rem;
-      height: 2rem;
-      text-align: center;
-      padding-top: .3rem;
-      color: white;
-      background-color: #2e2d2d;
-      top:1rem !important;
-      right: 10rem;
-      font-weight: 300;
-      margin-top: 0rem !important;
-      
-  }
-
-  .cart-number:hover{
+.cart-number:hover{
     background-color: #FFA5A5FF;
     font-weight: 700;
-  }
+}
 
-  
-  .cart-number-mob{
+
+.cart-number-mob{
     font-size: .6rem !important;
     position: absolute !important;
     border-radius: 50% 50%;
@@ -199,8 +170,6 @@ html, body{
     font-weight: 300;
     
 }
-/* End Nav Sanjana==================================================================================*/
-
 /* End Navigation Bar */
 
 
@@ -688,7 +657,6 @@ html, body{
         display: none;
     }
     /* End Bottom Navbar */
-
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR COMMON ELEMENTS*/

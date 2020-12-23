@@ -40,7 +40,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
     <!--========== CSS FILES ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
-    <link rel="stylesheet" type="text/css" href="sanj2.css">
+    <link rel="stylesheet" type="text/css" href="Sanjana.css">
 
     <link href="jquery.nice-number.css" rel="stylesheet">
     <!--========== JQUERY CDN ==========-->
@@ -54,7 +54,10 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
 
     <!--========== BOOTSTRAP ==========-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+
+     <!-- Bootstrap Core CSS -->
+     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -80,40 +83,19 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
         ?>
 
 
-          <!--========== HEADER ==========-->
+        <!--========== HEADER ==========-->
+        <?php $page = 'cart'?>
+        
         <!--Start Navigation Bar-->
-        
-        <header class="main-header">
-            <nav class="nav main-nav details-header">
+        <?php include './Includes/MobileNavBar.php';?>
+        <!--End Navigation Bar-->
 
-                <input type="checkbox" id="check">
 
-                <div class="display_view">
-                    <label for="check" class="checkbtn">
-                        <i class="fas fa-bars animate__animated animate__backInDown"></i>
-                    </label>
-                    <a href="cart.php"><i class="bx bx-cart nav__cart animate__animated animate__backInDown"></i><p class="cart-number-mob"><?php echo $_SESSION['item_quantity']; ?></p></a>
-                    <h1 class="business-name"><a href="index.html" class="animate__animated animate__backInDown">M A L A K O</a></h1>
-                </div>
-
-                <ul>
-                <li><a href="index.php">HOME</a></li>
-                <li><a class="" href="products.php">PRODUCTS</a></li>
-                <li><a href="makeyourcake.php">MAKE YOUR CAKE</a></li>
-                <li><a href="about.php">ABOUT</a></li>
-                <li><a href="contact.php">CONTACT US</a></li>
-            </ul>
-
-                
-            </nav>
-        </header>
-        
         <!--Start Navigation Bar @media 1200px-->
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
-
-        <!--End Navigation Bar @media 1200px-->
           
+
         <!--========== CART STRUCTURE ==========-->
         <div class="row mx-auto">
             <!-- Cart items -->
@@ -313,70 +295,13 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
         </div>
 
            
-        <!--========== FOOTER ==========-->
         <!--Start Footer-->
-        <footer class="footer-group">
-
-            <div class="footer">
-
-                <div class="logo">
-                    <span class="logo-name">MALAKO</span>
-                </div>
-
-                <div class="social-media">
-                    <span class="facebook">
-                        <a href=#><i class="fab fa-facebook-square"></i></a>
-                    </span>
-                    <span class="twitter">
-                        <a href=#><i class="fab fa-twitter-square"></i></a>
-                    </span>
-                    <span class="instagram">
-                        <a href=#><i class="fab fa-instagram-square"></i></a>
-                    </span>
-                    <span class="pinterest">
-                        <a href=#><i class="fab fa-pinterest-square"></i></a>
-                    </span>
-                </div>
-
-                <hr size="2px" width="80%" color="white">
-                <hr size="2px" width="80%" color="white">
-
-                <div class="contact-links">
-                    <span class="phone"><i class="fas fa-phone-square-alt"></i> 5758 XXXX</span>
-                    <span class="address">Patisserie Malako At Jerningham and Royal Street</span>
-                </div>
-
-                <div class="legal-links">
-                    <span class="privacy-policy"><b><a href=#>PRIVACY POLICY</a></b></span>
-                    <span class="term-of-use"><b><a href=#>TERMS OF USE</a></b></span>
-                </div>
-
-                <div class="copyright">
-                    <span class="copyright-text">&#169; 2020 Design by Atish & Sanjana</span>
-                </div>
-
-            </div>
-
-        </footer>
+        <?php include './Includes/Footer.php';?>
         <!--End Footer-->
-        <!--========== BOTTOM-MENU-PHONE ==========-->
+
+        
         <!-- Start Bottom Nav -->
-        <div class="bottom-nav-group">
-            <nav class="bottom-nav">
-                <a href="#" class="bottom-nav-link bottom-nav-active">
-                    <i class="fas fa-user bottom-nav-icon"></i>
-                    <span class="bottom-nav-text">Account</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-search"></i>
-                    <span class="bottom-nav-text">Search</span>
-                </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="bottom-nav-text">Cart</span>
-                </a>
-            </nav>
-        </div>
+        <?php include './Includes/MobileBottomNav.php';?>
         <!-- End Bottom Nav -->
 
         <!-- <script src="Javascript\main.js?<?php //echo filemtime('Javascript\main.js'); ?>" ></script> -->

@@ -1,128 +1,3 @@
-/* ========== GOOGLE FONTS =========== */
-
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap'); */
-
-
-/*___________________________________________________________________________*/
-/* *{
-    box-sizing: border-box;
-    font-family: Nunito;
-}
-
-html, body{
-    margin: 0;
-    padding: 0;
-    background-color:white;
-    scroll-behavior: smooth;
-}
-
-.subtitle h2{
-    text-align: center;
-    color: #FF7380FF;
-    font-size: 40px;
-    letter-spacing: 2.2pt;
-}
-
-.push-button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.push-button button{
-    font-size: 15pt;
-    font-weight: bold;
-    line-height: 24pt;
-    padding: 10px 20px;
-    width: 100%;
-    margin-top: 23px;
-    border: none;
-    background: #FF7380FF;
-    color: white;
-    letter-spacing: 2px;
-    transition: 0.2s all ease-in-out;
-    border-bottom: 2px solid transparent;
-    outline: none;
-} */
-
-/* ========== Start Navigation Bar =========== */
-/* .main-header-media1200{
-    display:none;
-}
-
-.main-header{
-    background-color: white;
-    padding-top: 5px;
-    padding-bottom: 80px;
-}
-
-.checkbtn{
-    font-size: 30px;
-    color: black;
-    float: left;
-    line-height: 60px;
-    margin-left: 40px;
-    cursor: pointer;
-    display: block;
-}
-
-#check{
-    display: none;
-}
-
-.business-name a{ 
-    float: right;
-    margin-right: 40px;
-    font-size: 40px;
-    color: black;
-    font-family: Playfair Display;
-}
-
-.nav ul li a{
-    font-size: 20px;
-}
-
-.nav ul li{
-    display: block;
-    padding-top: 50px;
-    padding-right: 32px;
-    line-height: 12%;
-}
-
-.nav ul{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color:white;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-    z-index: 5;
-}
-
-.nav a{
-    color: black;
-    text-decoration: none;
-}
-
-.main-nav .active{
-    text-decoration: blink;
-    color: #FF7380FF;
-    border-bottom: 2px solid currentColor;
-}
-
-#check:checked ~ ul{
-    left:0%;
-} */
-/* ========== End Navigation Bar ========== */
-
-
 /* ========== Start Wave Image ========== */
 .wave-image-group img{
     position: relative;
@@ -132,6 +7,7 @@ html, body{
     z-index:3;
     
 }
+
 .hide-wave{
     display: block;
 }
@@ -223,28 +99,6 @@ html, body{
 
 /* ========== BASE =========== */
 
-*, ::before, ::after{
-    box-sizing:border-box;
-}
-
-body{
-    /*margin: var(--header-height) 0 0 0;*/
-    font-family: var(--font-alt);
-    font-size: var(--normal-font-size);
-    color: var(--dark-color);
-    line-height: 1.6;
-}
-
-h1,h2,p{
-    margin: 0;
-}
-
-ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 a {
     text-decoration: none;
     color: var(--dark-color);
@@ -299,97 +153,7 @@ img{
 
 
 
-/*========== NAV ========== */
-/* 
-.active {
-    color: var(--first-color) !important;
-    border-bottom: 2px solid currentColor !important;
-}
 
-.nav__cart{
-    font-size: 1.68rem;
-    margin: var(--mb-2) var(--mb-2) 0;
-    position: relative;
-}
-
-.display_view{
-    display: inline-flex;
-    margin-top: .5rem;
-}
-
-.business-name{
-    margin-left: 7rem;
-    margin-top: var(--mb-half);
-}
-
-.details-header{
-
-    box-shadow: 0 3px 8px 0 rgba(80, 80, 80, 0.05), 0 3px 8px 0 rgba(90, 90, 90, 0.03) ;
-
-    
-} */
-
-/*========== NAV CART ========== */
-/* #cart__active {
-    border-radius: 40px;
-    border: 2px solid var(--first-color);
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    color: var(--first-color);
-    
-  }
-
-
-  #cart__active:hover {
-    border-radius: 25px;
-    border: 2px solid var(--white-color);
-    background-color: var(--first-color-alt);
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    color: var(--white-color);
-    
-  }
-
-  .cart-number{
-      font-size: 1rem !important;
-      position: absolute !important;
-      border-radius: 50% 50%;
-      width: 2rem;
-      height: 2rem;
-      text-align: center;
-      padding-top: .3rem;
-      color: var(--white-color);
-      background-color: var(--dark-color-light);
-      top:1rem !important;
-      right: 10rem;
-      font-weight: 300;
-      
-  }
-
-  .cart-number:hover{
-    
-    background-color: var(--first-color-alt);
-    font-weight: 700;
-  }
-
-  
-  .cart-number-mob{
-    font-size: .6rem !important;
-    position: absolute !important;
-    border-radius: 50% 50%;
-    width: 1rem;
-    height: 1rem;
-    text-align: center;
-    padding-top: .15rem;
-    color: var(--white-color);
-    background-color: var(--dark-color-light);
-    top:1.3rem !important;
-    left: 6rem;
-    font-weight: 300;
-    
-} */
 /*========== CART ========== */
 .title-cart{
     margin-top: 3rem;
@@ -1010,278 +774,10 @@ display: flex;
     background-color: linen;
 }
 
-/*========== NEWSLETTER ========== */
-/* .newsletter-section .input-error{
-    font-size: 13pt;
-    color: red;
-}
-
-.newsletter-section .send-input-message{
-    font-size: 13pt;
-    color: green;
-}
-
-.newsletter{
-    text-align: center;
-    padding-bottom: 45px;
-    padding-left: 20px; 
-    padding-right: 20px; 
-}
-
-.newsletter__description{
-    margin-bottom: 1rem;
-    font-size: 20px;
-    color:black;
-}
-
-.newsletter__form{
-    display: grid;
-    grid-template-columns: 1fr .5fr;
-}
-
-.newsletter__input{
-    border-radius: 25px;
-    outline: none;
-    border: none;
-    color: black;
-    background-color: #dadada;
-    padding: 0 1rem;
-}
-
-.newsletter__form ::placeholder{
-    color: black;
-    opacity: 0.6;
-}
-
-.subscribe-button{
-    display: inline-block;
-    border: none;
-    background-color: #FF7380FF;
-    color: white;
-    padding: 1rem;
-    font-size: 12pt;
-    font-weight: 600;
-    transition: .3s;
-    text-decoration: none;
-}
-
-.subscribe-button:hover{
-    background-color: black;
-  
-}
-
-.subscribe-button {
-    border-radius: 25px;
-} */
-/*___________________________________________________________________________*/
-
-/*========== START FOOTER ========== */
-/* .footer{
-    background-color: #FF7380FF;
-    background-size: 100%;
-    width: 100%;
-    height: 580px;
-    margin: 0;
-    margin-top: 0;
-    padding: 20px;
-    text-align: center;
-    color: white;
-}
-
-.logo-name{
-    font-size: 70px;
-    font-family: Playfair Display;
-}
-
-.footer-group .social-media{
-    padding-top: 25px;
-    padding-bottom: 15px;
-}
-
-.footer-group .social-media a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.footer-group .social-media span{
-    display: inline;
-    letter-spacing: 8px;
-    font-size: 40px;
-}
-
-.contact-links{
-    font-size: 22px;
-}
-
-.contact-links span{
-    display: block;
-}
-
-.contact-links .phone{
-    padding: 25px 0;
-}
-
-.contact-links .address{
-    padding-bottom: 25px;
-}
-
-.legal-links{
-    font-size:20px;
-    line-height: 35px;
-}
-
-.legal-links span{
-    display: block;
-    letter-spacing: 3px;
-}
-
-.legal-links a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.copyright{
-    padding-top: 25px;
-}
-
-.copyright span{
-    font-size: 15px;
-} */
-/* ========== End Footer ========== */
-
-
-/*  ========== Start Bottom Navbar ========== */
-/* .bottom-nav{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
-    background-color:white;
-    display: flex;
-    overflow-x: auto;
-    z-index: 5;
-}
-
-.bottom-nav-link{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow:1;
-    min-width:50px;
-    overflow:hidden;
-    white-space: nowrap;
-    font-size: 18px;
-    color: black;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.1s ease-in-out;
-}
-
-.bottom-nav-active{
-    color: #FF7380FF;
-}
-
-.bottom-nav-icon{
-    font-size: 18px;
-} */
-/*  ========== End Bottom Navbar ==========*/
-
 
 /*---------------------------------------------------------------------------------------------*/
 /*MEDIA QUERY for pc browser*/
 /*---------------------------------------------------------------------------------------------*/
-
-@media only screen and (min-width: 1200px){
-
-    .main-header{
-        display:none;
-    }
-
-    /* ========== Start Navigation Bar ==========*/
-    /* .main-header-media1200{
-        display: contents;
-    }
-
-    .main-nav-media1200{
-        text-align: center;
-        font-size: 1.1em;
-    }
-
-    .main-nav-media1200 ul{
-        margin: 0;
-        padding-bottom: 40px;
-        padding-top: 1em;
-    }
-
-    .main-nav-media1200 li{
-        display: inline;
-    }
-
-    .main-nav-media1200 a{
-        display: inline-block; 
-        padding-left: .4em;
-        padding-right: .4em;
-        color: black;
-        text-decoration: none;
-    }
-
-    .main-nav-media1200 a:hover{
-        color: #FFA5A5FF;
-    }
-
-    .main-nav-media1200 .active{
-        text-decoration: blink;
-        color: #FFA5A5FF;
-        border-bottom: 2px solid currentColor;
-    }
-
-    .main-nav-media1200 li{
-        padding: 0 2%;
-    }
-
-    .business-name-media1200 a{
-        float: left;
-        margin: 0;
-        margin-top: 5px;
-        font-size: 60px;
-        color: black;
-        font-family: Playfair Display;
-        font-weight: 100; 
-    }
-
-    .nav-media1200 .logo-business-name:hover{
-        color:#9DDFD3FF;
-    }
-
-    .nav-media1200 .user-button{
-        font-size: 28px;
-    } */
-    /* ========== End Navigation Bar ==========*/
-
-
-    /*  ========== Start Bottom Navbar ========== */
-    /* .bottom-nav{
-        display: none;
-    } */
-    /*  ========== End Bottom Navbar ==========*/
-
-    /* Start Newsletter */
-    /* .newsletter{
-
-        padding-left: 400px; 
-        padding-right: 400px; 
-    } */
-    /* End Newsletter */
-
-
-    /* Start Bottom Navbar */
-    /* .bottom-nav{
-        display: none;
-    } */
-    /* End Bottom Navbar */
-}
 
 /*========== MEDIA QUERIES BY SANJANA ========== */
 @media screen and (min-width: 768px){
@@ -1299,8 +795,6 @@ display: flex;
         margin-right: auto;
     }
 
-
-     
     .offer__data{
         padding: 5rem 0;
     }
@@ -1321,8 +815,6 @@ display: flex;
         margin-left: auto;
         margin-right: auto;
     }
-
-   
 }
 /*========== REVERSE MEDIA QUERIES BY SANJANA ========== */
 @media (max-width: 1200px) {
@@ -1486,5 +978,4 @@ display: flex;
     .title-cart i{
         font-size: 1.5rem !important;  
         }
-
 }
