@@ -1,4 +1,4 @@
-/* Start User Profile Subtitle*/
+/* Start User Profile */
 .col-md-15 {
     width: 100%;
     position: relative;
@@ -80,7 +80,11 @@
     padding: 15px;
 }
 
-/* End User Profile Subtitle*/
+.tab-title h3{
+
+}
+
+/* End User Profile */
 
 
 /*Start Login & Registration Panel*/
@@ -177,6 +181,10 @@
 .social-login i{
     padding-left: 30px;
     font-size: 30px;
+}
+
+.g-recaptcha{
+    height: 100px;
 }
 /*End Login & Registration Panel*/
 
@@ -285,7 +293,7 @@
     /*Start Login Panel*/
     .login-page {
         position: absolute;
-        top: 60%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -30%);
         width: 360px;
@@ -487,12 +495,12 @@
         padding: 15px;
     }
 
+    .container h3{
+        font-weight: 300;
+        font-size: 35px;
+    }
+
     /* End User Profile Subtitle*/
-
-    /* Start Admin Panel */
-
-    
-    /* End Admin Panel */
 }
 /*---------------------------------------------------------------------------------------------*/
 /*END MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP, ADMINPANEL.PHP*/
