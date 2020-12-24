@@ -22,7 +22,6 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
     //reset session array keys so they match with $product_ids numeric array
     $_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
 }//end if
-
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +44,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
     <link href="jquery.nice-number.css" rel="stylesheet">
     <!--========== JQUERY CDN ==========-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
     <script src="jquery.nice-number.js"> </script>
     <script type="text/javascript"> 
     $(function(){
@@ -54,10 +54,11 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
 
     <!--========== BOOTSTRAP ==========-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
      <!-- Bootstrap Core CSS -->
-     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+     <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -259,7 +260,9 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                     
                     ?>
                     <div class="row checkout-area">
-                        <button type="button" class="btn btn-primary btn-lg my-4 button">Checkout</button>
+                        <a href="checkout.php">
+                            <button type="button" class="btn btn-primary btn-lg my-4 button">Checkout</button>
+                        </a>
                     </div>
                     <?php
                      }//end count if
