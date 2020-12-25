@@ -85,8 +85,8 @@
                 <span>Our Rewards</span>
             </div>
 
-            <div class="award-subtitle">
-                <span>WINNER AWARDS</span>
+            <div class="subtitle">
+                <h2>WINNER AWARDS</h2>
             </div>
 
             <div class="award-badge-container">
@@ -141,8 +141,8 @@
                 <span>Golden Hand</span>
             </div>
 
-            <div class="team-subtitle">
-                <span>OUR TEAM</span>
+            <div class="subtitle">
+                <h2>OUR TEAM</h2>
             </div>
 
             

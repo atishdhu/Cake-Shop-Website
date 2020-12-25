@@ -1,3 +1,8 @@
+hr{
+    color: lightgray;
+    opacity: .2;
+}
+
 /* Start User Profile */
 .col-md-15 {
     width: 100%;

@@ -1,32 +1,12 @@
-
-/*========== OFFER ========== */
-
-
-/* ========== IMAGES USED IN CSS =========== */
-
-:root{
-    --offer-1: url("Assets/images/products/cupcake_bg2_cropped.jpg");
-    --offer-2: url("Assets/images/products/christmas_2.jpg");
-}
-
+/* Start Special Offer */
 .offer__section{
-    /* z-index: 300; */
+    z-index: 1;
     margin-bottom: 2rem;
     border: 5px solid black;
 }
 
 .offer__bg {
-    background-image: var(--offer-1);
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    text-align: center;
-}
-
-.offer__bg2 {
-    width: 100%;
-    height: auto;
-    background-image: var(--offer-2);
+    background-image: url("Assets/images/products/cupcake_bg2_cropped.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -36,18 +16,15 @@
 .offer__data{
     padding: 2rem .25rem;
     background: rgba(0,0,0,.25);
-    color: var(--white-color);
+    color: white;
 }
 
-.offer__title{
-    font-size: var(--h1-font-size);
-    letter-spacing: .2rem;
-    text-transform: uppercase;
-    font-weight: var(--font-semi);
+.subtitle h2{
+    color: white;
 }
 
 .offer__description{
-    margin-bottom: var(--mb-2);
+    margin-bottom: 1rem;
     letter-spacing: .2rem;
 }
 
@@ -56,18 +33,17 @@
     padding-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
-  /*  mask-image: linear-gradient(to bottom, transparent 10%, black);*/
 }
 
 
 /*========== BUTTONS ========== */
 .button{
     display: inline-block;
-    background-color: var(--first-color) !important;
-    color: var(--white-color) !important;
+    background-color:#FF7380FF !important;
+    color: white !important;
     padding: 1rem ;
-    font-size: var(--small-font-size);
-    font-weight: var(--font-semi) !important;
+    font-size: .75rem;;
+    font-weight: 600 !important;
     transition: .3s !important;
     text-decoration: none !important;
     border: none !important;
@@ -75,8 +51,8 @@
 }
 
 .button:hover{
-    background-color: var(--dark-color) !important;
-    color: var(--white-color) !important;
+    background-color: black !important;
+    color: white !important;
   
 }
 
@@ -85,14 +61,12 @@
 }
 .continue-shop{
     display: inline-block;
-    /* background-color: rgba(148, 148, 148, 0.479) !important; */
     color: grey !important;
     padding: .8rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
-    font-family: var(--body-font);
-    font-size: var(--small-font-size);
-    /* font-weight: var(--font-semi) !important; */
+    font-family: 'Open Sans', sans-serif;
+    font-size: .75rem;
     transition: .3s !important;
     text-decoration: none !important;
     border: 1px solid grey !important;
@@ -102,8 +76,8 @@
 
 
 .continue-shop:hover{
-    background-color: var(--dark-color) !important;
-    color: var(--white-color) !important;
+    background-color: black !important;
+    color: white !important;
   
 }
 
@@ -113,10 +87,10 @@
     max-width: 10%;
     border-radius: 25px;
 }
-
+/* End Special Offer */
 
 /*========== MEDIA QUERIES BY SANJANA ========== */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1200px){
     
     .offer__data{
         padding-left: 0;

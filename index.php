@@ -12,7 +12,6 @@
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
         <link rel="stylesheet" type="text/css" href="Atish.css">
-        <link rel="stylesheet" type="text/css" href="offer.css">
         <!-- Font Awesome -->
         <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
         <!--BOXICONS-->
@@ -108,95 +107,24 @@
 
         </div>
         <!--End What You Can Do-->
-
-
-         <!--Start Wave Image Flip-->
-        <!-- <div class="wave-image-group">
-            <div class="wave-image-flip">
-                <img src="Assets/images/1.index/NavBar_WaveWhiteFlip.png">
-            </div>
-        </div> -->
-        <!--End Wave Image Flip-->
-        
        
-        <!--========== OFFER 2 ==========-->
+        
+        <!--Start Special Offer-->
+        <section class="offer-section">
+            <div class="offer-bg">
+                <div class="offer-data">
+                    <div class="subtitle">
+                        <h2>SPECIAL OFFER</h2>
+                    </div>
+                    <p class="offer-description">Extreme Christmas Sales this month only!</p>
 
-        <section class="offer section">
-            <div class="offer__bg">
-                <div class="offer__data">
-                    <h2 class="offer__title">Special Offer</h2>
-                    <p class="offer__description">Extreme Christmas Sales this month only!</p>
-
-                    <a href="products.php" class="button button__round">SHOP NOW</a>
+                    <div class="subscribe-button-container">
+                        <a href="products.php"><button class="subscribe-button" name="subscribe">SHOP NOW</button></a>
+                    </div>
                 </div>
             </div>
         </section>
-
-
-
-        <!--Start Products List-->
-        <div class="all-cakes">
- 
-            <div class="subtitle" >
-                <h2 style="padding-top: 1rem;">SPECIAL OFFERS</h2>
-            </div>
-             
-            <div class = "all-hot-cakes">
-                <div class ="hot-cake-group">
-                    <div class="cake1 hot-cake">
-                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
-                            <span class="price">Rs250</span>
-                            <span class="name">Cupcake</span>
-                        </div>
-                        <div class="hot-cake-description">
-                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class ="hot-cake-group">
-                    <div class="cake2 hot-cake">
-                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
-                            <span class="price">Rs250</span>
-                            <span class="name">Cupcake</span>
-                        </div>
-                        <div class="hot-cake-description">
-                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class ="hot-cake-group">
-                    <div class="cake3 hot-cake">
-                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
-                            <span class="price">Rs250</span>
-                            <span class="name">Cupcake</span>
-                        </div>
-                        <div class="hot-cake-description">
-                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class ="hot-cake-group">
-                    <div class="cake4 hot-cake">
-                        <div class="hot-cake-baseInfo" style="background-image: url(./Assets/images/1.index/Cupcake.png)">
-                            <span class="price">Rs250</span>
-                            <span class="name">Cupcake</span>
-                        </div>
-                        <div class="hot-cake-description">
-                            <span>Cookie apple pie donut gingerbread sweet roll pudding topping marshmallow.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="push-button">
-                <button class="view-all-cakes">View All Cakes</button>
-            </div>
-        
-        </div>
-        <!--End Products List-->
+        <!--End Special Offer-->
 
 
         <!--Start Wave Image-->
@@ -252,29 +180,102 @@
         <div class="our-baker">
 
             <div class="subtitle">
-                <h2>OUR BAKER</h2>
+                <h2>OUR BAKERS</h2>
             </div>
             
-            <div class="baker-container">
-                <div class="baker-profile-group">
-                    <!-- Contains bakers profile picture -->
-                    <div class="baker-pic-group">
-                        <div class="baker-pic"></div>
-                    </div>
+            <div class="all-helper-info-index">
+                <div class="helper-individual-index">
+                    <div class="helper-group helper0">
+                        <div class="helper-pic-group">
+                            <div class="helper-pic"></div>
+                        </div>
 
-                    <div class = "baker-more-about">
-                        <p class="name"><b>SARAH CONNOR</b></p>
-                        <p class="hierarchy">CEO-FOUNDER</p>
-                        <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
-                    </div>   
+                        <div class = "helper-more-about">
+                            <p class="name"><b>SARAH CONNOR</b></p>
+                            <p class="hierarchy">CEO - Malako Bakery Shop</p>
+                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                        </div>
+        
+                        <div class="helper-social-media">
+                            <div class="social-media">
+                                <span class="facebook">
+                                    <a href=#><i class="fab fa-facebook-square"></i></a>
+                                </span>
+                                <span class="twitter">
+                                    <a href=#><i class="fab fa-twitter-square"></i></a>
+                                </span>
+                                <span class="instagram">
+                                    <a href=#><i class="fab fa-instagram-square"></i></a>
+                                </span>
+                                <span class="pinterest">
+                                    <a href=#><i class="fab fa-pinterest-square"></i></a>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
-                    
-                <article class="baker-info">
-                    <p>
-                        We all have those moments in our lives when we feel as if everything needs to be exactly right.
-        <br><br>Dessert tiramisu tart donut macaroon. Gummi bears lollipop marzipan. Caramels gummi bears icing jelly beans cheesecake brownie topping candy sugaplum.
-                    </p>
-                </article>
+
+                <div class="helper-individual-index">
+                    <div class="helper-group helper1">
+                        <div class="helper-pic-group">
+                            <div class="helper-pic"></div>
+                        </div>
+
+                        <div class = "helper-more-about">
+                            <p class="name"><b>JUAN OLSON</b></p>
+                            <p class="hierarchy">CO-FOUNDER</p>
+                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                        </div>
+        
+                        <div class="helper-social-media">
+                            <div class="social-media">
+                                <span class="facebook">
+                                    <a href=#><i class="fab fa-facebook-square"></i></a>
+                                </span>
+                                <span class="twitter">
+                                    <a href=#><i class="fab fa-twitter-square"></i></a>
+                                </span>
+                                <span class="instagram">
+                                    <a href=#><i class="fab fa-instagram-square"></i></a>
+                                </span>
+                                <span class="pinterest">
+                                    <a href=#><i class="fab fa-pinterest-square"></i></a>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="helper-individual-index">
+                    <div class="helper-group helper2">
+                        <div class="helper-pic-group">
+                            <div class="helper-pic"></div>
+                        </div>
+
+                        <div class = "helper-more-about">
+                            <p class="name"><b>AGNES BUCHANAN</b></p>
+                            <p class="hierarchy">MASTER BAKER</p>
+                            <p class="description">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                        </div>
+        
+                        <div class="helper-social-media">
+                            <div class="social-media">
+                                <span class="facebook">
+                                    <a href=#><i class="fab fa-facebook-square"></i></a>
+                                </span>
+                                <span class="twitter">
+                                    <a href=#><i class="fab fa-twitter-square"></i></a>
+                                </span>
+                                <span class="instagram">
+                                    <a href=#><i class="fab fa-instagram-square"></i></a>
+                                </span>
+                                <span class="pinterest">
+                                    <a href=#><i class="fab fa-pinterest-square"></i></a>
+                                </span>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </div>
         <!-- End Our Baker-->

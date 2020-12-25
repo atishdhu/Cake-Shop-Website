@@ -58,9 +58,9 @@
 ?>
 
 <section class="newsletter newsletter-section" id="subscribed">
-    <div id="subscribe-section" class="newsletter__container bd-grid" onclick="window.location.hash='back-subscribe';" style="cursor: pointer;">
+    <div id="subscribe-section" class="newsletter__container bd-grid" onclick="window.location.hash='subscribe-button';" style="cursor: pointer;">
         <div class="newsletter__subscribe subtitle">
-            <h2 class="section-title">OUR NEWSLETTER</h2>
+            <h2 class="section-title">NEWSLETTER</h2>
             <p class="newsletter__description">Be the first to get informed about our best deals!</p>
             <form class="newsletter__form" method="POST" actions="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
                 <input class="newsletter__input"  name="email" required="" type="email" placeholder="Enter your email"/>

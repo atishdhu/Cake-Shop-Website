@@ -503,6 +503,10 @@ html, body{
 
 @media only screen and (min-width: 1200px){
 
+    .subtitle h2{
+        font-size: 50px;
+    }
+
     .main-header{
         display:none;
     }
@@ -607,7 +611,6 @@ html, body{
 
     /* Start Locate Us */
     .map .subtitle h2{
-        font-size: 40px;
         color: black;
     }
     /* End Locate Us */
@@ -635,7 +638,6 @@ html, body{
         padding: 0px 300px;
         padding-bottom: 50px;
     }
-
     /* End Contact Us Form */
 
 
