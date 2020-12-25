@@ -18,7 +18,7 @@
             $password = test_input($_POST['password']);
 
             // select row
-            $sql = "SELECT * FROM users WHERE uname='$uname'";
+            $sql = "SELECT * FROM user WHERE uname='$uname'";
             $result= mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) === 1){
@@ -34,7 +34,7 @@
                     {
                         include "./AdditionalPHP/startSession.php";
 
-                        // store the users data in this session
+                        // store the user data in this session
                         $_SESSION['uname'] = $row['uname'];
                         $_SESSION['isAdmin'] = $row['isAdmin'];
 
@@ -51,7 +51,7 @@
 
                         $vkey = md5(time().$uname);
 
-                        $sql = "UPDATE users SET vkey = '$vkey' WHERE uname = '$uname'";
+                        $sql = "UPDATE user SET vkey = '$vkey' WHERE uname = '$uname'";
 
                         if(mysqli_query($conn, $sql)){
 

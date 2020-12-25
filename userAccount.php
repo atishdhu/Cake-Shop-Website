@@ -6,7 +6,7 @@
     
     include "connection.php";
 
-    $sql = "SELECT * FROM users WHERE uname='$uname'";
+    $sql = "SELECT * FROM user WHERE uname='$uname'";
     $result= mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($result) === 1){
@@ -63,7 +63,7 @@
         <div id="screenRes" class="col-md-15">
             <div class="form-name-container">
                 <div class="admin-subtitle">
-                    <span><i class="fas fa-users-cog"></i></span>
+                    <span><i class="fas fa-user-cog"></i></span>
                     <span>&nbspHELLO <?php echo $titleName;?></span>
                     <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
                 </div>

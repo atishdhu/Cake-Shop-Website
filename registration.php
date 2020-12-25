@@ -36,7 +36,7 @@
             }
             else {
                 // check if username already in database
-                $sql = "SELECT * FROM users WHERE uname='$uname'";
+                $sql = "SELECT * FROM user WHERE uname = '$uname'";
 
                 $result = mysqli_query($conn, $sql);
 
@@ -89,7 +89,7 @@
             else
             {
                 // check if username already in database
-                $sql = "SELECT * FROM users WHERE email='$email'";
+                $sql = "SELECT * FROM user WHERE email='$email'";
 
                 $result = mysqli_query($conn, $sql);
 
@@ -145,7 +145,7 @@
 
                 $passHash = password_hash($password, PASSWORD_BCRYPT);
 
-                $sql = "INSERT INTO users (uname, pass, fname, lname, email, vkey)
+                $sql = "INSERT INTO user (uname, pass, fname, lname, email, vkey)
                 VALUES ('$uname', '$passHash', '$fname', '$lname', '$email', '$vkey')";
 
                 if(mysqli_query($conn, $sql)){
@@ -160,6 +160,12 @@
                     mail($to, $subject, $message, $headers);
                     setcookie("thankYouCookie", "verificationEmailSent");
                     header('location: thankYouPage.php');
+
+                    $lastUserID = mysqli_insert_id($conn);
+
+                    $sql = "INSERT INTO cart (userID) VALUES ($lastUserID);";
+
+                    mysqli_query($conn, $sql);
                 }
             }
         }

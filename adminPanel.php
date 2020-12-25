@@ -6,7 +6,7 @@
     
     include "connection.php";
 
-    $sql = "SELECT * FROM users WHERE uname='$uname'";
+    $sql = "SELECT * FROM user WHERE uname='$uname'";
     $result= mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($result) === 1){
@@ -32,7 +32,7 @@
 
                 $message = test_input($_POST['message']);
                 
-                $sql = "SELECT email FROM users";
+                $sql = "SELECT email FROM user";
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) > 0)
@@ -115,7 +115,7 @@
                 </div>
                 
                 <div class="admin-subtitle">
-                    <span><i class="fas fa-users-cog"></i></span>
+                    <span><i class="fas fa-user-cog"></i></span>
                     <span>&nbspHELLO <?php echo $titleName;?></span>
                     <span class="user-logout"><a href="logout.php"><button type="button" title="Logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-in"></span></button></a></span>
                 </div>
@@ -144,7 +144,7 @@
                         
                 <div id="sendMail" class="tab-pane fade">
                     <div class="tab-title">
-                        <h3>Edit My Profile</h3>
+                        <h3>Send Mail To Subscribers</h3>
                     </div>
                     <div class="container mt-5 mb-5">
                         <form method="POST" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

@@ -28,7 +28,7 @@
 
                 if($responseKey['success'])
                 {
-                    $sql = "SELECT * FROM users WHERE email='$email'";
+                    $sql = "SELECT * FROM user WHERE email='$email'";
                     $result= mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result) === 1){
@@ -65,7 +65,7 @@
 
                         $passHash = password_hash($newPassword, PASSWORD_BCRYPT);
 
-                        $sql = "UPDATE users SET pass='$passHash' WHERE uname='$uname'";
+                        $sql = "UPDATE user SET pass='$passHash' WHERE uname='$uname'";
 
                         if(mysqli_query($conn, $sql)){
                             header("Location: login.php");

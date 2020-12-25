@@ -13,6 +13,6 @@
         }
     }
     else {
-        echo 'Access Denied!';
+        include "login.php";
     }
 ?>
