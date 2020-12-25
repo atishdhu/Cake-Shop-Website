@@ -42,12 +42,11 @@
           <!--========== PHP QUERIES ==========-->
         <?php 
             
-            $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
-            $Q_fetch_categories = "SELECT * FROM product_categories"; //selects all categories
-            
-        
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
+            $Q_fetch_categories = "SELECT * FROM categories"; //selects all categories
+    
         ?>
 
 
@@ -76,9 +75,9 @@
                 <div class="dropdown-content">
                     <?php
                     while($row_categories = mysqli_fetch_assoc($result_cat)){
-                        $p_cat_id = $row_categories['p_cat_id'];
+                        $categoryID = $row_categories['categoryID'];
                         ?>
-                        <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                        <a href="products_category.php?categoryID=<?php echo $categoryID; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
                         <?php
                     }
                     
@@ -91,14 +90,14 @@
         <!--========== PHP FETCH PRODUCT DETAILS ==========-->
 
         <?php
-            if(isset($_GET['p_cat_id'])){
-                $cat_id = $_GET['p_cat_id'];
-                $Q_fetch_product_by_cat_id = "SELECT * FROM products WHERE p_cat_id = '$cat_id' ; ";
-                $Q_fetch_cat_name_by_cat_id = "SELECT * FROM product_categories WHERE p_cat_id = '$cat_id' ; ";
+            if(isset($_GET['categoryID'])){
+                $cat_id = $_GET['categoryID'];
+
+                $Q_fetch_product_by_cat_id = "SELECT * FROM products INNER JOIN product_category ON products.productID = product_category.productID WHERE product_category.categoryID = '$cat_id'";
+                $Q_fetch_cat_name_by_cat_id = "SELECT * FROM categories WHERE categoryID = '$cat_id'";
 
                 $run_cat = mysqli_query($conn, $Q_fetch_cat_name_by_cat_id );
                 $row_cat = mysqli_fetch_array($run_cat);
-
             }
         ?>
 
@@ -121,9 +120,9 @@
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
-                            $p_cat_id = $row_categories['p_cat_id'];
+                            $categoryID = $row_categories['categoryID'];
                             ?>
-                            <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                            <a href="products_category.php?categoryID=<?php echo $categoryID; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
                             <?php
                         }
                         
@@ -142,7 +141,7 @@
                 <?php
                          $run_get_product_by_cat_id = mysqli_query($conn, $Q_fetch_product_by_cat_id); 
                         while($row_product = mysqli_fetch_assoc($run_get_product_by_cat_id)){
-                             $product_id = $row_product['p_id'];
+                             $product_id = $row_product['productID'];
                             ?>
 
                                 <div class="featured__products" id="product__card">
@@ -159,7 +158,7 @@
                                     </div>
 
                                     <div class="featured__data">
-                                        <?php $product_id = $row_product['p_id']; ?>
+                                        <?php $product_id = $row_product['productID']; ?>
                                         <a href="product.php?product_id=<?php echo $product_id; ?>" class="product__name" id="product__name"style="text-decoration: none;"><?php echo $row_product['p_name']; ?></a></br>
                                         <span class="featured__price">Rs <?php echo $row_product['p_price']; ?></span>
                                        

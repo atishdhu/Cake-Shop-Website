@@ -46,9 +46,9 @@
     <!--========== PHP QUERIES ==========-->
     <?php 
         
-        $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-        $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-        $Q_fetch_categories = "SELECT * FROM product_categories"; //selects all categories
+        $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
+        $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+        $Q_fetch_categories = "SELECT * FROM categories"; //selects all categories
     
     ?>
 
@@ -114,9 +114,9 @@
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
-                            $p_cat_id = $row_categories['p_cat_id'];
+                            $categoryID = $row_categories['categoryID'];
                             ?>
-                            <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                            <a href="products_category.php?categoryID=<?php echo $categoryID; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
                             <?php
                         }
                         
@@ -144,7 +144,7 @@
                     if($check>0){
                         
                         while($featured_row = mysqli_fetch_assoc($result)){
-                            $product_id = $featured_row['p_id'];
+                            $product_id = $featured_row['productID'];
 
                             
                             ?>
@@ -165,7 +165,7 @@
                                     </div>
 
                                     <div class="featured__data">
-                                        <?php $product_id = $featured_row['p_id']; ?>
+                                        <?php $product_id = $featured_row['productID']; ?>
                                         <!-- <form action="product.php?product_id=<?php echo $product_id; ?>"  method="POST">  -->
                                             <!-- set session to product id value  -->
                                             <!-- <input type="submit" name="view-product"  value="View Product" class="btn btn-primary btn-lg my-4 button" />
@@ -227,9 +227,9 @@
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
-                            $p_cat_id = $row_categories['p_cat_id'];
+                            $categoryID = $row_categories['categoryID'];
                             ?>
-                            <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                            <a href="products_category.php?categoryID=<?php echo $categoryID; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
                             <?php
                         }
                         
@@ -258,7 +258,7 @@
                                     <img src="<?php echo $new_row['p_img'];?>" class="new__img" />
 
                                     <div class="new__link">
-                                        <a href="product.php?product_id=<?php echo $new_row['p_id']; ?>" class="button"> VIEW PRODUCT</a>
+                                        <a href="product.php?product_id=<?php echo $new_row['productID']; ?>" class="button"> VIEW PRODUCT</a>
                                     </div>
                                 </div>
 
