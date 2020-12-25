@@ -32,7 +32,7 @@
 
                 $message = test_input($_POST['message']);
                 
-                $sql = "SELECT email FROM user";
+                $sql = "SELECT email FROM user WHERE isSubscribed = 1";
                 $result = mysqli_query($conn, $sql);
 
                 if(mysqli_num_rows($result) > 0)

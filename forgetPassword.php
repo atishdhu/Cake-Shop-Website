@@ -38,7 +38,7 @@
 
                         $alphas = range('A', 'Z');
                         $numbers = range(0,26);
-                        $symbols = range('@', '#', '$', '%');
+                        $symbols = array('@', '#', '$', '%');
 
                         $newPassword = "";
                         $passLength = rand(8,20);
@@ -51,8 +51,6 @@
 
                             $newPassword .= $a . $n . $s;
                         }
-
-                        echo $newPassword;
 
                         $to = $row['email'];
                         $subject = "Reset Password";
@@ -68,7 +66,8 @@
                         $sql = "UPDATE user SET pass='$passHash' WHERE uname='$uname'";
 
                         if(mysqli_query($conn, $sql)){
-                            header("Location: login.php");
+                            setcookie("resetPassword","resetMailSent");
+                            header('location: passwordResetPage.php');
                         }
                     } else {
                         $errCriteria = "Cannot find your account!";
@@ -120,6 +119,11 @@
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
+        <!--Start Background Image-->
+        <div class="bg-image-container">
+            <div class="bg-image-forget"></div>
+        </div>
+        <!--End Background Image-->
 
         <!--Start ForgetPassword Panel-->
         <div class="login-page">
@@ -133,11 +137,8 @@
 
                 <form class="login-form" method="post" actions="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"/>
-                    <span class="input-error"><?php echo $errCriteria;?></span>
-                    <br>
-                    <br>
+                    <span class="input-error"><?php if($errCriteria != ""){echo "$errCriteria <br><br>";}?></span>
                     <div name="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LdT9A0aAAAAAPLi4Ab29xdM28aipZ0D3IyXbjXQ"></div>
-                    <br/>
                     <button>Reset Password</button>
                 </form>
             </div>

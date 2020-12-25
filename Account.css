@@ -84,11 +84,6 @@ hr{
 .danger-zone-inside {
     padding: 15px;
 }
-
-.tab-title h3{
-
-}
-
 /* End User Profile */
 
 
@@ -114,7 +109,7 @@ hr{
 }
 
 .login-form span{
-    font-size: 15px;
+    font-size: 20px;
     color: red;
 }
 
@@ -148,7 +143,7 @@ hr{
     text-transform: uppercase;
     outline: 0;
     background-color:#FFA5A5FF;
-    background-image: linear-gradient(45deg,rgb(252, 243, 243),#FFA5A5FF);
+    background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
     width: 100%;
     border: 0;
     padding: 15px;
@@ -192,6 +187,7 @@ hr{
     height: 100px;
 }
 /*End Login & Registration Panel*/
+
 
 /* Start Thank You Page */
 .mail-sent-group{
@@ -263,6 +259,23 @@ hr{
 
 /* End Email Verification Page */
 
+
+/* Start Password Reset Page */
+.login-form .forget-text a{
+    color:black;
+    font-size: 20px;
+    /* text-decoration: underline; */
+}
+
+.mail-forget-image{
+    background-image: url("./Assets/images/6.login/ForgetPassword.png");
+    padding-bottom: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* End Password Reset Page */
+
 /*---------------------------------------------------------------------------------------------*/
 /*START MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP*/
 /*---------------------------------------------------------------------------------------------*/
@@ -271,7 +284,7 @@ hr{
 
     /*Start Background Image For Login Page*/
     .bg-image-container .bg-image{
-        background-image: url("./Assets/images/6.login/Dessert.jpg");
+        background-image: url("./Assets/images/6.login/CakeAndCoffee.jpg");
         filter: blur(8px);
         padding-bottom: 63%;
         -webkit-filter: blur(4px);
@@ -293,6 +306,19 @@ hr{
         background-size: cover;
     }
     /*End Background Image For Registration Page*/
+
+
+    /*Start Background Image For Password Reset Page*/
+    .bg-image-container .bg-image-forget{
+        background-image: url("./Assets/images/6.login/Dessert.jpg");
+        filter: blur(8px);
+        padding-bottom: 57%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*End Background Image For RPassword Reset Page*/
 
 
     /*Start Login Panel*/
@@ -341,7 +367,7 @@ hr{
         text-transform: uppercase;
         outline: 0;
         background-color:#FFA5A5FF;
-        background-image: linear-gradient(45deg,rgb(252, 211, 211),#FFA5A5FF);
+        background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
         width: 100%;
         border: 0;
         padding: 15px;
@@ -385,8 +411,13 @@ hr{
         color: #FFA5A5FF;
     }
 
+    .login-form span{
+        font-size: 15px;
+    }
+
     .login-form .forget-text a{
         color:black;
+        font-size: 15px;
         text-decoration: none;
     }
 

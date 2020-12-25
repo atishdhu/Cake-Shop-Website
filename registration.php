@@ -159,7 +159,7 @@
 
                     mail($to, $subject, $message, $headers);
                     setcookie("thankYouCookie", "verificationEmailSent");
-                    header('location: thankYouPage.php');
+                    header('location: thankYouRegistration.php');
 
                     $lastUserID = mysqli_insert_id($conn);
 

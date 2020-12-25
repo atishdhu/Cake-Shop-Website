@@ -29,6 +29,7 @@
                 {
                     setcookie("thankYouCookie", "verificationEmailSent", time() - 3600);
                     setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
+                    setcookie("resetPassword","resetMailSent", time() - 3600);
                     // check if hashed passwords match
                     if(password_verify($password, $row['pass']))
                     {
@@ -66,7 +67,7 @@
 
                             setcookie("thankYouCookie", "verificationEmailSent");
                             setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
-                            header('location: thankYouPage.php');
+                            header('location: thankYouRegistration.php');
 
                         }
                     } 
