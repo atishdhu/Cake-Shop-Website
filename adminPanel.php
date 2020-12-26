@@ -48,13 +48,13 @@
                     {
                         $subject = test_input($_POST['subject']);
                     }
-                    $message = $message;
+                    $msg = $message;
                     $headers = "From: malako.cakeshop@gmail.com \r\n";
                     $headers .= "Bcc: " . implode(",", $emailArray) . "\r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-                    mail($to, $subject, $message, $headers);
+                    mail($to, $subject, $msg, $headers);
                     // Used to prevent the mail from sending each time the page is refreshed
                     header("location: $_SERVER[PHP_SELF]");
                 }
