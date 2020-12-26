@@ -1,5 +1,5 @@
 <?php include "./AdditionalPHP/checkAccess.php"; ?>
-<?php include "numOfItemsInCart.php";?>
+<?php //include "numOfItemsInCart.php";?>
 
 <?php 
 
