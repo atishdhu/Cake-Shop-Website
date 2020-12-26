@@ -32,24 +32,35 @@
             if($emailOK)
             {
                 $errorCriteria = "";
-                $sql = "SELECT * FROM newsletter WHERE email = '$email'";
+                $sql = "SELECT isSubscribed FROM user WHERE email = '$email'";
     
                 $result = mysqli_query($conn, $sql);
     
                 if(mysqli_num_rows($result) == 1)
                 {
-                    $emailCriteria = "You are already subscribed!";
+                    $row = mysqli_fetch_assoc($result);
+
+                    if($row['isSubscribed'] == 1)
+                    {
+                        $emailCriteria = "You are already subscribed!";
+                    }
+                    else
+                    {
+                        $sql = "UPDATE user SET isSubscribed = 1 WHERE email = '$email'";
+
+                        if(mysqli_query($conn, $sql))
+                        {
+                            $emailCriteria = "Thank you for subscribing! We will get back to you soon.";
+                        }
+                        else
+                        {
+                            $errorCriteria = "Something went wrong. Please try again later.";
+                        }
+                    }
                 }
                 else
                 {
-                    $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
-    
-                    if(mysqli_query($conn, $sql))
-                    {
-                        $emailCriteria = "Thank you for your subscription!";
-                    } else {
-                        $errorCriteria = "Something went wrong. Please try again later.";
-                    }
+                    $emailCriteria = "Please create an account to subscribe to our newsletter.";
                 }
             }        
         } 

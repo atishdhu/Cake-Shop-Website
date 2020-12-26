@@ -5,13 +5,13 @@
         // Process Verification
         $vkey = $_GET['vkey'];
 
-        $sql = "SELECT verified,vkey FROM users WHERE verified = 0 AND vkey = '$vkey' LIMIT 1";
+        $sql = "SELECT verified,vkey FROM user WHERE verified = 0 AND vkey = '$vkey' LIMIT 1";
 
         $result = mysqli_query($conn, $sql);
 
         if(mysqli_num_rows($result) === 1){
             // Validate Email
-            $update = "UPDATE users SET verified = 1 WHERE vkey = '$vkey' LIMIT 1";
+            $update = "UPDATE user SET verified = 1 WHERE vkey = '$vkey' LIMIT 1";
 
             $resultSet = mysqli_query($conn, $update);
             
@@ -25,7 +25,7 @@
 
         } else {
 
-            $sql = "SELECT verified,vkey FROM users WHERE verified = 1 AND vkey = '$vkey' LIMIT 1";
+            $sql = "SELECT verified,vkey FROM user WHERE verified = 1 AND vkey = '$vkey' LIMIT 1";
 
             $result = mysqli_query($conn, $sql);
 

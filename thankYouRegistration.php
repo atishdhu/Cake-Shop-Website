@@ -27,7 +27,7 @@
     </head>
 
     <body>
-        <?php $page = 'thankyoupage';?>
+        <?php $page = 'thankYouRegistration';?>
 
         <!--Start Navigation Bar-->
         <?php include './Includes/MobileNavBar.php';;?>

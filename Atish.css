@@ -109,7 +109,7 @@
 }
 
 .offer-bg {
-    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/images/products/cupcake_bg2_cropped.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("Assets/images/2.products/cupcake_bg2_cropped.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -172,19 +172,19 @@
 /* Start How to Order*/
 .how-to-order h2{
     padding-top: 40px;
-    color:white;
+    color:black;
     margin: 0px;
 }
 
 .how-to-order{
     position:relative;
-    background-color: #23CFA7FF;
+    background-color: white;
 }
 
 .how-to-order .row{
     text-align: center;
     font-size:80px;
-    color:white;
+    color:black;
     padding-bottom: 40px;
 }
 
@@ -316,7 +316,7 @@
 
     /* Start Special Offer */
     .offer-data{
-        margin-bottom: 120px;
+        margin-bottom: 0;
         padding: 0 10px;
         padding-top: 20px;
         padding-bottom: 60px;
@@ -335,7 +335,6 @@
     /* Start How to Order*/
     .how-to-order h2{
         padding-top: 20px;
-        color:white;
         margin: 0px;
     }
 
@@ -357,7 +356,6 @@
 
     .how-to-order .row .column p{
         font-size: 25px;
-        color:black;
         margin:0;
     }
 

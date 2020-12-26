@@ -555,7 +555,7 @@ html, body{
     .business-name-media1200 a{
         float: left;
         margin: 0;
-        margin-top: 5px;
+        margin-top: 0;
         font-size: 60px;
         color: black;
         font-family: Playfair Display;

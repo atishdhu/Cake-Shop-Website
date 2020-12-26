@@ -1,12 +1,19 @@
 <?php
-    header("refresh:3;url=checkAccount.php");
+    include "./AdditionalPHP/startSession.php";
+    
+    if(isset($_COOKIE['resetPassword'])){
+        define('Access', TRUE);
+    }
+    else {
+        echo 'Access Denied!';
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en-MU">
     <head>
         <meta charset="utf-8">
-        <title>MALAKO | EMAIL VERIFIED</title>
+        <title>MALAKO | CHECK YOU EMAIL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS File-->
         <link rel="stylesheet" type="text/css" href="Common.css">
@@ -20,7 +27,7 @@
     </head>
 
     <body>
-        <?php $page = 'thankYouRegistration';?>
+        <?php $page = 'thankyouregistration';?>
 
         <!--Start Navigation Bar-->
         <?php include './Includes/MobileNavBar.php';;?>
@@ -35,14 +42,14 @@
         <div class="mail-sent-group">
             <div class="mail-sent-container">
                 <div class="mail-sent-image-container">
-                    <div class="mail-sent-image mail-verified-image"></div>
+                    <div class="mail-forget-image"></div>
                 </div>
 
                 <div class="mail-sent-text">
-                    <h1>Your email address has been verified.</h1>
-                    <span class="message">You will now be redirected to the login page.</span>
+                    <h1>Check your email!</h1>
+                    <span class="message">Hooray! We sent you an email with your new password. Please change your password as soon as you login.</span>
                     <br><br>
-                    <span class="tip">Redirecting........</span>
+                    <span class="tip">Tip: If you have not received the email, please check your Spam or Trash folder.</span>
                 </div>
             </div>
         </div>
