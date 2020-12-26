@@ -32,24 +32,35 @@
             if($emailOK)
             {
                 $errorCriteria = "";
-                $sql = "SELECT * FROM newsletter WHERE email = '$email'";
+                $sql = "SELECT isSubscribed FROM user WHERE email = '$email'";
     
                 $result = mysqli_query($conn, $sql);
     
                 if(mysqli_num_rows($result) == 1)
                 {
-                    $emailCriteria = "You are already subscribed!";
+                    $row = mysqli_fetch_assoc($result);
+
+                    if($row['isSubscribed'] == 1)
+                    {
+                        $emailCriteria = "You are already subscribed!";
+                    }
+                    else
+                    {
+                        $sql = "UPDATE user SET isSubscribed = 1 WHERE email = '$email'";
+
+                        if(mysqli_query($conn, $sql))
+                        {
+                            $emailCriteria = "Thank you for subscribing! We will get back to you soon.";
+                        }
+                        else
+                        {
+                            $errorCriteria = "Something went wrong. Please try again later.";
+                        }
+                    }
                 }
                 else
                 {
-                    $sql = "INSERT INTO newsletter (email) VALUES ('$email')";
-    
-                    if(mysqli_query($conn, $sql))
-                    {
-                        $emailCriteria = "Thank you for your subscription!";
-                    } else {
-                        $errorCriteria = "Something went wrong. Please try again later.";
-                    }
+                    $emailCriteria = "Please create an account to subscribe to our newsletter.";
                 }
             }        
         } 
@@ -58,9 +69,9 @@
 ?>
 
 <section class="newsletter newsletter-section" id="subscribed">
-    <div id="subscribe-section" class="newsletter__container bd-grid" onclick="window.location.hash='back-subscribe';" style="cursor: pointer;">
+    <div id="subscribe-section" class="newsletter__container bd-grid" onclick="window.location.hash='subscribe-button';" style="cursor: pointer;">
         <div class="newsletter__subscribe subtitle">
-            <h2 class="section-title">OUR NEWSLETTER</h2>
+            <h2 class="section-title">NEWSLETTER</h2>
             <p class="newsletter__description">Be the first to get informed about our best deals!</p>
             <form class="newsletter__form" method="POST" actions="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
                 <input class="newsletter__input"  name="email" required="" type="email" placeholder="Enter your email"/>

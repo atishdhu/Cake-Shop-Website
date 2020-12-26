@@ -18,7 +18,7 @@
             $password = test_input($_POST['password']);
 
             // select row
-            $sql = "SELECT * FROM users WHERE uname='$uname'";
+            $sql = "SELECT * FROM user WHERE uname='$uname'";
             $result= mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) === 1){
@@ -29,12 +29,13 @@
                 {
                     setcookie("thankYouCookie", "verificationEmailSent", time() - 3600);
                     setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
+                    setcookie("resetPassword","resetMailSent", time() - 3600);
                     // check if hashed passwords match
                     if(password_verify($password, $row['pass']))
                     {
                         include "./AdditionalPHP/startSession.php";
 
-                        // store the users data in this session
+                        // store the user data in this session
                         $_SESSION['uname'] = $row['uname'];
                         $_SESSION['isAdmin'] = $row['isAdmin'];
 
@@ -51,7 +52,7 @@
 
                         $vkey = md5(time().$uname);
 
-                        $sql = "UPDATE users SET vkey = '$vkey' WHERE uname = '$uname'";
+                        $sql = "UPDATE user SET vkey = '$vkey' WHERE uname = '$uname'";
 
                         if(mysqli_query($conn, $sql)){
 
@@ -66,7 +67,7 @@
 
                             setcookie("thankYouCookie", "verificationEmailSent");
                             setcookie("verifiedEmailCookie", "emailInvalid", time() - 3600);
-                            header('location: thankYouPage.php');
+                            header('location: thankYouRegistration.php');
 
                         }
                     } 

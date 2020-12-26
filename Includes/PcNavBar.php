@@ -28,7 +28,7 @@
             <li><a href="about.php" class="<?php if($page == 'about'){echo 'active';}?>">ABOUT</a></li>
             <li><a href="contact.php" class="<?php if($page == 'contact'){echo 'active';}?>">CONTACT US</a></li>
             <li><a href="cart.php" class="<?php if($page == 'cart'){echo 'active';}?>"><i class="bx bx-cart nav__cart"></i></a>
-            <p class="cart-number"><?php //echo $_SESSION['item_quantity']; ?></p></li>
+            <p class="cart-number"><?php echo $_SESSION['item_quantity']; ?></p></li>
             <li><a href="<?php echo $href;?>" class="<?php if($page == 'login' || $page == 'checkaccount'){echo 'active';}?> user-button"><i class="<?php echo $icon;?>"></i></a></li>
         </ul>
     </nav>
