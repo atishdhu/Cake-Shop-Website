@@ -128,11 +128,11 @@
 
 
         <!--Start Wave Image-->
-        <div class="wave-image-group">
+        <!-- <div class="wave-image-group">
             <div class="wave-image">
-                <img src="Assets/images/1.index/NavBar_WaveTeal.png">
+                <img src="Assets/images/1.index/NavBar_WaveWhite.png">
             </div>
-        </div>
+        </div> -->
         <!--End Wave Image-->
 
 
@@ -170,7 +170,7 @@
         <!--Start Wave Image Flip-->
         <div class="wave-image-group">
             <div class="wave-image-flip how-to-order-wave">
-                <img src="Assets/images/1.index/NavBar_WaveTealFlip.png">
+                <img src="Assets/images/1.index/NavBar_WaveWhiteFlip.png">
             </div>
         </div>
         <!--End Wave Image Flip-->
