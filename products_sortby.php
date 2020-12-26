@@ -7,7 +7,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>MALAKO | Category</title>
+    <title>MALAKO | Sort By</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
@@ -22,9 +22,6 @@
 
     <!--========== BOOTSTRAP ==========-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    <!-- Bootstrap Core CSS -->
-    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
@@ -47,7 +44,7 @@
             $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
             $Q_fetch_categories = "SELECT * FROM product_categories;"; //selects all categories
             $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //sort all products by price low to high
-            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
+            $Q_sortby_price_desc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
             
             
         
@@ -65,7 +62,30 @@
         <?php include './Includes/PcNavBar.php';?>
         <!--End Navigation Bar @media 1200px-->
 
-      
+        <!--========== CATEGORIES BUTTON ==========-->
+        <?php 
+        
+        //$result_cat = mysqli_query($conn, $Q_fetch_categories);
+
+        ?>
+        <!-- <div class="row category-title">
+            <h2 class="category">CATEGORY</h2>
+            <h2 class="category-name "><?php echo $row_cat['p_cat_name']; ?></h2>
+            <div class="dropdown col-auto mx-auto pt-5 pb-1">
+                <button class="dropbtn button" id="cat-but" style="outline: none;">Categories &nbsp<i class='bx bxs-down-arrow drop-arrow'></i></button>
+                <div class="dropdown-content">
+                    <?php
+                    while($row_categories = mysqli_fetch_assoc($result_cat)){
+                        $p_cat_id = $row_categories['p_cat_id'];
+                        ?>
+                        <a href="products_category.php?p_cat_id=<?php echo $p_cat_id; ?>"><?php echo $row_categories['p_cat_name']; ?></a>
+                        <?php
+                    }
+                    
+                    ?>
+                </div>
+            </div>
+        </div> -->
 
 
         <!--========== PHP FETCH PRODUCT DETAILS ==========-->
@@ -90,11 +110,27 @@
             
                 $result_cat = mysqli_query($conn, $Q_fetch_categories);
 
+                if($_GET['sortby']==1){ //1 = low to high
+                    $result_sortby =mysqli_query($conn, $Q_sortby_price_asc);
+                }
+                elseif($_GET['sortby']==2){ //2 = high to low
+                    $result_sortby =mysqli_query($conn, $Q_sortby_price_desc);
+                }
+                
+
             ?>
             <div class="row category-title">
                 <div class="col">
-                    <h2 class="category">CATEGORY</h2>
-                    <h2 class="category-name "><?php echo $row_cat['p_cat_name']; ?></h2>
+                    <h2 class="category">SORT BY PRICE</h2>
+                    <?php
+                    if($_GET['sortby']==1){
+                        echo '<h2 class="category-name ">low to high</h2>';
+                    }
+                    elseif($_GET['sortby']==2){
+                        echo '<h2 class="category-name ">high to low</h2>';
+                    }
+                    ?>
+                   
                 </div>
 
                 <!--========== SORT BY BUTTON ==========-->
@@ -130,8 +166,8 @@
             <div class="featured__container bd-grid mt-4">
 
                 <?php
-                         $run_get_product_by_cat_id = mysqli_query($conn, $Q_fetch_product_by_cat_id); 
-                        while($row_product = mysqli_fetch_assoc($run_get_product_by_cat_id)){
+                         
+                        while($row_product = mysqli_fetch_assoc($result_sortby)){
                              $product_id = $row_product['p_id'];
                             ?>
 
