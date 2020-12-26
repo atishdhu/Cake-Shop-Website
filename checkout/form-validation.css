@@ -71,6 +71,7 @@ select:-webkit-autofill:focus {
 
 .business-name{
   font-family: Playfair Display;
+  
 
 }
 
@@ -145,7 +146,7 @@ select:-webkit-autofill:focus {
   height: auto;
   display: block;
   position: relative;
-  left:40%
+  left:40%;
   
 }
 
@@ -156,10 +157,38 @@ select:-webkit-autofill:focus {
   z-index: 100;
   position: absolute;
   display: block;
-  top: 22%;
+  top: 10vw;
   left: 43%;
   
 }
+
+/* @media screen and (max-width: 768px) {
+  
+.thankYouImageHead{
+  top: 11%;
+  left: 43%;
+}
+}
+
+
+
+  
+@media screen and (max-width: 374px) {
+  
+  .thankYouImageHead{
+    top: 16%;
+    left: 43%;
+  }
+  } */
+
+  
+@media screen and (max-width: 360px) {
+  
+  .thankYouImageHead{
+    top: 10%;
+    left: 43%;
+  }
+  }
 
 .rotate {
   animation: rotation 3.6s 6 linear;

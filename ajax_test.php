@@ -1,13 +1,13 @@
-﻿<?php 
+<?php 
     define('Access', TRUE);
     include "./AdditionalPHP/startSession.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en-MU">
-<head>
+<html>
+    <head>
     <meta charset="utf-8">
-    <title>MALAKO | Products</title>
+    <title>MALAKO | Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
@@ -16,17 +16,13 @@
         include_once 'numOfItemsInCart.php';
     ?>
 
-    <!--========== CSS FILE ==========-->
+    <!--========== CSS FILES ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
-    <link rel='stylesheet' type='text/css' href='Sanjana.css' />
+    <link rel="stylesheet" type="text/css" href="Sanjana.css">
 
     <!--========== BOOTSTRAP ==========-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
- 
     <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
 
     <!-- Font Awesome -->
@@ -37,75 +33,41 @@
     <!--========== BOXICONS ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-</head>
+    </head>
 
-<!--___________________________________________________________________________-->
-
-<body>
-
-    <!--========== PHP QUERIES ==========-->
-    <?php 
+    <body>
         
-        $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-        $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-        $Q_fetch_categories = "SELECT * FROM product_categories"; //selects all categories
-    
-    ?>
-
-
-    <!--========== HEADER ==========-->
-    <?php $page = 'products'?>
-    <!--Start Navigation Bar-->
-    <?php include './Includes/MobileNavBar.php';?>
-    <!--End Navigation Bar-->
-
-
-    <!--Start Navigation Bar @media 1200px-->
-    <?php include './Includes/PcNavBar.php';?>
-    <!--End Navigation Bar @media 1200px-->
-
-    <!--Start Wave Image-->
-    <!-- <div class="wave-image-group hide-wave">
-        <div class="wave-image footer-wave">
-            <img src="Assets/images/1.index/NavBar_WavePink.png">
-        </div>
-    </div> -->
-    <!--End Wave Image-->
-    <!--___________________________________________________________________________-->
-
-    
-    
-    <main class="1-main">
-
-        <!--========== OFFER 1 ==========-->
-
-        <!-- <section class="offer section offer__top mt-2">
-            <div class="offer__bg2 offer__1bg">
-                <div class="offer__data ">
-                    <h2 class="offer__title">50% OFF ON ALL CAKES!!!</h2>
-                    <p class="offer__description">1st - 31st DECEMBER 2020<br />HURRY UP, DON'T MISS YOUR CHANCE!!!</p>
-
-                    <a href="products.php" class="button button__round">SHOP NOW</a>
-                </div>
-            </div>
-        </section> -->
-
-        <!--Start Wave Flip Image-->
-        <!-- <div class="">
-            <div class="">
-                <img src="Assets/images/1.index/NavBar_WavePinkFlip.png">
-            </div>
-        </div> -->
-        <!--End Wave Flip Image-->
-
-       
+          <!--========== PHP QUERIES ==========-->
+          <?php 
+            
+            $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
+            $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
+            $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
+            $Q_fetch_categories = "SELECT * FROM product_categories;"; //selects all categories
+            $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //sort all products by price low to high
+            $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
+            
+            
+        
+        ?>
 
         
 
-        <!--========== ATTEMPT TO QUERY FEATURED PRODUCTS ==========-->
+        <!--========== HEADER ==========-->
+        <?php $page = 'products_category'?>
+        <!--Start Navigation Bar-->
+        <?php include './Includes/MobileNavBar.php';?>
+        <!--End Navigation Bar-->
 
+
+        <!--Start Navigation Bar @media 1200px-->
+        <?php include './Includes/PcNavBar.php';?>
+        <!--End Navigation Bar @media 1200px-->
+
+        
+        
         <section class="featured section" id="featured">
-           
+
             <!--========== TITLE BANNER ==========-->
             <?php 
                 //FETCH PRODUCT BY CATEGORY
@@ -154,60 +116,11 @@
                 
             </div>
 
+           
+
 
         </section>
 
-       
-        <!--========== OFFER 2 ==========-->
-
-        <section class="offer section">
-            <div class="offer__bg">
-                <div class="offer__data">
-                    <h2 class="offer__title">Special Offer</h2>
-                    <p class="offer__description">Extreme Christmas Sales this month only!</p>
-
-                    <a href="#" class="button button__round">SHOP NOW</a>
-                </div>
-            </div>
-        </section>
-
-
-      
-
-        <!--========== ATTEMPT TO QUERY NEW PRODUCTS ==========-->
-        <section class="new section" id="new">
-        <div class="row category-title">
-                <div class="col">
-                    <h2 class="category" id="small_title2"></h2>
-                    <h2 class="category-name " id="big_title2"></h2>
-                </div>
-        </div>
-
-            <div class="new__container bd-grid" id="result2">
-               
-                
-            </div>
-        </section>
-
-        <!--Start Newsletter-->
-        <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
-
-
-        <!--Start Footer-->
-        <?php include './Includes/Footer.php';?>
-        <!--End Footer-->
-
-        
-        <!-- Start Bottom Nav -->
-        <?php include './Includes/MobileBottomNav.php';?>
-        <!-- End Bottom Nav -->
-
-    <!--___________________________________________________________________________-->
-
-
-    <!--========== JAVASCRIPT ==========-->
-  
             <!-- IMPLEMENTING AJAX WITH JAVASCRIPT -->
             <script>
 
@@ -234,7 +147,7 @@
                     
                 }
 
-                //SORT BY FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
+                //SORT BY FUNCTION - DISPLAY WITHOUT LOAD
                 function sortby_products(sort_num){
                     var xhttp;
                       //AJAX
@@ -263,7 +176,7 @@
                 }
 
 
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD
+                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
                 function display_products_by_type(p_type){
                     var xhttp;
                    
@@ -300,8 +213,8 @@
                     
                 }
 
-                  
-                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT2
+                
+                //TYPE OF PRODUCTS FUNCTION - DISPLAY WITHOUT LOAD WHERE ID = RESULT
                 function display_products_by_type_second(p_type){
                     var xhttp;
                    
@@ -321,35 +234,28 @@
                     //CHANGES TITLE
 
                     if(p_type==1){
-                        document.getElementById('small_title2').innerHTML = 'new';
+                        document.getElementById('small_title').innerHTML = 'new';
                     }
                     else  if(p_type==2){
-                        document.getElementById('small_title2').innerHTML = 'featured';
+                        document.getElementById('small_title').innerHTML = 'featured';
                     }
                     else  if(p_type==3){
-                        document.getElementById('small_title2').innerHTML = 'sales';
+                        document.getElementById('small_title').innerHTML = 'sales';
                     }
                     else  if(p_type==4){
-                        document.getElementById('small_title2').innerHTML = 'best-seller';
+                        document.getElementById('small_title').innerHTML = 'best-seller';
                     }
 
                     //BIG TITLE
-                    document.getElementById('big_title2').innerHTML = 'PRODUCTS';
+                    document.getElementById('big_title').innerHTML = 'PRODUCTS';
                     
                 }
 
-
                 //LAUNCHING FEATURED PRODUCTS FUNCTION
                 display_products_by_type(2); // 2 --> featured
-
-                //LAUNCHING NEW PRODUCTS FUNCTION
-                display_products_by_type_second(1); // 1 --> new
             </script>
+        
 
+    </body>
 
-
-
-
-
-</body>
-</html>
+    
