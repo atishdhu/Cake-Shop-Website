@@ -18,8 +18,12 @@
         
         
         $p_type= $_REQUEST['p_type'];
-        $Q_fetch_by_type = "SELECT * FROM products WHERE p_type_id = $p_type; ";//selects products by type
-        $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
+        // $Q_fetch_by_type = "SELECT * FROM products WHERE typeID = $p_type; ";//selects products by type
+        $Q_fetch_by_type= "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = '$p_type' "; //selects products by type
+
+
+        // $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//selects new products
+        $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
 
 
 
@@ -31,7 +35,7 @@
         if($check>0 && $p_type!=1){ 
            
            while($row = mysqli_fetch_assoc($result)){
-               $product_id = $row['p_id'];
+               $product_id = $row['productID'];
 
                
                
@@ -52,7 +56,7 @@
                        </div>';
 
                        echo ' <div class="featured__data"> ';
-                           $product_id = $row['p_id'];
+                           $product_id = $row['productID'];
                           
                         echo'<a href="product.php?product_id='.$product_id.'" style="text-decoration: none;">
                            <h4 class="product__name" id="product__name">'.$row['p_name'].'</h4>
@@ -78,7 +82,7 @@
                         <img src=" '.$new_row['p_img'] .' " class="new__img" />
 
                         <div class="new__link">
-                            <a href="product.php?product_id='.$new_row['p_id'] .'" class="button"> VIEW PRODUCT</a>
+                            <a href="product.php?product_id='.$new_row['productID'] .'" class="button"> VIEW PRODUCT</a>
                         </div>
                     </div> ';
                 }

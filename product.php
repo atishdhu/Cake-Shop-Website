@@ -5,13 +5,13 @@
 
 <?php
 $product_ids = array();
-if(!isset($_SESSION['p_id'])){
+if(!isset($_SESSION['productID'])){
 
     if($_GET['product_id'] == "") {
         echo "NO $-GET['product_id'] value ";
     }
     else {
-        $_SESSION['p_id']= $_GET['product_id'];
+        $_SESSION['productID']= $_GET['product_id'];
     }
 }
 else {
@@ -20,7 +20,7 @@ else {
         //carry on with program.. session value does not change
     }
     else { //if session is defined and get is not empty
-        $_SESSION['p_id'] = $_GET['product_id'];
+        $_SESSION['productID'] = $_GET['product_id'];
     }
 }
 
@@ -130,11 +130,11 @@ function pre_r($array){
     <body>
           <!--========== PHP QUERIES ==========-->
         <?php 
-            
-            $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
-        
+                
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
+
         ?>
 
 
@@ -153,24 +153,39 @@ function pre_r($array){
         <!--========== PHP FETCH PRODUCT DETAILS ==========-->
 
         <?php
-            if(isset($_GET['product_id'])){ //if(isset($_GET['product_id'])){
+             if(isset($_GET['product_id'])){ //if(isset($_GET['product_id'])){
                 $product_id = $_GET['product_id'];
-                $Q_get_product = "SELECT * FROM products WHERE p_id = '$product_id'";
-
+                
+                //******* start get products details *******
+                //query
+                $Q_get_product = "SELECT * FROM products WHERE productID = '$product_id'";
                 //run query
                 $run_get_product = mysqli_query($conn, $Q_get_product);
                 //store details in array
                 $row_product = mysqli_fetch_array($run_get_product);
+                //******* end get products details *******
+
+                //******* start get products type *******
+                $Q_get_type_id = "SELECT * FROM product_type WHERE productID = '$product_id'";
+                $run_get_type_id = mysqli_query($conn, $Q_get_type_id);
+                $row_type_id = mysqli_fetch_array($run_get_type_id);
+                //******* end  get products type *******
+
+                //******* start get products category *******
+                $Q_get_cat_id = "SELECT * FROM product_category WHERE productID = '$product_id'";
+                $run_get_cat_id = mysqli_query($conn, $Q_get_cat_id);
+                $row_cat_id = mysqli_fetch_array($run_get_cat_id);
+                //******* end  get products category *******
+
                 //declare variables for all column headers
                 $p_name = $row_product['p_name'];
-                $p_type_id = $row_product['p_type_id'];
-                $p_cat_id = $row_product['p_cat_id'];
                 $p_desc = $row_product['p_desc'];
                 $p_img = $row_product['p_img'];
                 $p_price = $row_product['p_price'];
-
-               
+                $typeID = $row_type_id['typeID'];
+                $categoryID = $row_cat_id['categoryID'];             
             }
+            
             else{
 
             }
@@ -197,7 +212,7 @@ function pre_r($array){
                                 margin-bottom: .8rem; font-weight: 700; color: grey; ">Quantity</label><br>
                                 <input type="number" value="1" min="1" max="100" name= "input_quantity" id= "input_quantity" class="input-quantity mx-2 p-3 px-4">
                                 <input type="hidden" name="name" value="<?php echo $p_name;?>" />
-                                <input type="hidden" class="show_id" name="p_id_id" value="<?php echo $product_id;?>" />
+                                <input type="hidden" class="show_id" name="productID_id" value="<?php echo $product_id;?>" />
                                 <input type="hidden" name="price" value="<?php echo $p_price;?>" /> <br>
                                 <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Add to Cart" class="btn btn-primary btn-lg my-4 button" />
 

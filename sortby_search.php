@@ -28,7 +28,7 @@
 
         //DISPLAY SORTED RESULTS
         while($row_product = mysqli_fetch_assoc($result_sortby)){
-            $product_id = $row_product['p_id'];
+            $product_id = $row_product['productID'];
            
 
         echo '   <div class="featured__products" id="product__card">

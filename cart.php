@@ -76,9 +76,9 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
           <!--========== PHP QUERIES ==========-->
         <?php 
             
-            $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
             $Q_fetch__all_products = "SELECT * FROM products";
         
         ?>
@@ -155,7 +155,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
                               //compare if id in database in current loop is equal to  
                               //id in current session shopping cart foreach loop
-                            if($product_row['p_id'] == $product['id']){
+                            if($product_row['productID'] == $product['id']){
                                 ?>
                                 <!-- prints image from database of corresponding id -->
                                 <div class="cart_img">

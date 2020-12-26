@@ -5,9 +5,72 @@
 /* ========== IMAGES USED IN CSS =========== */
 
 :root{
+    --header-height: 3rem;
+    --font-semi: 600;
+    --font-bold: 700;
+}
+
+/* ========== IMAGES USED IN CSS =========== */
+
+:root{
     --offer-1: url("Assets/images/products/cupcake_bg2_cropped.jpg");
     --offer-2: url("Assets/images/products/christmas_2.jpg");
 }
+
+/* ========== COLOURS =========== */
+
+:root {
+    --first-color: #FF7380FF;
+    --first-color-alt: #FFA5A5FF;
+    --white-color: white;
+    --baby-pink-color: #ffd7d7;
+    --yellow-color: #ffe547;
+    --dark-color: black;
+    --dark-color-light: #2e2d2d;
+    --grey-color: #d0d0d0;
+}
+
+/* ========== FONTS AND TYPOGRAPHY =========== */
+
+:root {
+    --body-font: 'Open Sans', sans-serif;
+    --font-alt: Nunito;
+    --big-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    
+}
+
+@media screen and (min-width: 768px){
+
+    :root {
+        --big-font-size: 6rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .813rem;
+    }
+
+}
+
+/* ========== MARGINS =========== */
+:root {
+    --mb-1: .5rem;
+    --mb-half: .75rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+}
+
+/* ========== Z-INDEX =========== */
+
+:root{
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
 
 .offer__section{
     /* z-index: 300; */

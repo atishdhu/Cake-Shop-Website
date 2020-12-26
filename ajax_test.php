@@ -40,9 +40,9 @@
           <!--========== PHP QUERIES ==========-->
           <?php 
             
-            $Q_fetch_featured = "SELECT * FROM products WHERE p_type_id = 2 ; ";//selects featured products
-            $Q_fetch_new =  "SELECT * FROM products WHERE p_type_id = 1 ; ";//selects new products
-            $Q_fetch_product_details =  "SELECT * FROM products WHERE p_id = 1 ; ";//selects product with id =1
+            $Q_fetch_featured = "SELECT * FROM products WHERE typeID = 2 ; ";//selects featured products
+            $Q_fetch_new =  "SELECT * FROM products WHERE typeID = 1 ; ";//selects new products
+            $Q_fetch_product_details =  "SELECT * FROM products WHERE productID = 1 ; ";//selects product with id =1
             $Q_fetch_categories = "SELECT * FROM product_categories;"; //selects all categories
             $Q_sortby_price_asc = "SELECT * FROM products ORDER BY p_price ASC; "; //sort all products by price low to high
             $Q_sortby_price_dsc = "SELECT * FROM products ORDER BY p_price DESC; "; //sort all products by price high to low
@@ -96,11 +96,11 @@
                     <div class="dropdown-content">
                         <?php
                         while($row_categories = mysqli_fetch_assoc($result_cat)){
-                            $p_cat_id = $row_categories['p_cat_id'];
+                            $categoryID = $row_categories['categoryID'];
                             $p_cat_name = $row_categories['p_cat_name'];
                             ?>
-                            <a href="#" onclick="display_products_by_cat_id(<?php echo $p_cat_id; ?>, '<?php echo $p_cat_name; ?>'); " ><?php echo $p_cat_name; ?></a>
-                            <!-- <input type="submit" onclick="display_products_by_cat_id(<?php echo $p_cat_id; ?>)" value="<?php echo $row_categories['p_cat_name']; ?>"> -->
+                            <a href="#" onclick="display_products_by_cat_id(<?php echo $categoryID; ?>, '<?php echo $p_cat_name; ?>'); " ><?php echo $p_cat_name; ?></a>
+                            <!-- <input type="submit" onclick="display_products_by_cat_id(<?php echo $categoryID; ?>)" value="<?php echo $row_categories['p_cat_name']; ?>"> -->
                             
                             <?php 
                         }
