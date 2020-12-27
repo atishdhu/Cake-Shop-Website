@@ -1,6 +1,11 @@
 <?php 
     define('Access', TRUE);
+
+    //SESSION START
     include "./AdditionalPHP/startSession.php";
+
+    //DATABASE CONNECTION  cakeshop
+    include_once 'connection.php';
 ?>
 
 <?php
@@ -19,8 +24,14 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
             unset($_SESSION['shopping_cart'][$key]);
         }//end if
     }//end foreach
+
     //reset session array keys so they match with $product_ids numeric array
     $_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
+
+    //DELETE ROW FROM CARTITEM TABLE
+    $Q_delete_cartitem = 'DELETE FROM cartitem WHERE productID = '.filter_input(INPUT_GET, 'product_id');
+    $run_delete_cartitem = mysqli_query($conn, $Q_delete_cartitem);
+
 }//end if
 ?>
 
@@ -33,7 +44,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
 
     <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
     <?php 
-        include_once 'connection.php';
+        
         include_once 'numOfItemsInCart.php';
     ?>
 
@@ -82,6 +93,7 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
             $Q_fetch__all_products = "SELECT * FROM products";
         
         ?>
+
 
         <!--========== HEADER ==========-->
         <?php $page = 'cart'?>
@@ -203,9 +215,13 @@ if(filter_input(INPUT_GET, 'action') == 'delete'){
                 </div>
 
                 <?php
+
+                    //CALCULATING TOTAL PRICE
                     $total = $total + ($product['quantity'] * $product['price']);
-                    //total num of items
-                   // $_SESSION['total_quantity'] = $_SESSION['total_quantity'] + $product['quantity'];
+
+                    //CREATE SESSION FOR TOTAL PRICE
+                    $_SESSION['total_price'] = $total;
+
                 }//end foreach
                 ?>
             </div>

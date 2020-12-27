@@ -1,3 +1,18 @@
+<?php 
+    define('Access', TRUE);
+
+    //SESSION START
+    include "./AdditionalPHP/startSession.php";
+
+    //DATABASE CONNECTION  cakeshop
+    include_once 'connection.php';
+
+    
+      
+
+    
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -90,7 +105,7 @@
          
          
          
-          <form action="ThankYouCheckout.php"  class="needs-validation" novalidate>
+          <form action="ThankYouCheckout.php"  class="needs-validation" method="POST">
             <div class="row g-3">
 
 
@@ -140,7 +155,7 @@
               <!-- ENTER ADDRESS -->
               <div class="col-12">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                <input type="text" class="form-control" id="address" name="address_checkout" placeholder="1234 Main St" required>
                 <div class="invalid-feedback">
                   Please enter your shipping address.
                 </div>
@@ -203,19 +218,19 @@
             <!-- CREDIT CARD  -->
             <div class="my-3">
               <div class="form-check">
-                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="creditCard" checked>
                 <label class="form-check-label" for="credit">Credit card</label>
               </div>
 
               <!-- MCB JUICE  -->
               <div class="form-check">
-                <input id="mcbjuice" name="paymentMethod" type="radio" class="form-check-input" required>
+                <input id="mcbjuice" name="paymentMethod" type="radio" class="form-check-input" value="JuiceByMCB">
                 <label class="form-check-label" for="mcbjuice">Juice by MCB</label>
               </div>
 
               <!-- PAYPAL  -->
               <div class="form-check">
-                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" value="paypal">
                 <label class="form-check-label" for="paypal">PayPal</label>
               </div>
             </div>
@@ -267,8 +282,12 @@
 
             <!-- COTINUE TO CHECKOUT BUTTON  -->
             <hr class="my-4 pinkLine" >
-            <!-- <a href="ThankYouCheckout.php"  class="w-100 btn btn-primary btn-lg button" >Continue to checkout</a> -->
+            
             <button class="w-100 btn btn-primary btn-lg button" type="submit">Continue to checkout</button>
+            
+          <a href="cancel.php" class="w-30 btn btn-primary btn-lg button mt-3 cancel">Cancel</a>
+
+            <!-- <button class="w-30 btn btn-primary btn-lg button mt-3 cancel">Cancel</button> -->
           </form>
         </div>
       </div>

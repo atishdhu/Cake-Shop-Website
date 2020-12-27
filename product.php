@@ -1,7 +1,17 @@
 <?php 
     define('Access', TRUE);
+
+    //START SESSION
     include "./AdditionalPHP/startSession.php";
+
+    //CONNECTION TO DATABASE : cakeshop
+    include_once 'connection.php';
+
+    
 ?>
+
+
+  
 
 <?php
 $product_ids = array();
@@ -24,6 +34,39 @@ else {
     }
 }
 
+// BASIC MYSQL QUERIES
+if(isset($_SESSION['uname'])){
+
+    //set session for userID
+    $Q_fetch_userID = 'SELECT userID FROM user WHERE uname = "'. $_SESSION['uname'].'"';
+    $run_fetch_userID = mysqli_query($conn, $Q_fetch_userID);
+    $result = mysqli_fetch_array($run_fetch_userID);
+    $_SESSION['userID'] = $result[0];
+
+    //give cartID to user
+    $Q_select_user_in_cart = 'SELECT * FROM cart WHERE userID = '.$_SESSION['userID'];
+    $run_select_user_in_cart = mysqli_query($conn, $Q_select_user_in_cart);
+    $count_user_in_cart = mysqli_num_rows($run_select_user_in_cart);
+    
+    //create cartID for user only once
+    if( $count_user_in_cart==0){
+        $Q_insert_into_cart = 'INSERT INTO cart (userID) VALUES ('.$_SESSION['userID'].')';
+        $run_insert_into_cart = mysqli_query($conn, $Q_insert_into_cart);   
+    }
+
+    //set session for cartID
+    $Q_fetch_cartID = 'SELECT cartID FROM cart WHERE userID ='.$_SESSION['userID'];
+    $run_fetch_cartID = mysqli_query($conn, $Q_fetch_cartID);
+    $result2 = mysqli_fetch_array($run_fetch_cartID);
+    $_SESSION['cartID'] = $result2[0];
+   
+
+}
+
+
+
+
+
 //check if Add to Cart button has been submitted
 if(filter_input(INPUT_POST, 'add-to-cart')){
     if(isset($_SESSION['shopping_cart'])){
@@ -43,6 +86,11 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
                     'price' => filter_input(INPUT_POST, 'price'),
                     'quantity' => filter_input(INPUT_POST, 'input_quantity')
                 ); 
+
+                //INSERT CART ITEM DETAILS TO TABLE cartitem
+                $Q_insert_into_cartitem = 'INSERT INTO cartitem (productID, cartID, price, quantity) 
+                VALUES ('.$_SESSION['productID'].','.$_SESSION['cartID'].','.filter_input(INPUT_POST, 'price').','.filter_input(INPUT_POST, 'input_quantity').' )';
+                $run_insert_into_cartitem = mysqli_query($conn, $Q_insert_into_cartitem);
             }
             else {//product already exist, increase quantity
 
@@ -53,6 +101,11 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
                         //add item quantity from form to the existing product in the array
                         // $_SESSION['shopping_cart'][$i]['quantity'] += filter_input(INPUT_POST, 'input-quantity');
                         $_SESSION['shopping_cart'][$i]['quantity'] += $_POST['input_quantity'];
+
+                        //UPDATE QUERY IN TABLE cartitem
+                        $Q_update_cartitem = 'UPDATE cartitem SET quantity = '.$_SESSION['shopping_cart'][$i]['quantity'].' 
+                        WHERE productID = '.$_GET['product_id'];
+                        $run_update_cartitem = mysqli_query($conn, $Q_update_cartitem);
                     }
                 }
             }
@@ -67,6 +120,12 @@ if(filter_input(INPUT_POST, 'add-to-cart')){
             'price' => filter_input(INPUT_POST, 'price'),
             'quantity' => filter_input(INPUT_POST, 'input_quantity')
         );
+
+
+        //INSERT CART ITEM DETAILS TO TABLE cartitem
+        $Q_insert_into_cartitem = 'INSERT INTO cartitem (productID, cartID, price, quantity) 
+        VALUES ('.$_GET['product_id'].','.$_SESSION['cartID'].','.filter_input(INPUT_POST, 'price').','.filter_input(INPUT_POST, 'input_quantity').' )';
+        $run_insert_into_cartitem = mysqli_query($conn, $Q_insert_into_cartitem);
     }
 
 }
@@ -88,11 +147,6 @@ function pre_r($array){
     <title>MALAKO | Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--========== PHP CONNECTION TO DATABASE: MALAKO ==========-->
-    <?php 
-        include_once 'connection.php';
-        include_once 'numOfItemsInCart.php';
-    ?>
 
     <!--========== CSS FILES ==========-->
     <link rel="stylesheet" type="text/css" href="Common.css">
@@ -112,10 +166,11 @@ function pre_r($array){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap.css"> -->
-
-    <!-- <link rel='stylesheet' type='text/css' href='style.php' /> -->
+    
+    <?php
+    //CART QUANTITY VALUE
+    include_once 'numOfItemsInCart.php';
+    ?>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0e16635bd7.js" crossorigin="anonymous"></script>
@@ -130,10 +185,10 @@ function pre_r($array){
     <body>
           <!--========== PHP QUERIES ==========-->
         <?php 
-        
-        $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
-        $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
-        $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
+                
+            $Q_fetch_featured = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects featured products
+            $Q_fetch_new = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 1"; //selects new products
+            $Q_fetch_product_details = "SELECT * FROM products INNER JOIN product_type ON products.productID = product_type.productID WHERE product_type.typeID = 2"; //selects product with id =1
 
         ?>
 
@@ -153,7 +208,7 @@ function pre_r($array){
         <!--========== PHP FETCH PRODUCT DETAILS ==========-->
 
         <?php
-            if(isset($_GET['product_id'])){ //if(isset($_GET['product_id'])){
+             if(isset($_GET['product_id'])){ //if(isset($_GET['product_id'])){
                 $product_id = $_GET['product_id'];
                 
                 //******* start get products details *******
@@ -185,6 +240,7 @@ function pre_r($array){
                 $typeID = $row_type_id['typeID'];
                 $categoryID = $row_cat_id['categoryID'];             
             }
+            
             else{
 
             }
@@ -211,7 +267,7 @@ function pre_r($array){
                                 margin-bottom: .8rem; font-weight: 700; color: grey; ">Quantity</label><br>
                                 <input type="number" value="1" min="1" max="100" name= "input_quantity" id= "input_quantity" class="input-quantity mx-2 p-3 px-4">
                                 <input type="hidden" name="name" value="<?php echo $p_name;?>" />
-                                <input type="hidden" class="show_id" name="p_id_id" value="<?php echo $product_id;?>" />
+                                <input type="hidden" class="show_id" name="productID_id" value="<?php echo $product_id;?>" />
                                 <input type="hidden" name="price" value="<?php echo $p_price;?>" /> <br>
                                 <input type="submit" name="add-to-cart" id="add-to-cart-btn" value="Add to Cart" class="btn btn-primary btn-lg my-4 button" />
 

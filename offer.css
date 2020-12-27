@@ -1,0 +1,191 @@
+
+/*========== OFFER ========== */
+
+
+/* ========== IMAGES USED IN CSS =========== */
+
+:root{
+    --header-height: 3rem;
+    --font-semi: 600;
+    --font-bold: 700;
+}
+
+/* ========== IMAGES USED IN CSS =========== */
+
+:root{
+    --offer-1: url("Assets/images/products/cupcake_bg2_cropped.jpg");
+    --offer-2: url("Assets/images/products/christmas_2.jpg");
+}
+
+/* ========== COLOURS =========== */
+
+:root {
+    --first-color: #FF7380FF;
+    --first-color-alt: #FFA5A5FF;
+    --white-color: white;
+    --baby-pink-color: #ffd7d7;
+    --yellow-color: #ffe547;
+    --dark-color: black;
+    --dark-color-light: #2e2d2d;
+    --grey-color: #d0d0d0;
+}
+
+/* ========== FONTS AND TYPOGRAPHY =========== */
+
+:root {
+    --body-font: 'Open Sans', sans-serif;
+    --font-alt: Nunito;
+    --big-font-size: 3rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .75rem;
+    
+}
+
+@media screen and (min-width: 768px){
+
+    :root {
+        --big-font-size: 6rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .813rem;
+    }
+
+}
+
+/* ========== MARGINS =========== */
+:root {
+    --mb-1: .5rem;
+    --mb-half: .75rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+}
+
+/* ========== Z-INDEX =========== */
+
+:root{
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+.offer__section{
+    /* z-index: 300; */
+    margin-bottom: 2rem;
+    border: 5px solid black;
+}
+
+.offer__bg {
+    background-image: var(--offer-1);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    text-align: center;
+}
+
+.offer__bg2 {
+    width: 100%;
+    height: auto;
+    background-image: var(--offer-2);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    text-align: center;
+}
+
+.offer__data{
+    padding: 2rem .25rem;
+    background: rgba(0,0,0,.25);
+    color: var(--white-color);
+}
+
+.offer__title{
+    font-size: var(--h1-font-size);
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-weight: var(--font-semi);
+}
+
+.offer__description{
+    margin-bottom: var(--mb-2);
+    letter-spacing: .2rem;
+}
+
+.offer__top {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  /*  mask-image: linear-gradient(to bottom, transparent 10%, black);*/
+}
+
+
+/*========== BUTTONS ========== */
+.button{
+    display: inline-block;
+    background-color: var(--first-color) !important;
+    color: var(--white-color) !important;
+    padding: 1rem ;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi) !important;
+    transition: .3s !important;
+    text-decoration: none !important;
+    border: none !important;
+
+}
+
+.button:hover{
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+  
+}
+
+.button__round {
+    border-radius: 25px;
+}
+.continue-shop{
+    display: inline-block;
+    /* background-color: rgba(148, 148, 148, 0.479) !important; */
+    color: grey !important;
+    padding: .8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-family: var(--body-font);
+    font-size: var(--small-font-size);
+    /* font-weight: var(--font-semi) !important; */
+    transition: .3s !important;
+    text-decoration: none !important;
+    border: 1px solid grey !important;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+
+.continue-shop:hover{
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+  
+}
+
+.continue-shop-div{
+    margin-top: 1rem !important;
+    margin-left: .1rem !important;
+    max-width: 10%;
+    border-radius: 25px;
+}
+
+
+/*========== MEDIA QUERIES BY SANJANA ========== */
+@media screen and (min-width: 768px){
+    
+    .offer__data{
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 3rem;
+        padding-bottom: 14rem;
+    }
+
+}
