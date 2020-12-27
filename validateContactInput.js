@@ -7,7 +7,8 @@ form.addEventListener('submit', (e) => {
 	var nameError = "";
 	var emailError = "";
 	var phoneError = "";
-	
+	var message = document.getElementById('customerNote');
+
 	document.getElementById("nameError").innerHTML = "";
 	document.getElementById("emailError").innerHTML = "";
 	document.getElementById("phoneError").innerHTML = "";
@@ -52,8 +53,22 @@ form.addEventListener('submit', (e) => {
 	}
 	else
 	{
-		alert("Message Sent!");
+		sendMessage();
 		document.getElementById("sendError").innerHTML = "Message Sent!";
 	}
 
+	
 })
+
+function sendMessage() {
+	const FD = new FormData( form );
+	const xhr = new XMLHttpRequest();
+
+	xhr.onload = function(){
+		document.getElementById("sendError").innerHTML = "Sending Message!";
+	};
+
+	xhr.open("POST", "./Includes/ContactUsForm.php", true);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send(FD);
+  }
