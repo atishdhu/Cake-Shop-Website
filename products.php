@@ -195,11 +195,6 @@
             </div>
         </section>
 
-        <!--Start Newsletter-->
-        <?php include './Includes/NewsLetter.php';?>
-        <!--End Newsletter-->
-
-
         <!--Start Footer-->
         <?php include './Includes/Footer.php';?>
         <!--End Footer-->

@@ -443,7 +443,7 @@ hr{
     /* Start User Profile Subtitle*/
     .user-profile-container .input-error{
         font-weight: bold;
-        color: red;
+        color: #FFA5A5FF;
     }
 
     .user-profile-container .message{
