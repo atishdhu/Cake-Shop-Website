@@ -214,7 +214,7 @@ html, body{
 /* Start Contact Us Form */
 .contact-section .input-error{
     font-size: 12pt;
-    color: red;
+    color:  #FF7380FF;
 }
 
 .contact-section .send-input-message{
