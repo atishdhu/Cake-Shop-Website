@@ -11,7 +11,7 @@
             <p class="newsletter__description">Be the first to get informed about our best deals!</p>
             
             <form id="newsletterForm" class="newsletter__form" method="POST" action="validateNewsletterInput.php">
-                <input id="email" class="newsletter__input" name="email" required type="email" placeholder="Enter your email"/>
+                <input id="mail" class="newsletter__input" name="mail" required type="mail" placeholder="Enter your mail"/>
                 
                 <div class="subscribe-button-container">
                     <span><button id="subscribe" class="subscribe-button" name="subscribe" type="submit">SUBSCRIBE</button></span>

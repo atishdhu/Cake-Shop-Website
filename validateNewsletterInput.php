@@ -4,9 +4,9 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $email = $_POST['email'];
+        $mail = $_POST['mail'];
 
-        $sql = "SELECT isSubscribed FROM user WHERE email = '$email'";
+        $sql = "SELECT isSubscribed FROM user WHERE email = '$mail'";
 
         $result = mysqli_query($conn, $sql);
 
@@ -20,7 +20,7 @@
             }
             else
             {
-                $sql = "UPDATE user SET isSubscribed = 1 WHERE email = '$email'";
+                $sql = "UPDATE user SET isSubscribed = 1 WHERE email = '$mail'";
 
                 if(mysqli_query($conn, $sql))
                 {

@@ -4,7 +4,6 @@
     <script defer src="validateContactInput.js"></script>
 </head>
 
-
 <div id="contact-submission" class="contact-section">
     <div class="contact-us">
         <div class="subtitle">

@@ -1,5 +1,5 @@
 var newsletterForm = document.getElementById('newsletterForm');
-var email = document.getElementById('email');
+var mail = document.getElementById('mail');
 var buttonPressed = document.getElementById('subscribe');
 
 if(buttonPressed.id == "subscribe")
@@ -11,11 +11,11 @@ if(buttonPressed.id == "subscribe")
     
         var allErrors = [];
         
-        email.value = String(email.value).trim();
+        mail.value = String(mail.value).trim();
         var regmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if( !email.value.match(regmail) )
+        if( !mail.value.match(regmail) )
         {
-            mailError = "Invalid email format";
+            mailError = "Invalid mail format";
             document.getElementById("mailError").innerHTML = mailError;
             allErrors.push(mailError);
         }
@@ -34,7 +34,7 @@ if(buttonPressed.id == "subscribe")
     })
     
     function sendToServer() {
-        var var_str = "email=" + email.value;
+        var var_str = "mail=" + mail.value;
         
         const xhr = new XMLHttpRequest();
     
