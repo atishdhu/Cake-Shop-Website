@@ -23,12 +23,10 @@ if(buttonPressed.id == "subscribe")
         if(allErrors.length > 0)
         {
             f.preventDefault();
-            document.getElementById("sendError").innerHTML = "Message Not Sent!";
         }
         else
         {
             sendToServer();
-            document.getElementById("sendError").innerHTML = "Message Sent!";
             f.preventDefault();
         }
     })
