@@ -137,8 +137,22 @@ select:-webkit-autofill:focus {
   border: none;
 }
 
+
 .button:hover{
   background-color: var(--dark-color-light);
+}
+
+.button:focus{
+  background-color: #851bcc !important;
+}
+
+.cancel{
+  background-color: var(--dark-color-light) !important;
+  font-size: .8rem !important;
+}
+
+.cancel:hover{
+  background-color: var(--first-color-alt) !important;
 }
 
 .thankYouImage{
