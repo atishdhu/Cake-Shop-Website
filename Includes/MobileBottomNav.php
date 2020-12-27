@@ -24,7 +24,7 @@
             <i class="<?php echo $icon;?>" ></i>
             <span class="bottom-nav-text"><?php echo $uname;?></span>
         </a>
-        <a href="#" class="bottom-nav-link">
+        <a href="cart.php" class="bottom-nav-link">
             <i class="fas fa-shopping-cart"></i>
             <span class="bottom-nav-text">My Cart</span>
         </a> 

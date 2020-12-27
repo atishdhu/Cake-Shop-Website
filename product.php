@@ -249,9 +249,10 @@ function pre_r($array){
         <!--PRODUCT DETAILS GRID-->
         
         <div class="container mx-auto mt-0 pt-0 ">
-            <!-- <form method="POST" action="index.php?action=add&id=<?php echo $product_id; ?>"> -->
+            <!-- <form method="POST" action="index.php?action=add&id=<?php //echo $product_id; ?>"> -->
                 <div class="row continue-shop-div text-center">
-                    <a href="products.php" class="continue-shop">Continue</a>
+                    <a href="products.php" class="button continue" id="cat-but" >Continue</a>
+                    <!-- <button class="dropbtn button" id="cat-but"></button> -->
                 </div>
                 <div class="row">
                     <div class="col-md mt-4 mx-auto ">
