@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+*{
+    box-sizing: border-box;
+    font-family: Nunito;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+    scroll-behavior: smooth;
+}
+
+.subtitle h2{
+    text-align: center;
+    color: #FF7380FF;
+    font-size: 40px;
+    letter-spacing: 2.2pt;
+}
+
+.push-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.push-button button{
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 24pt;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 23px;
+    border: none;
+    background: #FF7380FF;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
+}
+
+
+/* Start Navigation Bar */
+.main-header-media1200{
+    display:none;
+}
+
+.main-header{
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 90px;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: left;
+    line-height: 60px;
+    margin-left: 40px;
+    cursor: pointer;
+    display: block;
+}
+
+#check{
+    display: none;
+}
+
+.business-name a{ 
+    float: right;
+    margin-right: 40px;
+    font-size: 40px;
+    color: black;
+    font-family: Playfair Display;
+}
+
+.main-nav ul li a{
+    font-size: 20px;
+}
+
+.main-nav ul li{
+    display: block;
+    padding-top: 50px;
+    padding-right: 32px;
+    line-height: 12%;
+}
+
+.main-nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 5;
+}
+
+.main-nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.main-nav .active{
+    text-decoration: blink;
+    color: #FF7380FF;
+    border-bottom: 2px solid currentColor;
+}
+
+#check:checked ~ ul{
+    left:0%;
+}
+
+.nav__cart{
+    font-size: 1.68rem;
+    margin: 1rem 1rem;
+    position: relative;
+}
+
+.display_view{
+    display: inline-flex;
+    margin-top: .5rem;
+}
+
+.details-header{
+    box-shadow: 0 3px 8px 0 rgba(80, 80, 80, 0.05), 0 3px 8px 0 rgba(90, 90, 90, 0.03) ;
+}
+.cart-number{
+    font-size: 1rem !important;
+    position: absolute !important;
+    border-radius: 50% 50%;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    padding-top: .3rem;
+    color: white;
+    background-color: #2e2d2d;
+    top:1rem !important;
+    right: 10rem;
+    font-weight: 300;
+    margin-top: 0rem !important;
+    
+}
+
+.cart-number:hover{
+    background-color: #FFA5A5FF;
+    font-weight: 700;
+}
+
+
+.cart-number-mob{
+    font-size: .6rem !important;
+    position: absolute !important;
+    border-radius: 50% 50%;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    padding-top: .15rem;
+    color: white;
+    background-color: #2e2d2d;
+    top:1.3rem !important;
+    left: 6rem;
+    font-weight: 300;
+    
+}
+/* End Navigation Bar */
+
+
+/* Start Wave Image */
+.wave-image-group-media1200{
+    display: none;
+}
+
+.wave-image-group img{
+    position:relative;
+    max-width:100%;
+    margin:0;
+    z-index:3;
+}
+
+.wave-image-group .wave-image{
+    margin-bottom: -10px;
+    margin-top: -30px;
+    vertical-align: bottom;
+}
+
+.wave-image-group .wave-image-flip{
+    margin-bottom: -40px;
+    margin-top: -10px;
+    vertical-align: top;
+}
+/* End Wave Image */
+
+
+/* Start Locate Us */
+.google-map{
+    vertical-align: bottom;
+    margin-bottom: -7px;
+}
+
+.map .subtitle h2{
+    color: black;
+}
+/* End Locate Us */
+
+
+/* Start Contact Us Form */
+.contact-section .input-error{
+    font-size: 12pt;
+    color:  #FF7380FF;
+}
+
+.contact-section .send-input-message{
+    font-size: 12pt;
+    color: green;
+}
+
+.contact-section h2{
+    padding-top: 28px;
+    margin:0;
+    color: white;
+}
+
+.contact-section .subtitle{
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+}
+
+.contact-section .subtitle p{
+    color: white;
+    font-size: 14pt;
+}
+
+.contact-us{
+    background: #282c2f;
+    padding: 0px 40px;
+    padding-bottom: 50px;
+    /* border-top: 10px solid #23CFA7FF; */
+}
+
+.contact-section label, input, textarea {
+    display: block;
+    width: 100%;
+    font-size: 12pt;
+    color: white;
+    line-height: 24pt;
+}
+ 
+.contact-section input {
+    color: black;
+    margin-bottom: 24pt;
+}
+  
+.contact-section h3 {
+    font-weight: normal;
+    font-size: 10pt;
+    line-height: 24pt;
+    font-style: italic;
+    margin: 0 0 0.5em 0;
+}
+  
+.contact-section span {
+    font-size: 8pt;
+}
+  
+.contact-section em {
+    color: #FF7380FF;
+    font-weight: bold;
+}
+  
+.contact-section input, textarea {
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    background: white;
+    padding-left: 5px;
+    outline: none;
+}
+  
+.contact-section input:focus, textarea:focus {
+    border: 1px solid #FF7380FF;
+}
+  
+.contact-section textarea {
+    color: black;
+    resize: none;
+}
+
+.contact-section button:hover {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.contact-section .g-recaptcha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us .captcha-error-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* End Contact Us Form */
+
+
+/* Start Newsletter */
+.newsletter-section .input-error{
+    font-size: 13pt;
+    color: red;
+}
+
+.newsletter-section .send-input-message{
+    font-size: 13pt;
+    color: green;
+}
+
+.newsletter{
+    text-align: center;
+    padding-bottom: 45px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+}
+
+.newsletter__description{
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color:black;
+}
+
+.newsletter__form{
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+}
+
+.newsletter__input{
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: #dadada;
+    padding: 0 1rem;
+}
+
+.newsletter__form ::placeholder{
+    color: black;
+    opacity: 0.6;
+}
+
+.subscribe-button{
+    display: inline-block;
+    border: none;
+    background-color: #FF7380FF;
+    color: white;
+    padding: 1rem;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.subscribe-button:hover{
+    background-color: black;
+  
+}
+
+.subscribe-button {
+    border-radius: 25px;
+}
+
+.subscribe-button-container{
+    width: 150px;
+}
+/* End Newsletter */
+
+
+/* Start Footer */
+.footer{
+    background-color: #FF7380FF;
+    background-size: 100%;
+    width: 100%;
+    height: 580px;
+    margin: 0;
+    margin-top: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.logo-name{
+    font-size: 70px;
+    font-family: Playfair Display;
+}
+
+.footer-group .social-media{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.footer-group .social-media a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-group .social-media span{
+    display: inline;
+    letter-spacing: 8px;
+    font-size: 40px;
+}
+
+.contact-links{
+    font-size: 22px;
+}
+
+.contact-links span{
+    display: block;
+}
+
+.contact-links .phone{
+    padding: 25px 0;
+}
+
+.contact-links .address{
+    padding-bottom: 25px;
+}
+
+.legal-links{
+    font-size:20px;
+    line-height: 35px;
+}
+
+.legal-links span{
+    display: block;
+    letter-spacing: 3px;
+}
+
+.legal-links a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.copyright{
+    padding-top: 25px;
+}
+
+.copyright span{
+    font-size: 15px;
+}
+/* End Footer */
+
+
+/* Start Bottom Navbar */
+.bottom-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    background-color:white;
+    display: flex;
+    overflow-x: auto;
+    z-index: 5;
+}
+
+.bottom-nav-link{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow:1;
+    min-width:50px;
+    overflow:hidden;
+    white-space: nowrap;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.bottom-nav-active{
+    color: #FF7380FF;
+}
+
+.bottom-nav-icon{
+    font-size: 18px;
+}
+/* End Bottom Navbar */
+
+
+/*---------------------------------------------------------------------------------------------*/
+/*START MEDIA QUERY FOR COMMON ELEMENTS*/
+/*---------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px){
+
+    .subtitle h2{
+        font-size: 50px;
+    }
+
+    .main-header{
+        display:none;
+    }
+
+    /*Start Navigation Bar*/
+    .main-header-media1200{
+        display: contents;
+    }
+
+    .main-nav-media1200{
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .main-nav-media1200 ul{
+        padding-bottom: 40px;
+        padding-top: 1em;
+    }
+
+    .main-nav-media1200 li{
+        display: inline;
+    }
+
+    .main-nav-media1200 a{
+        display: inline-block; /*makes space on top of inline elements - the nav*/
+        padding-left: .4em;/*only makes space to left and right but not top since elements are inline*/
+        padding-right: .4em;/*only makes space to left and right but not top since elements are inline*/
+        color: black;
+        text-decoration: none;
+    }
+
+    .main-nav-media1200 a:hover{
+        color: #FFA5A5FF;
+    }
+
+    .main-nav-media1200 .active{
+        text-decoration: blink;
+        color: #FFA5A5FF;
+        border-bottom: 2px solid currentColor;
+    }
+
+    .main-nav-media1200 li{
+        padding: 0 2%;
+    }
+
+    .business-name-media1200 a{
+        float: left;
+        margin: 0;
+        margin-top: 0;
+        font-size: 60px;
+        color: black;
+        font-family: Playfair Display;
+        font-weight: 100; 
+    }
+
+    .main-nav-media1200 .logo-business-name:hover{
+        color:#9DDFD3FF;
+    }
+
+    .main-nav-media1200 .user-button{
+        font-size: 32px;
+    }
+
+    .indexNav ul{
+        padding-bottom: 0px;
+    }
+    /*End Navigation Bar*/
+
+
+    /* Start Wave Image */
+    .wave-image-group .wave-image{
+        margin-bottom: -10px;
+        margin-top: -150px;
+        vertical-align: bottom;
+    }
+
+    .wave-image-group .wave-image-flip{
+        margin-bottom: -5px;
+        margin-top: -10px;
+
+        vertical-align: top;
+    }
+
+    
+    .wave-image-group-media1200{
+        display: contents;
+    }
+
+    .wave-image-group-media1200 img{
+        position:relative;
+        max-width:100%;
+        margin:0;
+        z-index:3;
+    }
+
+    .wave-image-group-media1200 .wave-image-flip-media1200{
+        margin-bottom: -60px;
+        margin-top: 0px;
+        vertical-align: top;
+    }
+    /* End Wave Image */
+
+    /* Start Locate Us */
+    .map .subtitle h2{
+        color: black;
+    }
+    /* End Locate Us */
+
+
+    /* Start Contact Us Form */
+    .contact-section h2{
+        padding-top: 40px;
+        font-size: 40px;
+        margin:0;
+        color: white;
+    }
+
+    .contact-section .subtitle p{
+        font-size: 15pt;
+    }
+
+    .contact-section button{
+        border-radius: 30px;
+        padding-top: 15px;
+    }
+
+    .contact-us{
+        background: #282c2f;
+        padding: 0px 300px;
+        padding-bottom: 50px;
+    }
+    /* End Contact Us Form */
+
+
+    /* Start Newsletter */
+    .newsletter{
+
+        padding-left: 400px; 
+        padding-right: 400px; 
+    }
+
+    .subscribe-button-container{
+        width: 150px;
+    }
+    /* End Newsletter */
+
+
+    /* Start Bottom Navbar */
+    .bottom-nav{
+        display: none;
+    }
+    /* End Bottom Navbar */
+}
+/*---------------------------------------------------------------------------------------------*/
+/*END MEDIA QUERY FOR COMMON ELEMENTS*/
+/*---------------------------------------------------------------------------------------------*/

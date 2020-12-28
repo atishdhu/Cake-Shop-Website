@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&family=Open+Sans:wght@300;400&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
+
+/* ========== COLOURS =========== */
+
+:root {
+  --first-color: #FF7380FF;
+  --first-color-alt: #FFA5A5FF;
+  --white-color: white;
+  --baby-pink-color: #ffd7d7;
+  --yellow-color: #ffe547;
+  --dark-color: black;
+  --dark-color-light: #2e2d2d;
+  --grey-color: #d0d0d0;
+}
+
+.container {
+  max-width: 960px;
+}
+
+body{
+  font-family: Nunito;
+  color: var(--dark-color-light);
+}
+
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+  border: none !important;
+  outline: none !important;
+}
+
+
+.form-control:focus{
+  color: var(--dark-color-light);
+  background-color: #fff;
+  border-color: linen;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem linen;
+}
+
+
+.form-select:focus{
+  color: var(--dark-color-light);
+  background-color: #fff;
+  border-color: linen;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem linen;
+}
+  
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--dark-color-light);
+  -webkit-box-shadow: 0 0 0px 1000px linen inset;
+  /* transition: background-color 5000s ease-in-out 0s; */
+}
+
+
+.business-name{
+  font-family: Playfair Display;
+  
+
+}
+
+
+.bg-pink{
+  background-color:var(--first-color-alt);
+  color: var(--white-color);
+}
+
+.linen-rows{
+  background-color: linen;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  margin-bottom: 1rem ;
+  border-radius: 5px;
+  border-left: 10px solid var(--first-color-alt) ;
+
+}
+
+
+.total-row{
+  
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  margin-bottom: 1rem ;
+  
+  border-top: 3px solid var(--first-color-alt) !important;
+
+}
+
+
+.my-cart{
+  
+  border-right: none !important;
+  border-left: none !important;
+  border-top: none !important;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--first-color-alt) !important;
+  font-size: 22px;
+
+}
+
+.price-tag{
+  font-family: Old Standard TT;
+}
+
+.border-bottom-pink{
+  border-bottom: 3px solid var(--first-color-alt) !important;
+  padding-bottom: 1rem;
+}
+
+.pinkLine{
+  border-bottom: 3px solid var(--first-color-alt) !important;
+  opacity: 100;
+}
+
+.button{
+  background-color: var(--first-color-alt);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+
+.button:hover{
+  background-color: var(--dark-color-light);
+}
+
+.button:focus{
+  background-color: #851bcc !important;
+}
+
+.cancel{
+  background-color: var(--dark-color-light) !important;
+  font-size: .8rem !important;
+}
+
+.cancel:hover{
+  background-color: var(--first-color-alt) !important;
+}
+
+.thankYouImage{
+  width: 20%;
+  height: auto;
+  display: block;
+  position: relative;
+  left:40%;
+  
+}
+
+
+.thankYouImageHead{
+  width: 14%;
+  height: auto;
+  z-index: 100;
+  position: absolute;
+  display: block;
+  top: 10vw;
+  left: 43%;
+  
+}
+
+/* @media screen and (max-width: 768px) {
+  
+.thankYouImageHead{
+  top: 11%;
+  left: 43%;
+}
+}
+
+
+
+  
+@media screen and (max-width: 374px) {
+  
+  .thankYouImageHead{
+    top: 16%;
+    left: 43%;
+  }
+  } */
+
+  
+@media screen and (max-width: 360px) {
+  
+  .thankYouImageHead{
+    top: 10%;
+    left: 43%;
+  }
+  }
+
+.rotate {
+  animation: rotation 3.6s 6 linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* 
+.animation-image{
+  position: relative;
+  justify-items: center !important;
+  align-items: center !important;
+  background-color: black !important;
+  left: 40%;
+} */

@@ -1,0 +1,543 @@
+hr{
+    color: lightgray;
+    opacity: .2;
+}
+
+/* Start User Profile */
+.col-md-15 {
+    width: 100%;
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.adminPanelContainer{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.adminPanelSubtitle{
+    padding: 0 15px;
+    border-width: 2px;
+}
+
+.form-name-container h2{
+    color: orangered;
+    border-bottom: 3px solid orangered;
+    padding: 0 0 2px;
+    font-size: 30px;
+    letter-spacing: 2.2pt;
+}
+
+.subtitle span{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 2.2pt;
+}
+.user-logout{
+    padding-left: 20px;
+}
+
+.user-logout span{
+    color:white;
+}
+
+.user-logout i{
+    color:white;
+}
+
+.user-profile-container .input-error{
+    font-weight: bold;
+    color: red;
+}
+
+.user-profile-container .message{
+    font-weight: bold;
+    color: green;
+}
+
+.change-password-container{
+    padding-top: 1px;
+    padding-bottom: 15px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.change-password-container h3{
+    color: orangered;
+    font-size:25px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.danger-zone {
+    border: solid red;
+    border-style: groove;
+}
+
+.danger-zone .change-password-container h3{
+    color: red;
+}
+
+.danger-zone-inside {
+    padding: 15px;
+}
+/* End User Profile */
+
+
+/*Start Login & Registration Panel*/
+.login-page {
+    width: 100%;
+    padding: 10px 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.login-header h3{
+    font-size: 30px;
+}
+
+.login-header p{
+    font-size: 20px;
+}
+
+.login-page .form .login{
+    margin-top: -31px;
+    margin-bottom: 26px;
+}
+
+.login-form span{
+    font-size: 20px;
+    color: red;
+}
+
+.form {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 100px;
+    padding: 25px;
+    text-align: center;
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: black;
+}
+
+.form input:focus {
+    color: black;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color:#FFA5A5FF;
+    background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 20px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 20px;
+}
+
+.form .message a {
+    color: #FFA5A5FF;
+    text-decoration: none;
+}
+
+.form .or-message{
+    font-size: 20px;
+}
+
+.social-login{
+    padding-top: 5px;
+}
+
+.social-login .login-text{
+    color:  #FFA5A5FF;
+    font-size: 20px;
+}
+
+.social-login i{
+    padding-left: 30px;
+    font-size: 30px;
+}
+
+.g-recaptcha{
+    height: 100px;
+}
+/*End Login & Registration Panel*/
+
+
+/* Start Thank You Page */
+.mail-sent-group{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mail-sent-container{
+    display:block;
+}
+
+.mail-sent-image-container{
+    display:inline-block;
+    align-items: center;
+    justify-content: center;
+    width:250px;
+}
+
+.mail-sent-image{
+    background-image: url("./Assets/images/6.login/MailSent.png");
+    padding-bottom: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mail-sent-text{
+    padding: 15px;
+}
+
+.mail-sent-text h1{
+    font-size: 50px;
+}
+
+.mail-sent-text .message{
+    font-size: 20px;
+}
+/* End Thank You Page */
+
+/* Start Email Verification Page */
+.mail-verified-image{
+    background-image: url("./Assets/images/6.login/emailVerified.png");
+}
+
+.mail-invalid-image{
+    margin-top: -15px;
+    background-image: url("./Assets/images/6.login/emailInvalid.png");
+}
+
+.resend-button{
+    border: none;
+    background-color: crimson;
+    color: white;
+    padding: 1rem;
+    font-size: 12pt;
+    font-weight: 600;
+    transition: .3s;
+    text-decoration: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.resend-button:hover{
+    background-color: black;
+    text-decoration: none;
+}
+
+/* End Email Verification Page */
+
+
+/* Start Password Reset Page */
+.login-form .forget-text a{
+    color:black;
+    font-size: 20px;
+    /* text-decoration: underline; */
+}
+
+.mail-forget-image{
+    background-image: url("./Assets/images/6.login/ForgetPassword.png");
+    padding-bottom: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* End Password Reset Page */
+
+/*---------------------------------------------------------------------------------------------*/
+/*START MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP*/
+/*---------------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px){
+
+    /*Start Background Image For Login Page*/
+    .bg-image-container .bg-image{
+        background-image: url("./Assets/images/6.login/CakeAndCoffee.jpg");
+        filter: blur(8px);
+        padding-bottom: 63%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*End Background Image For Login Page*/
+
+
+    /*Start Background Image For Registration Page*/
+    .bg-image-container .bg-image-join{
+        background-image: url("./Assets/images/6.login/Eclair.jpg");
+        filter: blur(8px);
+        padding-bottom: 90%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*End Background Image For Registration Page*/
+
+
+    /*Start Background Image For Password Reset Page*/
+    .bg-image-container .bg-image-forget{
+        background-image: url("./Assets/images/6.login/Dessert.jpg");
+        filter: blur(8px);
+        padding-bottom: 57%;
+        -webkit-filter: blur(4px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*End Background Image For RPassword Reset Page*/
+
+
+    /*Start Login Panel*/
+    .login-page {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 360px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: auto;
+        z-index: 5;
+    }
+
+    .login-page .form .login{
+        margin-top: -31px;
+        margin-bottom: 26px;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .form input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .form button {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background-color:#FFA5A5FF;
+        background-image: linear-gradient(45deg,rgb(252, 173, 173),rgb(255, 195, 195));
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+
+    .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 15px;
+    }
+
+    .form .message a {
+        color: #FFA5A5FF;
+        text-decoration: none;
+    }
+
+    .form .message a:hover{
+        text-decoration: underline;
+    }
+
+    .social-login{
+        padding-top: 5px;
+    }
+    
+    .social-login .login-text{
+        color:  #FFA5A5FF;
+        font-size: 20px;
+    }
+    
+    .social-login i{
+        padding-left: 30px;
+        font-size: 20px;
+    }
+    
+    .social-login i:hover{
+        color: #FFA5A5FF;
+    }
+
+    .login-form span{
+        font-size: 15px;
+    }
+
+    .login-form .forget-text a{
+        color:black;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .login-form .forget-text a:hover{
+        color:#FFA5A5FF;
+        text-decoration: underline;
+    }
+
+    .login-form .g-recaptcha{
+        transform:scale(0.89);
+        -webkit-transform:scale(0.89);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+
+    .reg-page{
+        padding-top: 30px;
+        margin-top:30px;
+    }
+    /*End Login Panel*/
+
+
+    /* Start User Profile Subtitle*/
+    .user-profile-container .input-error{
+        font-weight: bold;
+        color: #FFA5A5FF;
+    }
+
+    .user-profile-container .message{
+        font-weight: bold;
+        color: green;
+    }
+
+    .subtitle{
+        display: inline;
+        margin: auto;
+        margin-left: 280px;
+    }
+    
+    .admin-subtitle{
+        display: inline;
+        margin: auto;
+        margin-left: 380px;
+    }
+
+    .adminPanelContainer{
+        padding: 0;
+        padding-bottom: 50px;
+        margin: 0px 380px;
+        
+    }
+    
+    .adminPanelSubtitle{
+        padding: 0 15px;
+        border-width: 2px;
+    }
+    
+    .form-name-container h2{
+        text-align: center;
+        color: orangered;
+        border-bottom: 3px solid orangered;
+        padding: 0 0 2px;
+        font-size: 40px;
+        letter-spacing: 2.2pt;
+    }
+
+    .admin-subtitle span{
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        letter-spacing: 2.2pt;
+    }
+
+    .subtitle span{
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        letter-spacing: 2.2pt;
+    }
+    
+    .user-logout{
+        padding-left: 100px;
+    }
+
+    .user-logout span{
+        color:white;
+    }
+
+    .user-logout i{
+        color:white;
+    }
+
+    .change-password-container h3{
+        color: orangered;
+        font-size:25px;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .danger-zone {
+        border: solid red;
+        border-style: groove;
+    }
+
+    .danger-zone .change-password-container h3{
+        color: red;
+    }
+
+    .danger-zone-inside {
+        padding: 15px;
+    }
+
+    .container h3{
+        font-weight: 300;
+        font-size: 35px;
+    }
+
+    /* End User Profile Subtitle*/
+}
+/*---------------------------------------------------------------------------------------------*/
+/*END MEDIA QUERY FOR LOGIN.PHP, REGISTRATION.PHP, USERACCOUNT.PHP, ADMINPANEL.PHP*/
+/*---------------------------------------------------------------------------------------------*/
