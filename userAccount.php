@@ -24,7 +24,7 @@
 
     $titleName = strtoupper($fname);
 
-    include "./AdditionalPHP/updateProfile.php";
+    include "updateProfile.php";
 ?>
 
 <!DOCTYPE html>

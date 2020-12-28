@@ -1,8 +1,10 @@
+<script defer src="updateProfile.js"></script>
+
 <!--Start User Profile-->
 <div class="container user-profile-container">
     <div class="row">
         <div id="screenRes" class="col-md-15">
-            <form class="form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form id="profileForm" class="form-horizontal" method="POST" action="./CakeShop/updateProfile.php">
                 <fieldset>
                     <!-- Form Name -->
                     <div class="form-spacer">
@@ -31,7 +33,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                 </div>
-                                <input value = "<?php echo $fname;?>" id="First Name" name="fname" type="text" placeholder="First Name" class="form-control input-md">
+                                <input value = "<?php echo $fname;?>" id="fname" name="fname" type="text" placeholder="First Name" class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                 </div>
-                                <input value = "<?php echo $lname;?>" id="Last Name " name="lname" type="text" placeholder="Last Name " class="form-control input-md">
+                                <input value = "<?php echo $lname;?>" id="lname" name="lname" type="text" placeholder="Last Name " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-map-marked-alt"></i>
                                 </div>
-                                <input value = "<?php echo $address;?>" id="Address " name="address" type="text" placeholder="Enter Address " class="form-control input-md">
+                                <input value = "<?php echo $address;?>" id="address" name="address" type="text" placeholder="Enter Address " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -72,7 +74,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-phone"></i> 
                                 </div>
-                                <input value = "<?php echo $phone;?>" id="Phone Number " name="phone" type="text" placeholder="Phone Number " class="form-control input-md">
+                                <input value = "<?php echo $phone;?>" id="phone" name="phone" type="text" placeholder="Phone Number " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -104,9 +106,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" ></label>  
                         <div class="col-md-4">
-                            <button name="updateProfile" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Update</button>
-                            <button name="revertProfile" class="btn btn-danger" value=""><span class="glyphicon glyphicon-repeat"></span> Revert</button>
-                            <span class="message"><?php echo "&nbsp&nbsp <b>$updateMessage</b>";?></span>
+                            <button id="updateProfile" name="updateProfile" class="btn btn-success" onClick="sendMessage(this.id)"><span class="glyphicon glyphicon-thumbs-up"></span> Update</button>
+                            <button id="revertProfile" name="revertProfile" class="btn btn-danger" onClick="sendMessage(this.id)"><span class="glyphicon glyphicon-repeat"></span> Revert</button>
+                            <span id="message" class="message"></span>
                         </div> 
                     </div>
 
@@ -121,14 +123,14 @@
                     </div>
 
                     <div class="form-group">
-                        <span class="input-error"><?php echo $currentPasswordCriteria;?></span>
+                        <span class="input-error"></span>
                         <label class="col-md-4 control-label" for="Current Password ">Current Password </label>
                         <div class="col-md-4">
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fas fa-unlock-alt"></i>
                                 </div>
-                                <input type="password" id="Current Password " name="currentPassword" type="text" placeholder="Enter Current Password " class="form-control input-md">
+                                <input type="password" id="currentPwd" name="currentPassword" type="text" placeholder="Enter Current Password " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -143,7 +145,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-key"></i>
                                 </div>
-                                <input type="password" id="New Password " name="newPassword" type="text" placeholder="Enter New Password " class="form-control input-md">
+                                <input type="password" id="newPwd" name="newPassword" type="text" placeholder="Enter New Password " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -157,7 +159,7 @@
                                 <div class="input-group-addon">
                                     <i class="fas fa-key"></i>
                                 </div>
-                                <input type="password" id="Confirm Password " name="confirmPassword" type="text" placeholder="Confirm Password " class="form-control input-md">
+                                <input type="password" id="confirmPwd" name="confirmPassword" type="text" placeholder="Confirm Password " class="form-control input-md">
                             </div>
                         </div>
                     </div>
@@ -165,9 +167,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" ></label>  
                         <div class="col-md-4">
-                            <button name="updatePassword" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Update</button>
-                            <button name="clearPassword" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Clear</button>
-                            <span class=message"><?php echo "&nbsp&nbsp <b>$passwordMessage</b>";?></span>
+                            <button id="updatePassword" name="updatePassword" class="btn btn-success" onClick="sendMessage(this.id)"><span class="glyphicon glyphicon-thumbs-up"></span> Update</button>
+                            <button id="clearPassword" name="clearPassword" class="btn btn-danger" onClick="sendMessage(this.id)"><span class="glyphicon glyphicon-remove-sign"></span> Clear</button>
+                            <span id="pwdMessage" class="pwdMessage"></span>
                         </div>
                     </div>
 
@@ -190,7 +192,7 @@
                                         <div class="input-group-addon">
                                             <i class="fas fa-unlock-alt"></i>
                                         </div>
-                                        <input type="password" id="Current Password " name="delPassword" type="text" placeholder="Confirm Your Password" class="form-control input-md">
+                                        <input type="password" id="currentPwdDel" name="delPassword" type="text" placeholder="Confirm Your Password" class="form-control input-md">
                                     </div>
                                 </div>
                             </div>
@@ -198,8 +200,8 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" ></label>  
                                 <div class="col-md-4">
-                                    <button name="deleteAccount" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Delete Account</button>
-                                    <span class=message"><?php echo "&nbsp&nbsp <b>$passwordMessage</b>";?></span>
+                                    <button id="deleteAccount" name="deleteAccount" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign" onClick="sendMessage(this.id)"></span> Delete Account</button>
+                                    <span id="delMessage" class="delMessage"></span>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,27 @@
-<?php 
+<?php
+    include "./AdditionalPHP/startSession.php";
+    include "./AdditionalPHP/checkAccess.php";
+
+    $uname = $_SESSION['uname'];
+
+    include "connection.php";
+
+    $sql = "SELECT * FROM user WHERE uname='$uname'";
+    $result= mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result) === 1){
+        $row = mysqli_fetch_assoc($result);
+    }
+
+    $uname = $row['uname'];
+    $password = $row['pass'];
+    $fname = $row['fname'];
+    $lname = $row['lname'];
+    $email = $row['email'];
+    $address = $row['address'];
+    $phone = $row['phone'];
+    $description = $row['description'];
+
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -20,7 +43,9 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if(isset($_POST['updateProfile'])){
+        $buttonClicked = $_POST['btn'];
+
+        if($buttonClicked == 'updateProfile'){
             $fnameOK = false;
             $lnameOK = false;
             $addressOK = false;
@@ -91,8 +116,9 @@
                     $updateMessage = "Error Updating Records. Please try again later.";
                 }
             }
-        } else if(isset($_POST['revertProfile'])){
-            Header('Location: '.$_SERVER['PHP_SELF']);
+        } else if($buttonClicked == 'revertProfile'){
+            echo "redirecting";
+            // Header('Location: '.$_SERVER['PHP_SELF']);
 
         } else if(isset($_POST['updatePassword'])){
             if (empty($_POST["currentPassword"])) {
@@ -115,9 +141,10 @@
 
                         $sql = "UPDATE user SET pass='$passHash' WHERE uname='$uname'";
                         if(mysqli_query($conn, $sql)){
-                            $passwordMessage = "Password Updated!";
-                            include "logout.php";
-                            header("Location: login.php");
+                            echo "redirecting";
+                            // $passwordMessage = "Password Updated!";
+                            // include "logout.php";
+                            // header("Location: login.php");
                         }
                     }
                 }
@@ -126,12 +153,12 @@
                     $currentPasswordCriteria = "Current Password Incorrect!";
                 }
             }
-        } else if(isset($_POST['clearPassword'])){
+        } else if($buttonClicked == 'clearPassword'){
             $_POST['currentPassword'] = "";
             $_POST['newPassword'] = "";
             $_POST['confirmPassword'] = "";
 
-        } else if(isset($_POST['deleteAccount'])){
+        } else if($buttonClicked == 'deleteAccount'){
             if (empty($_POST["delPassword"])) {
                 $delPasswordCriteria = "Current password empty!";
             } else {
@@ -141,8 +168,9 @@
                     $sql = "DELETE FROM user WHERE uname='$uname'";
 
                     if(mysqli_query($conn, $sql)){
-                        include "logout.php";
-                        header("Location: index.php");
+                        echo "redirecting";
+                        // include "logout.php";
+                        // header("Location: index.php");
                     }
                 }
                 else

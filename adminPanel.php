@@ -24,7 +24,7 @@
 
     $titleName = strtoupper($fname);
 
-    include "./AdditionalPHP/updateProfile.php";
+    include "updateProfile.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST['sendMail'])){
