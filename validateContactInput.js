@@ -8,7 +8,7 @@ var buttonPressed = document.getElementById('submit');
 
 if(buttonPressed.id == 'submit')
 {
-	form.addEventListener('submit', (e) => {
+	form.addEventListener( 'submit', (e) => {
 		var nameError = "";
 		var emailError = "";
 		var phoneError = "";
@@ -20,13 +20,12 @@ if(buttonPressed.id == 'submit')
 		var allErrors = [];
 	
 		customerName.value = String(customerName.value).trim();
-		var regName = /^[A-Za-z]+$/;
+		var regName = /^[a-zA-Z-' ]*$/;
 		   if( !customerName.value.match(regName) )
 		{
-			console.log("nameError");
 			nameError = "Only letters and white space allowed";
-			document.getElementById("nameError").innerHTML = nameError;
-			allErrors.push(nameError);
+			document.getElementById( "nameError" ).innerHTML = nameError;
+			allErrors.push( nameError );
 		}
 		
 		email.value = String(email.value).trim();
@@ -34,31 +33,31 @@ if(buttonPressed.id == 'submit')
 		if( !email.value.match(regEmail) )
 		{
 			emailError = "Invalid email format";
-			document.getElementById("emailError").innerHTML = emailError;
-			allErrors.push(emailError);
+			document.getElementById( "emailError" ).innerHTML = emailError;
+			allErrors.push( emailError );
 		}
 	
 		if( phone.value != '' || phone.value != null )
 		{
 			phone.value = String(phone.value).trim();
 			regPhone = /^([0-9]{8}|[0-9]{7})*$/;
-			if( !phone.value.match(regPhone) )
+			if( !phone.value.match( regPhone ) )
 			{
 				phoneError = "Enter a valid phone number";
-				document.getElementById("phoneError").innerHTML = phoneError;
-				allErrors.push(phoneError);
+				document.getElementById( "phoneError" ).innerHTML = phoneError;
+				allErrors.push( phoneError );
 			}
 		}
 	
 		if(allErrors.length > 0)
 		{
 			e.preventDefault();
-			document.getElementById("sendError").innerHTML = "Message Not Sent!";
+			document.getElementById( "sendError" ).innerHTML = "Message Not Sent!";
 		}
 		else
 		{
 			sendMessage();
-			document.getElementById("sendError").innerHTML = "Message Sent!";
+			document.getElementById( "sendError" ).innerHTML = "Message Sent!";
 			e.preventDefault();
 		}
 	})

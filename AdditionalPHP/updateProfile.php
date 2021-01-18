@@ -31,7 +31,7 @@
             } else {
                 $fname = test_input($_POST["fname"]);
                 // check if name only contains letters and whitespace
-                if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+                if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
                     $fnameCriteria = "Only letters and white space allowed";
                 }
                 else
@@ -45,7 +45,7 @@
             } else {
                 $lname = test_input($_POST["lname"]);
                 // check if name only contains letters and whitespace
-                if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+                if (!preg_match("/^[a-zA-Z-' ]*$/", $lname)) {
                     $lnameCriteria = "Only letters and white space allowed";
                 }
                 else
@@ -66,7 +66,7 @@
             } else {
                 $phone = test_input($_POST["phone"]);
 
-                if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/",$phone)) {
+                if (!preg_match("/^([0-9]{8}|[0-9]{7})*$/", $phone)) {
                     $phoneCriteria = "Enter a valid phone number";
                 }
                 else

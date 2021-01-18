@@ -87,19 +87,19 @@
             <div class="row">
 
                 <div class="column">
-                    <i class="fas fa-cookie"  style="color: #FF7380FF;"></i>
+                    <i class="fas fa-cookie"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle buy-our-cake">Freshly baked cakes</span>
                     <span class="what-you-can-do-text">Get a taste of our freshly prepared cakes by ordering online!</span>
                 </div>
 
                 <div class="column">
-                    <i class="fas fa-mitten"  style="color: #FF7380FF;"></i>
+                    <i class="fas fa-mitten"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle customize-cake">Customize your cake</span>
                     <span class="what-you-can-do-text">You can customize your cake with your favourite glazing, toppings, color and more!</span>
                 </div>
                 
                 <div class="column">
-                    <i class="fas fa-boxes"  style="color: #FF7380FF;"></i>
+                    <i class="fas fa-boxes"  style="color: black;"></i>
                     <span class="what-you-can-do-subtitle create-box">Custom cake box</span>
                     <span class="what-you-can-do-text">You can add different types of cakes in a box and we deliver it to you!</span>
                 </div>
